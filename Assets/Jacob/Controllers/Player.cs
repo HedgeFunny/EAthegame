@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Jacob.Controllers
@@ -9,8 +8,12 @@ namespace Jacob.Controllers
 		public float jumpForce;
 		public float moveSpeed;
 
+		[Header("Ground Check Properties")] public bool checkForGround;
+		public string groundTag;
+
 		private Rigidbody2D _rigidbody;
 		private float _horizontalInput;
+		private bool _canJump = true;
 
 		private void Awake()
 		{
@@ -24,6 +27,16 @@ namespace Jacob.Controllers
 			JumpCheck();
 		}
 
+		private void FixedUpdate()
+		{
+			Movement();
+		}
+
+		private void OnCollisionEnter2D(Collision2D col)
+		{
+			GroundCheck(col);
+		}
+
 		/// <summary>
 		/// Setup properties of the Rigidbody2D the Script needs.
 		/// </summary>
@@ -32,10 +45,6 @@ namespace Jacob.Controllers
 			_rigidbody.freezeRotation = true;
 		}
 
-		private void FixedUpdate()
-		{
-			Movement();
-		}
 
 		private void Movement()
 		{
@@ -48,7 +57,16 @@ namespace Jacob.Controllers
 		private void JumpCheck()
 		{
 			if (!Input.GetButton("Jump")) return;
+			if (!_canJump) return;
 			_rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+			if (checkForGround) _canJump = false;
+		}
+
+		private void GroundCheck(Collision2D col)
+		{
+			if (!checkForGround) return;
+			if (!col.collider.CompareTag(groundTag)) return;
+			_canJump = true;
 		}
 	}
 }

@@ -246,6 +246,7 @@ GameObject:
   - component: {fileID: 1447931327}
   - component: {fileID: 1447931326}
   - component: {fileID: 1447931329}
+  - component: {fileID: 1447931331}
   - component: {fileID: 1447931330}
   m_Layer: 0
   m_Name: Player
@@ -374,6 +375,28 @@ MonoBehaviour:
   moveSpeed: 5
   checkForGround: 0
   groundTag: 
+  hasAnimator: 0
+  animationParameter: 
+--- !u!95 &1447931331
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447931325}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1550494025
 GameObject:
   m_ObjectHideFlags: 0

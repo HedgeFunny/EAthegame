@@ -3,6 +3,7 @@ using UnityEngine;
 namespace Jacob.Controllers
 {
 	[RequireComponent(typeof(Rigidbody2D))]
+	[RequireComponent(typeof(Animator))]
 	public class Player : MonoBehaviour
 	{
 		public float jumpForce;
@@ -11,19 +12,25 @@ namespace Jacob.Controllers
 		[Header("Ground Check Properties")] public bool checkForGround;
 		public string groundTag;
 
+		[Header("Animation Properties")] public bool hasAnimator;
+		public string animationParameter;
+
 		private Rigidbody2D _rigidbody;
+		private Animator _animator;
 		private float _horizontalInput;
 		private bool _canJump = true;
 
 		private void Awake()
 		{
 			_rigidbody = GetComponent<Rigidbody2D>();
+			_animator = GetComponent<Animator>();
 			SetupRigidbody();
 		}
 
 		private void Update()
 		{
 			_horizontalInput = Input.GetAxis("Horizontal");
+			AnimatorCheck();
 			JumpCheck();
 		}
 
@@ -66,6 +73,17 @@ namespace Jacob.Controllers
 			if (!_canJump) return;
 			_rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			if (checkForGround) _canJump = false;
+		}
+	
+		/// <summary>
+		/// Sets the animationParameter that you set in the script to the _horizontalInput float so you can check
+		/// if you're walking and animate the character by checking if the animationParameter is greater than 0 or
+		/// less than -0.
+		/// </summary>
+		private void AnimatorCheck()
+		{
+			if (!hasAnimator) return;
+			_animator.SetFloat(animationParameter, _horizontalInput);
 		}
 
 		/// <summary>

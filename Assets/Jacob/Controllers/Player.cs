@@ -62,7 +62,7 @@ namespace Jacob.Controllers
 		/// </summary>
 		private void JumpCheck()
 		{
-			if (!Input.GetButton("Jump")) return;
+			if (!Input.GetButtonDown("Jump")) return;
 			if (!_canJump) return;
 			_rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			if (checkForGround) _canJump = false;

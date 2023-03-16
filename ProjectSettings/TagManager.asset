@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Spike
+  - Fire
+  - Fall
   layers:
   - Default
   - TransparentFX

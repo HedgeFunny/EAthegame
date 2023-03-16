@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c7c5dd368d0c99348989a8e9b47dd8f2
+guid: 4fff0e9d7cfd9a14dbd2d4314c63072e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,6 +113,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -128,337 +140,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Test Pallet (1)_0
+      name: Spike290_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 72
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 495a787b07537c54a922d1dc005bd33a
+      internalID: 240080358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike290_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 72
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e9b09cc94310fe47a6dbce3e2857ebc
+      internalID: 1771120051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike290_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 83
-        width: 28
-        height: 28
+        y: 48
+        width: 24
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c486964c4c1b9b344aa2ff6ded801b78
-      internalID: 620652594
+      spriteID: 0c25743e58205154aa7c3d9daeb60544
+      internalID: -173185083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_1
+      name: Spike290_3
       rect:
         serializedVersion: 2
-        x: 28
-        y: 83
-        width: 28
-        height: 28
+        x: 24
+        y: 48
+        width: 24
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06a01edf5712e6b47ad05ea8cb09dcfa
-      internalID: -349741694
+      spriteID: 63cc96b3fc3342f4091db1018759d271
+      internalID: 1030118193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_2
+      name: Spike290_4
       rect:
         serializedVersion: 2
-        x: 56
-        y: 83
-        width: 28
-        height: 28
+        x: 48
+        y: 48
+        width: 24
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc855bf2cfb1a9543a247461468e8861
-      internalID: -1474171584
+      spriteID: 1605d512bade20549b33c631ba8051e1
+      internalID: 1582993504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_3
+      name: Spike290_5
       rect:
         serializedVersion: 2
-        x: 84
-        y: 83
-        width: 27
-        height: 28
+        x: 72
+        y: 48
+        width: 24
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3540b49c21289141b3424b66b15ab22
-      internalID: 35941132
+      spriteID: a95ab92a8af10d2439801189e49f4777
+      internalID: 392299491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 55
-        width: 28
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b713e757be81b414eb983340428d0412
-      internalID: 1791531926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Test Pallet (1)_5
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 55
-        width: 28
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd279aca0f636ec48a8eeb0cc11642ec
-      internalID: -1683484781
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Test Pallet (1)_6
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 55
-        width: 28
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 53df181f32042d940824515b41ae4bf8
-      internalID: -250337674
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Test Pallet (1)_7
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 55
-        width: 27
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb6a36d5252be994b83466d8e8a67b1f
-      internalID: -1772703660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Test Pallet (1)_8
+      name: Spike290_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 27
-        width: 28
-        height: 28
+        y: 24
+        width: 24
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cde00e66577677f46863503094edaa94
-      internalID: 2084496750
+      spriteID: fdcad33671beea543ae03cb9878b39a2
+      internalID: -826483309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_9
+      name: Spike290_7
       rect:
         serializedVersion: 2
-        x: 28
-        y: 27
-        width: 28
-        height: 28
+        x: 24
+        y: 24
+        width: 24
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ced8f730c33a834d89a936600de26d0
-      internalID: -1804747007
+      spriteID: dc7fcd97fff644d4fa51fb7a53336c54
+      internalID: -367736504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_10
+      name: Spike290_8
       rect:
         serializedVersion: 2
-        x: 56
-        y: 27
-        width: 28
-        height: 28
+        x: 48
+        y: 24
+        width: 24
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eaf71e478084ad6449f76de525ff9a7e
-      internalID: 1740621816
+      spriteID: 6eb174226f7aeb14d9b109f97677202e
+      internalID: -1150531258
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_11
+      name: Spike290_9
       rect:
         serializedVersion: 2
-        x: 84
-        y: 27
-        width: 27
-        height: 28
+        x: 72
+        y: 24
+        width: 24
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94e46e1fc23051647a1245f02cef8d72
-      internalID: -1614837704
+      spriteID: 7e536e9e65672804383f721f31d5d210
+      internalID: -1052169711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_12
+      name: Spike290_10
       rect:
         serializedVersion: 2
-        x: 0
+        x: 48
         y: 0
-        width: 28
-        height: 27
+        width: 24
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fd6c9d57df60b249b775b60dbdf1407
-      internalID: 1714976344
+      spriteID: 5b6ee6ee108a44b4c9e9d941b9a5dee1
+      internalID: -1865210393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_13
+      name: Spike290_11
       rect:
         serializedVersion: 2
-        x: 28
+        x: 72
         y: 0
-        width: 28
-        height: 27
+        width: 24
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f325e49978588147ad8b672a5b98a62
-      internalID: -518118315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Test Pallet (1)_14
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 0
-        width: 28
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10fa93895dcbff94ead950422a8d4817
-      internalID: 1179229308
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Test Pallet (1)_15
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 0
-        width: 27
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04734ba18d264064889a7a90a65561f3
-      internalID: 1241003290
+      spriteID: b767bb8a8cc8a1f4db09ea60a6b0c103
+      internalID: 422486228
       vertices: []
       indices: 
       edges: []
@@ -474,22 +402,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Test Pallet (1)_6: -250337674
-      Test Pallet (1)_7: -1772703660
-      Test Pallet (1)_12: 1714976344
-      Test Pallet (1)_8: 2084496750
-      Test Pallet (1)_13: -518118315
-      Test Pallet (1)_1: -349741694
-      Test Pallet (1)_4: 1791531926
-      Test Pallet (1)_14: 1179229308
-      Test Pallet (1)_11: -1614837704
-      Test Pallet (1)_9: -1804747007
-      Test Pallet (1)_10: 1740621816
-      Test Pallet (1)_0: 620652594
-      Test Pallet (1)_3: 35941132
-      Test Pallet (1)_5: -1683484781
-      Test Pallet (1)_15: 1241003290
-      Test Pallet (1)_2: -1474171584
+      Spike290_4: 1582993504
+      Spike290_9: -1052169711
+      Spike290_5: 392299491
+      Spike290_8: -1150531258
+      Spike290_0: 240080358
+      Spike290_7: -367736504
+      Spike290_2: -173185083
+      Spike290_11: 422486228
+      Spike290_6: -826483309
+      Spike290_1: 1771120051
+      Spike290_3: 1030118193
+      Spike290_10: -1865210393
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

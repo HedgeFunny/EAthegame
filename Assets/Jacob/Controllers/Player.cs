@@ -1,9 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Jacob.Controllers
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(Animator))]
     public class Player : MonoBehaviour
     {
         public float jumpForce;
@@ -12,25 +12,30 @@ namespace Jacob.Controllers
         [Header("Ground Check Properties")] public bool checkForGround;
         public string groundTag;
 
-        [Header("Animation Properties")] public bool hasAnimator;
-        public string animationParameter;
+        [Header("Animation Properties")] public string animationParameter;
+
+
+        [Header("On Fire Ability Properties")] public KeyCode onFireAbilityKey;
+        public bool onFireAbilityUnlocked;
+        public float onFireTimer;
 
         private Rigidbody2D _rigidbody;
         private Animator _animator;
         private float _horizontalInput;
         private bool _canJump = true;
         private bool _canControlMovement = true;
-        private float baseJumpForce;
-        private float baseMoveSpeed;
-        
+        private float _baseJumpForce;
+        private float _baseMoveSpeed;
+        private PlayerOnFire _playerOnFire;
+        private bool _hasAnimator;
+        private bool _hasOnFire;
+        private bool _isOnFire;
 
         private void Awake()
         {
-            _rigidbody = GetComponent<Rigidbody2D>();
-            _animator = GetComponent<Animator>();
+            GetComponents();
             SetupRigidbody();
-            baseJumpForce = jumpForce;
-            baseMoveSpeed = moveSpeed;
+            RecordBaseStats();
         }
 
         private void Update()
@@ -39,6 +44,7 @@ namespace Jacob.Controllers
                 _horizontalInput = Input.GetAxis("Horizontal");
             AnimatorCheck();
             JumpCheck();
+            OnFireAbilityCheck();
         }
 
         private void FixedUpdate()
@@ -52,11 +58,48 @@ namespace Jacob.Controllers
         }
 
         /// <summary>
+        /// Gets the Components the Player needs and stores them.
+        /// </summary>
+        private void GetComponents()
+        {
+            _rigidbody = GetComponent<Rigidbody2D>();
+
+            if (GetComponent<Animator>())
+            {
+                _animator = GetComponent<Animator>();
+                _hasAnimator = true;
+            }
+            else
+            {
+                _hasAnimator = false;
+            }
+
+            if (GetComponent<PlayerOnFire>())
+            {
+                _playerOnFire = GetComponent<PlayerOnFire>();
+                _hasOnFire = true;
+            }
+            else
+            {
+                _hasOnFire = false;
+            }
+        }
+
+        /// <summary>
         /// Setup properties of the Rigidbody2D the Script needs.
         /// </summary>
         private void SetupRigidbody()
         {
             _rigidbody.freezeRotation = true;
+        }
+
+        /// <summary>
+        /// Record the Base stats of the Player when the Script starts.
+        /// </summary>
+        private void RecordBaseStats()
+        {
+            _baseJumpForce = jumpForce;
+            _baseMoveSpeed = moveSpeed;
         }
 
         /// <summary>
@@ -80,13 +123,44 @@ namespace Jacob.Controllers
         }
 
         /// <summary>
+        /// This method implements the On Fire Ability. It checks if you have the component first, then it checks if the
+        /// ability is unlocked, then it checks if you're pressing the ability key, and then it checks if you're already
+        /// on fire (it will return if you are). If all of those conditionals are true (except the onFire one), the
+        /// player will go on fire and it will start a Coroutine.
+        /// </summary>
+        private void OnFireAbilityCheck()
+        {
+            if (!_hasOnFire) return;
+            if (!onFireAbilityUnlocked) return;
+            if (!Input.GetKeyDown(onFireAbilityKey)) return;
+            if (_isOnFire) return;
+            
+            _playerOnFire.SetOnFire();
+            StartCoroutine(OnFireCoroutine());
+        }
+
+        /// <summary>
+        /// A Coroutine that sets the _isOnFire bool to true and waits the set amount of time on the onFireTimer float
+        /// and then it Extinguishes the Fire and it sets _isOnFire to false.
+        /// </summary>
+        /// <returns>A Class that suspends the Coroutines execution for the set amount of time in onFireTimer</returns>
+        private IEnumerator OnFireCoroutine()
+        {
+            _isOnFire = true;
+            yield return new WaitForSeconds(onFireTimer);
+            _playerOnFire.ExtinguishFire();
+            _isOnFire = false;
+        }
+        
+
+        /// <summary>
         /// Sets the animationParameter that you set in the script to the _horizontalInput float so you can check
         /// if you're walking and animate the character by checking if the animationParameter is greater than 0 or
         /// less than -0.
         /// </summary>
         private void AnimatorCheck()
         {
-            if (!hasAnimator) return;
+            if (!_hasAnimator) return;
             _animator.SetFloat(animationParameter, _horizontalInput);
         }
 
@@ -120,7 +194,7 @@ namespace Jacob.Controllers
             _canControlMovement = false;
             _horizontalInput = 0;
         }
- 
+
         /// <summary>
         /// This method enabled the ability to let the player control movement.
         /// </summary>
@@ -170,7 +244,7 @@ namespace Jacob.Controllers
         /// </summary>
         public void UpgradeJumpForce()
         {
-            jumpForce += CalculatePercentage(baseJumpForce, 10);
+            jumpForce += CalculatePercentage(_baseJumpForce, 10);
         }
 
         /// <summary>
@@ -178,9 +252,15 @@ namespace Jacob.Controllers
         /// </summary>
         public void UpgradeMoveSpeed()
         {
-            moveSpeed += CalculatePercentage(baseMoveSpeed, 10);
+            moveSpeed += CalculatePercentage(_baseMoveSpeed, 10);
         }
 
+        /// <summary>
+        /// Calculate a Percentage of a number using a math equation.
+        /// </summary>
+        /// <param name="number">The number you want to calculate the percentage of.</param>
+        /// <param name="percentage">The percentage that you want to get the percentage of the number.</param>
+        /// <returns>A number that is a percentage of the number you provided.</returns>
         private static float CalculatePercentage(float number, float percentage)
         {
             return number * percentage / 100;

@@ -3,12 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Spike
+  - Fire
+  - Fall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - pop up ad layer
   - Water
   - UI
   - 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +12,13 @@ namespace Jacob.Controllers
 
         private void OnMouseDown()
         {
+            Activate();
+            Deactivate();
+        }
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            if (!col.CompareTag("Player")) return;
             Activate();
             Deactivate();
         }

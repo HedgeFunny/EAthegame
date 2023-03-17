@@ -20,12 +20,17 @@ namespace Jacob.Controllers
         private float _horizontalInput;
         private bool _canJump = true;
         private bool _canControlMovement = true;
+        private float baseJumpForce;
+        private float baseMoveSpeed;
+        
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             SetupRigidbody();
+            baseJumpForce = jumpForce;
+            baseMoveSpeed = moveSpeed;
         }
 
         private void Update()
@@ -158,6 +163,27 @@ namespace Jacob.Controllers
                 -1 => 1,
                 _ => _horizontalInput
             };
+        }
+
+        /// <summary>
+        /// Increases the jumpForce float by 10% of the base jumpForce.
+        /// </summary>
+        public void UpgradeJumpForce()
+        {
+            jumpForce += CalculatePercentage(baseJumpForce, 10);
+        }
+
+        /// <summary>
+        /// Increases the moveSpeed float by 10% of the base moveSpeed.
+        /// </summary>
+        public void UpgradeMoveSpeed()
+        {
+            moveSpeed += CalculatePercentage(baseMoveSpeed, 10);
+        }
+
+        private static float CalculatePercentage(float number, float percentage)
+        {
+            return number * percentage / 100;
         }
     }
 }

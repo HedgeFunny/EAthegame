@@ -57,7 +57,8 @@ namespace Jacob.Controllers
         /// </summary>
         public void RunAdCode()
         {
-            HideLayer();
+            if (!string.IsNullOrWhiteSpace(layer))
+                HideLayer();
             onClickedEnough.Invoke();
         }
     }

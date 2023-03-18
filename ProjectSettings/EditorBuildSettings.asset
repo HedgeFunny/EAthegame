@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Rose/Scenes/Stage-1.unity
     guid: 97e49c5389381ae4abe7f286850aadb6
+  - enabled: 1
+    path: Assets/Rose/Scenes/EndScene.unity
+    guid: 64cffca4743ca5b47bd493792b3ae5b9
   m_configObjects: {}

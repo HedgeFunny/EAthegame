@@ -290,10 +290,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70bae6465c9df0f48686dd8a056cbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 0
-  moveSpeed: 0
-  checkForGround: 0
-  groundTag: 
+  jumpForce: 5.1
+  moveSpeed: 5
+  checkForGround: 1
+  groundTag: Ground
   animationParameter: 
   onFireAbilityKey: 0
   onFireAbilityUnlocked: 0
@@ -114768,7 +114768,7 @@ GameObject:
   - component: {fileID: 1364647630}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114813,7 +114813,7 @@ GameObject:
   - component: {fileID: 1689579331}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

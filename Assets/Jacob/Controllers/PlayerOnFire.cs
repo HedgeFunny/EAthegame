@@ -4,14 +4,12 @@ namespace Jacob.Controllers
 {
     public class PlayerOnFire : MonoBehaviour
     {
-        public string playerName;
         public string tagName;
 
         private Player _player;
         private Collider2D _collider;
         private bool _onFire;
         private float _originalPlayerMoveSpeed;
-        private Vector2 _direction = Vector2.right;
 
         private void Awake()
         {
@@ -38,8 +36,8 @@ namespace Jacob.Controllers
             var bounds = _collider.bounds;
 
             var raycastOrigin = RaycastOrigin(bounds);
-            var hit = Physics2D.Raycast(raycastOrigin, _direction, 0.2f);
-            Debug.DrawRay(raycastOrigin, _direction);
+            var hit = Physics2D.Raycast(raycastOrigin, _player.Direction, 0.2f);
+            Debug.DrawRay(raycastOrigin, _player.Direction);
 
             ColliderCheck(hit);
         }
@@ -53,7 +51,7 @@ namespace Jacob.Controllers
         /// <returns>A Raycast origin adjusted to the Direction the player is facing.</returns>
         private Vector3 RaycastOrigin(Bounds bounds)
         {
-            return _direction == Vector2.right
+            return _player.Direction == Vector2.right
                 ? new Vector3(bounds.max.x, bounds.max.y, 0)
                 : new Vector3(bounds.min.x, bounds.max.y, 0);
         }
@@ -87,7 +85,7 @@ namespace Jacob.Controllers
         {
             _player.moveSpeed = 12;
             _player.DisableControllingMovement();
-            _player.SetHorizontalInput(1);
+            _player.SetHorizontalInput(_player.Direction == Vector2.right ? 1 : -1);
             _onFire = true;
         }
 
@@ -99,22 +97,21 @@ namespace Jacob.Controllers
             _onFire = false;
             _player.SetHorizontalInput(0);
             _player.moveSpeed = _originalPlayerMoveSpeed;
-            _direction = Vector2.right;
             _player.EnableControllingMovement();
         }
 
         /// <summary>
-        /// Flip the internal _direction. This lets the Raycast flip.
+        /// Flip the Players Direction. This lets the Raycast flip.
         /// </summary>
         private void FlipDirection()
         {
-            if (_direction == Vector2.right)
+            if (_player.Direction == Vector2.right)
             {
-                _direction = Vector2.left;
+                _player.Direction = Vector2.left;
             }
-            else if (_direction == Vector2.left)
+            else if (_player.Direction == Vector2.left)
             {
-                _direction = Vector2.right;
+                _player.Direction = Vector2.right;
             }
         }
     }

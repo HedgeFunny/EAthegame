@@ -19,6 +19,7 @@ namespace Jacob.Controllers
         public bool onFireAbilityUnlocked;
         public float onFireTimer;
 
+        internal Vector2 Direction = Vector2.right;
         private Rigidbody2D _rigidbody;
         private Animator _animator;
         private float _horizontalInput;
@@ -109,6 +110,12 @@ namespace Jacob.Controllers
         private void Movement()
         {
             _rigidbody.velocity = new Vector2(_horizontalInput * moveSpeed, _rigidbody.velocity.y);
+            Direction = _horizontalInput switch
+            {
+                > 0 => Vector2.right,
+                < -0 => Vector2.left,
+                _ => Direction
+            };
         }
 
         /// <summary>
@@ -134,7 +141,7 @@ namespace Jacob.Controllers
             if (!onFireAbilityUnlocked) return;
             if (!Input.GetKeyDown(onFireAbilityKey)) return;
             if (_isOnFire) return;
-            
+
             _playerOnFire.SetOnFire();
             StartCoroutine(OnFireCoroutine());
         }
@@ -151,7 +158,7 @@ namespace Jacob.Controllers
             _playerOnFire.ExtinguishFire();
             _isOnFire = false;
         }
-        
+
 
         /// <summary>
         /// Sets the animationParameter that you set in the script to the _horizontalInput float so you can check

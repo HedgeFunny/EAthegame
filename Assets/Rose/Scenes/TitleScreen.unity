@@ -389,8 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d487d3b51263b4a99b365e03187bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButton: {fileID: 0}
-  nextScene: {fileID: 0}
+  sceneToLoad: IntroScene
 --- !u!1 &875830054
 GameObject:
   m_ObjectHideFlags: 0

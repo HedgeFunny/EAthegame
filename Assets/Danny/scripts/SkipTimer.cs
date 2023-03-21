@@ -36,6 +36,9 @@ public class SkipTimer : MonoBehaviour
         skipWaitTimer.text = " " + waitTime;
 
         Invoke("ActivateButton", 0);
+
+        //Animation sample.  Steal this later
+        //anim.SetBool("myBool", true);
     }
 
     void ActivateButton()

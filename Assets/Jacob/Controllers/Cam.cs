@@ -8,6 +8,7 @@ namespace Jacob.Controllers
 	{
 		public Transform followedObject;
 		public TilemapCollider2D tilemap;
+		public bool clampVerticalPosition;
 
 		private Camera _camera;
 		private float _beginningOfLevel;
@@ -18,12 +19,13 @@ namespace Jacob.Controllers
 		private void Awake()
 		{
 			_camera = GetComponent<Camera>()!;
-			CalculateHorizontalSize();
+			CalculateSize();
 		}
 
 		private void Update()
 		{
-			transform.position = new Vector3(GetClampedHorizontalPosition(), 0, -10);
+			transform.position = new Vector3(GetClampedHorizontalPosition(),
+				clampVerticalPosition ? GetClampedVerticalPosition() : 0, -10);
 		}
 
 		private float GetClampedHorizontalPosition()
@@ -32,15 +34,35 @@ namespace Jacob.Controllers
 				_tilemapBounds.Right < _horizontalSize ? _tilemapBounds.Left : _tilemapBounds.Right);
 		}
 
+		private float GetClampedVerticalPosition()
+		{
+			return Mathf.Clamp(followedObject.position.y,
+				_tilemapBounds.Down > _camera.orthographicSize ? _tilemapBounds.Up : _tilemapBounds.Down,
+				_tilemapBounds.Up);
+		}
+
 		private static float GetHorizontalSize(Camera camera)
 		{
 			return camera.orthographicSize * camera.aspect;
 		}
 
-		private void CalculateHorizontalSize()
+		private void CalculateSize()
 		{
 			_horizontalSize = GetHorizontalSize(_camera);
-			_tilemapBounds = new TilemapBounds(tilemap.bounds, _horizontalSize);
+			_tilemapBounds = new TilemapBounds(tilemap.bounds, _horizontalSize, _camera.orthographicSize);
+		}
+
+		/// <summary>
+		/// Extends the Camera's view with another Collider bounding box.
+		/// </summary>
+		/// <param name="tileMapCollider">The Collider you want to extend the view to.</param>
+		public void ExtendCameraView(TilemapCollider2D tileMapCollider)
+		{
+			var size = tileMapCollider.bounds.size + tilemap.bounds.size;
+			var center = size / 2;
+			print(size);
+			var bound = new Bounds(center, size);
+			_tilemapBounds = new TilemapBounds(bound, _horizontalSize, _camera.orthographicSize);
 		}
 	}
 }

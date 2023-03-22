@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c7c5dd368d0c99348989a8e9b47dd8f2
+guid: 9c3ff67a58fb10a408effa96d91d7617
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -44,10 +44,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 83
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -68,7 +68,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -124,353 +124,362 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Test Pallet (1)_0
+      name: TImer_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 84
-        width: 24
-        height: 24
+        x: 0
+        y: 384
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c486964c4c1b9b344aa2ff6ded801b78
-      internalID: 620652594
+      spriteID: 65603db9f0162614a8cd618d883a1374
+      internalID: -1867194077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_1
+      name: TImer_1
       rect:
         serializedVersion: 2
-        x: 30
-        y: 84
-        width: 24
-        height: 24
+        x: 96
+        y: 384
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06a01edf5712e6b47ad05ea8cb09dcfa
-      internalID: -349741694
+      spriteID: 410f0d2d248b4bc4583b1a5eb53bdf7c
+      internalID: -1839483308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_2
+      name: TImer_2
       rect:
         serializedVersion: 2
-        x: 57
-        y: 84
-        width: 24
-        height: 24
+        x: 192
+        y: 384
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc855bf2cfb1a9543a247461468e8861
-      internalID: -1474171584
+      spriteID: 956ce9a1b6d88854a8e4ade87189a93a
+      internalID: -1196227461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_3
+      name: TImer_3
       rect:
         serializedVersion: 2
-        x: 87
-        y: 84
-        width: 18
-        height: 24
+        x: 288
+        y: 384
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3540b49c21289141b3424b66b15ab22
-      internalID: 35941132
+      spriteID: 73a98e41d272dbb44995b50190120045
+      internalID: 2008717947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_4
+      name: TImer_4
       rect:
         serializedVersion: 2
-        x: 3
-        y: 56
-        width: 24
-        height: 25
+        x: 0
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b713e757be81b414eb983340428d0412
-      internalID: 1791531926
+      spriteID: 40d62075c2c34d54ea8d7818b44aed08
+      internalID: 2061883605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_5
+      name: TImer_5
       rect:
         serializedVersion: 2
-        x: 30
-        y: 57
-        width: 24
-        height: 24
+        x: 96
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd279aca0f636ec48a8eeb0cc11642ec
-      internalID: -1683484781
+      spriteID: c03a936b40b3e5d4a83e53466be7ea0f
+      internalID: 1793418556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_6
+      name: TImer_6
       rect:
         serializedVersion: 2
-        x: 57
-        y: 57
-        width: 24
-        height: 24
+        x: 192
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53df181f32042d940824515b41ae4bf8
-      internalID: -250337674
+      spriteID: f9689b93183b2c340aa33439b6b30eb0
+      internalID: -1877842519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_7
+      name: TImer_7
       rect:
         serializedVersion: 2
-        x: 87
-        y: 57
-        width: 18
-        height: 24
+        x: 288
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb6a36d5252be994b83466d8e8a67b1f
-      internalID: -1772703660
+      spriteID: 8d87dfbcf4e2ef343920736940252184
+      internalID: -2116122756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_8
+      name: TImer_8
       rect:
         serializedVersion: 2
-        x: 3
-        y: 30
-        width: 24
-        height: 24
+        x: 0
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cde00e66577677f46863503094edaa94
-      internalID: 2084496750
+      spriteID: d550a3365879d8347a01d2aeb5c7b6e5
+      internalID: 452334580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_9
+      name: TImer_9
       rect:
         serializedVersion: 2
-        x: 30
-        y: 30
-        width: 24
-        height: 24
+        x: 96
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ced8f730c33a834d89a936600de26d0
-      internalID: -1804747007
+      spriteID: 66452c61fa80bd54f94b5b7f0b8cfbf2
+      internalID: -1975934758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_10
+      name: TImer_10
       rect:
         serializedVersion: 2
-        x: 57
-        y: 30
-        width: 24
-        height: 24
+        x: 192
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eaf71e478084ad6449f76de525ff9a7e
-      internalID: 1740621816
+      spriteID: 6fa1495e5ed0b794bacadd41bef9600e
+      internalID: -1602537585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_11
+      name: TImer_11
       rect:
         serializedVersion: 2
-        x: 87
-        y: 30
-        width: 18
-        height: 24
+        x: 288
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94e46e1fc23051647a1245f02cef8d72
-      internalID: -1614837704
+      spriteID: ffac26e31524cbe468e218809bf05f13
+      internalID: 322039221
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_12
+      name: TImer_12
       rect:
         serializedVersion: 2
-        x: 3
-        y: 6
-        width: 24
-        height: 21
+        x: 0
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fd6c9d57df60b249b775b60dbdf1407
-      internalID: 1714976344
+      spriteID: 53472d0e31c4491419db9dd19009bc35
+      internalID: 1116369318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_13
+      name: TImer_13
       rect:
         serializedVersion: 2
-        x: 30
-        y: 6
-        width: 24
-        height: 21
+        x: 96
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f325e49978588147ad8b672a5b98a62
-      internalID: -518118315
+      spriteID: 5d6f32906e514dc4b886d00a723e049e
+      internalID: -699921305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_14
+      name: TImer_14
       rect:
         serializedVersion: 2
-        x: 57
-        y: 6
-        width: 24
-        height: 21
+        x: 192
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10fa93895dcbff94ead950422a8d4817
-      internalID: 1179229308
+      spriteID: c2af2d2a42a28ea4ea4d5c5f5002b293
+      internalID: -1150482021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Test Pallet (1)_15
+      name: TImer_15
       rect:
         serializedVersion: 2
-        x: 87
-        y: 6
-        width: 18
-        height: 21
+        x: 288
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04734ba18d264064889a7a90a65561f3
-      internalID: 1241003290
+      spriteID: 13b5d7c7d92286f4498cac9185acc8f0
+      internalID: 788258236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TImer_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8f3c6d0fc1db4a4e8a3fc58cf0ce35a
+      internalID: 502229212
       vertices: []
       indices: 
       edges: []
@@ -486,22 +495,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Test Pallet (1)_6: -250337674
-      Test Pallet (1)_7: -1772703660
-      Test Pallet (1)_12: 1714976344
-      Test Pallet (1)_8: 2084496750
-      Test Pallet (1)_13: -518118315
-      Test Pallet (1)_1: -349741694
-      Test Pallet (1)_4: 1791531926
-      Test Pallet (1)_14: 1179229308
-      Test Pallet (1)_11: -1614837704
-      Test Pallet (1)_9: -1804747007
-      Test Pallet (1)_10: 1740621816
-      Test Pallet (1)_0: 620652594
-      Test Pallet (1)_3: 35941132
-      Test Pallet (1)_5: -1683484781
-      Test Pallet (1)_15: 1241003290
-      Test Pallet (1)_2: -1474171584
+      TImer_13: -699921305
+      TImer_14: -1150482021
+      TImer_15: 788258236
+      TImer_12: 1116369318
+      TImer_3: 2008717947
+      TImer_16: 502229212
+      TImer_11: 322039221
+      TImer_1: -1839483308
+      TImer_5: 1793418556
+      TImer_2: -1196227461
+      TImer_6: -1877842519
+      TImer_10: -1602537585
+      TImer_4: 2061883605
+      TImer_8: 452334580
+      TImer_0: -1867194077
+      TImer_9: -1975934758
+      TImer_7: -2116122756
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -11,15 +11,13 @@ namespace Jacob.Controllers
 		public bool clampVerticalPosition;
 
 		private Camera _camera;
-		private float _beginningOfLevel;
-		private float _endingOfLevel;
 		private float _horizontalSize;
 		private TilemapBounds _tilemapBounds;
 
 		private void Awake()
 		{
 			_camera = GetComponent<Camera>()!;
-			CalculateSize();
+			CalculateSize(tilemap.bounds);
 		}
 
 		private void Update()
@@ -46,10 +44,10 @@ namespace Jacob.Controllers
 			return camera.orthographicSize * camera.aspect;
 		}
 
-		private void CalculateSize()
+		private void CalculateSize(Bounds bounds)
 		{
 			_horizontalSize = GetHorizontalSize(_camera);
-			_tilemapBounds = new TilemapBounds(tilemap.bounds, _horizontalSize, _camera.orthographicSize);
+			_tilemapBounds = new TilemapBounds(bounds, _horizontalSize, _camera.orthographicSize);
 		}
 
 		/// <summary>
@@ -58,11 +56,9 @@ namespace Jacob.Controllers
 		/// <param name="tileMapCollider">The Collider you want to extend the view to.</param>
 		public void ExtendCameraView(TilemapCollider2D tileMapCollider)
 		{
-			var size = tileMapCollider.bounds.size + tilemap.bounds.size;
-			var center = size / 2;
-			print(size);
-			var bound = new Bounds(center, size);
-			_tilemapBounds = new TilemapBounds(bound, _horizontalSize, _camera.orthographicSize);
+			var bound = tilemap.bounds;
+			bound.Encapsulate(tileMapCollider.bounds);
+			CalculateSize(bound);
 		}
 	}
 }

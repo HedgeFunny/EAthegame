@@ -28,10 +28,7 @@ public class TimerClockController : MonoBehaviour
         anim.SetBool("isPlaying", IsAnimationOver);
 
         //Counts the number of times the loop happens and stops it after 5 loops
-        if ()
-        {
 
-        }
 
         //When the animation looped the set amount of times
         if(loopCount <= 0)

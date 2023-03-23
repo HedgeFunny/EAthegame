@@ -10,6 +10,7 @@ namespace Jacob.Controllers
 		public GameObject followedObject;
 		public TilemapCollider2D colliderToExtendTo;
 		public UnityEvent<TilemapCollider2D> whenObjectOutOfBounds;
+		public UnityEvent whenObjectInBounds;
 
 		private TilemapCollider2D _tileMapCollider;
 		private bool _eventCalled;
@@ -21,9 +22,15 @@ namespace Jacob.Controllers
 
 		private void Update()
 		{
-			if (followedObject.transform.position.y >= _tileMapCollider.bounds.max.y && !_eventCalled)
+			if (colliderToExtendTo.bounds.Contains(followedObject.transform.position) && !_eventCalled)
 			{
 				InvokeEvent();
+			}
+
+			if (_tileMapCollider.bounds.Contains(followedObject.transform.position) && _eventCalled)
+			{
+				whenObjectInBounds.Invoke();
+				_eventCalled = false;
 			}
 		}
 

@@ -29,6 +29,10 @@ public class TimerClockController : MonoBehaviour
 
         //Counts the number of times the loop happens and stops it after 5 loops
 
+       /* if ()
+
+
+
 
 
 

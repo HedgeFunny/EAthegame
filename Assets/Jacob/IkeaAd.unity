@@ -4473,6 +4473,8 @@ MonoBehaviour:
   checkForGround: 0
   groundTag: 
   animationParameter: 
+  animationType: 0
+  _inputToTrack: 0
   onFireAbilityKey: 0
   onFireAbilityUnlocked: 0
   onFireTimer: 0

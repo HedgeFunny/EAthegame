@@ -40,7 +40,7 @@ public class TimerClockController : MonoBehaviour
         {
             IsAnimationOver = false;
         } 
-       different idea to fix this */ 
+       /*different idea to fix this */ 
       while(loopCount >= 0)
         {
             new WaitForSeconds(1);

@@ -1,4 +1,5 @@
 using System.Collections;
+using Jacob.Data;
 using UnityEngine;
 
 namespace Jacob.Controllers
@@ -14,6 +15,8 @@ namespace Jacob.Controllers
 		public string groundTag;
 
 		[Header("Animation Properties")] public string animationParameter;
+		public AnimationType animationType;
+		public TrackInput inputToTrack;
 
 
 		[Header("On Fire Ability Properties")] public KeyCode onFireAbilityKey;
@@ -54,7 +57,6 @@ namespace Jacob.Controllers
 			TopDownCheck();
 			OnFireAbilityCheck();
 		}
-
 
 		private void FixedUpdate()
 		{
@@ -172,12 +174,29 @@ namespace Jacob.Controllers
 		/// <summary>
 		/// Sets the animationParameter that you set in the script to the _horizontalInput float so you can check
 		/// if you're walking and animate the character by checking if the animationParameter is greater than 0 or
-		/// less than -0.
+		/// less than -0. The Boolean feature also uses the _horizontalInput float but it uses a boolean based on if
+		/// _horizontalInput is greater than 0 or less than -0. It also decides to track either _horizontalInput or
+		/// _verticalInput based on what you set in inputToTrack.
 		/// </summary>
 		private void AnimatorCheck()
 		{
 			if (!_hasAnimator) return;
-			_animator.SetFloat(animationParameter, _horizontalInput);
+
+			var inputType = inputToTrack switch
+			{
+				TrackInput.HorizontalInput => _horizontalInput,
+				TrackInput.VerticalInput => _verticalInput,
+			};
+			
+			switch (animationType)
+			{
+				case AnimationType.Float:
+					_animator.SetFloat(animationParameter, inputType);
+					break;
+				case AnimationType.Boolean:
+					_animator.SetBool(animationParameter, inputType is > 0 or < -0);
+					break;
+			}
 		}
 
 		/// <summary>

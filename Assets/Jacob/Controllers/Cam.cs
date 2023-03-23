@@ -60,5 +60,13 @@ namespace Jacob.Controllers
 			bound.Encapsulate(tileMapCollider.bounds);
 			CalculateSize(bound);
 		}
+
+		/// <summary>
+		/// Re-calculates the Camera's view using the original tilemap bounds.
+		/// </summary>
+		public void RestoreCameraView()
+		{
+			CalculateSize(tilemap.bounds);
+		}
 	}
 }

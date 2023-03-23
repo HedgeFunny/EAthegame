@@ -266,6 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 5.1
   moveSpeed: 5
+  topDown: 0
   checkForGround: 1
   groundTag: Ground
   animationParameter: 
@@ -10766,16 +10767,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 204, y: 30, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 0
@@ -10800,8 +10791,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 969cae99f5126344d8084e4fd67ca4f0, type: 2}
   - m_RefCount: 81
     m_Data: {fileID: 11400000, guid: 0a44a0d485e720c46a999f4627816646, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: b4bd5835995eebc4a9ce4eaa7fc01cb3, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -10825,10 +10816,10 @@ Tilemap:
     m_Data: {fileID: 32983149, guid: f505528cde795f144b24647215654154, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -2117622992, guid: f505528cde795f144b24647215654154, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1683484781, guid: c7c5dd368d0c99348989a8e9b47dd8f2, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 997
+  - m_RefCount: 996
     m_Data:
       e00: 1
       e01: 0
@@ -10847,7 +10838,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 997
+  - m_RefCount: 996
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -11158,6 +11149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followedObject: {fileID: 122318999}
   tilemap: {fileID: 675672686}
+
 --- !u!1 &1325592858
 GameObject:
   m_ObjectHideFlags: 0

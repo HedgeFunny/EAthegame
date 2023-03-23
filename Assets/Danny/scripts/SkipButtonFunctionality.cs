@@ -4,17 +4,26 @@ using UnityEngine;
 
 public class SkipButtonFunctionality : MonoBehaviour
 {
-    public GameObject nextAd;
-    public GameObject previousAd;
+    public GameObject[] previousAd;
+    public GameObject[] nextAd;
+    private int nextAdIndex;
+    private int previousAdIndex;
     public bool PenultimateAd = false;
     public GameObject BackGround;
     public void SkipButton()
     {
-        previousAd.SetActive(false);
-        nextAd.SetActive(true);
-        if (PenultimateAd)
+        foreach (GameObject previousAdIndex in previousAd)
         {
-            BackGround.SetActive(false);
+            previousAdIndex.SetActive(false);
         }
+
+        foreach (GameObject nextAdIndex in nextAd)
+        {
+            nextAdIndex.SetActive(true);
+            if (PenultimateAd)
+            {
+                BackGround.SetActive(false);
+            }
+        }                     
     }
 }

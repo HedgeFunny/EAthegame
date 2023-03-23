@@ -7,7 +7,7 @@ public class SkipTimer : MonoBehaviour
     public float waitTime = 5f;
     public TextMeshProUGUI skipWaitTimer;
     public GameObject skipButton;
-
+    public GameObject clock;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +44,9 @@ public class SkipTimer : MonoBehaviour
     void ActivateButton()
     {
         skipWaitTimer.text = " ";
+        clock.SetActive(false);
         skipButton.SetActive(true);
+        
 
     }
 }

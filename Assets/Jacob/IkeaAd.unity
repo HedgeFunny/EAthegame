@@ -4435,6 +4435,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  whenObjectInBounds:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 346523137}
+        m_TargetAssemblyTypeName: Jacob.Controllers.Cam, Assembly-CSharp
+        m_MethodName: RestoreCameraView
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1408095788
 GameObject:
   m_ObjectHideFlags: 0
@@ -4473,9 +4488,13 @@ MonoBehaviour:
   checkForGround: 0
   groundTag: 
   animationParameter: 
+  animationType: 0
+  inputToTrack: 0
   onFireAbilityKey: 0
   onFireAbilityUnlocked: 0
   onFireTimer: 0
+  maxMoveSpeed: 10
+  secondsUntilFullSprint: 2
 --- !u!50 &1408095790
 Rigidbody2D:
   serializedVersion: 4

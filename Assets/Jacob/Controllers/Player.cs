@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Jacob.Data;
 using UnityEngine;
@@ -22,6 +23,9 @@ namespace Jacob.Controllers
 		[Header("On Fire Ability Properties")] public KeyCode onFireAbilityKey;
 		public bool onFireAbilityUnlocked;
 		public float onFireTimer;
+
+		[Header("Sprint Properties")] public float maxMoveSpeed;
+		public float secondsUntilFullSprint;
 
 		internal Vector2 Direction = Vector2.right;
 		private Rigidbody2D _rigidbody;
@@ -56,6 +60,7 @@ namespace Jacob.Controllers
 			AnimatorCheck();
 			TopDownCheck();
 			OnFireAbilityCheck();
+			SprintCheck();
 		}
 
 		private void FixedUpdate()
@@ -114,30 +119,48 @@ namespace Jacob.Controllers
 		}
 
 		/// <summary>
-		/// Checks if you are pressing your horizontalInput keys and changes your velocity with the value of
-		/// horizontalInput which either is -1 for left, and 1 for right times the moveSpeed.
+		/// Sets the animationParameter that you set in the script to the _horizontalInput float so you can check
+		/// if you're walking and animate the character by checking if the animationParameter is greater than 0 or
+		/// less than -0. The Boolean feature also uses the _horizontalInput float but it uses a boolean based on if
+		/// _horizontalInput is greater than 0 or less than -0. It also decides to track either _horizontalInput or
+		/// _verticalInput based on what you set in inputToTrack.
 		/// </summary>
-		private void Movement()
+		private void AnimatorCheck()
 		{
-			_rigidbody.velocity = new Vector2(_horizontalInput * moveSpeed,
-				topDown ? _verticalInput * moveSpeed : _rigidbody.velocity.y);
-			Direction = _horizontalInput switch
+			if (!_hasAnimator) return;
+
+			var inputType = inputToTrack switch
 			{
-				> 0 => Vector2.right,
-				< -0 => Vector2.left,
-				_ => Direction
+				TrackInput.HorizontalInput => _horizontalInput,
+				TrackInput.VerticalInput => _verticalInput,
+				_ => throw new ArgumentOutOfRangeException()
 			};
+
+			switch (animationType)
+			{
+				case AnimationType.Float:
+					_animator.SetFloat(animationParameter, inputType);
+					break;
+				case AnimationType.Boolean:
+					_animator.SetBool(animationParameter, inputType is > 0 or < -0);
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
 		}
 
 		/// <summary>
-		/// Checks if you are pressing your "Jump" key, which is Space on PC and checks if you canJump and it jumps.
+		/// Checks if you have the topDown bool enabled and changes the Player controller to act like a top down
+		/// controller with no Gravity Scale and no Jumping.
 		/// </summary>
-		private void JumpCheck()
+		private void TopDownCheck()
 		{
-			if (!Input.GetButtonDown("Jump")) return;
-			if (!_canJump) return;
-			_rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-			if (checkForGround) _canJump = false;
+			if (!topDown)
+			{
+				JumpCheck();
+			}
+
+			_rigidbody.gravityScale = topDown ? 0 : 1;
 		}
 
 		/// <summary>
@@ -170,33 +193,57 @@ namespace Jacob.Controllers
 			_isOnFire = false;
 		}
 
+		/// <summary>
+		/// Checks if you're pressing the Left Shift key, and if you are, it will activate a Sprint coroutine which
+		/// works by changing your moveSpeed to the maxMoveSpeed dynamically in 2 seconds using some Math.
+		/// </summary>
+		private void SprintCheck()
+		{
+			if (Input.GetKeyUp(KeyCode.LeftShift))
+			{
+				StartCoroutine(SlowDownCoroutine());
+			}
+
+			if (!Input.GetKeyDown(KeyCode.LeftShift)) return;
+			print(Time.fixedDeltaTime);
+
+			StartCoroutine(SprintCoroutine());
+		}
+
+		private IEnumerator SprintCoroutine()
+		{
+			var time = 1 / Time.fixedDeltaTime * secondsUntilFullSprint;
+			while (moveSpeed < maxMoveSpeed)
+			{
+				moveSpeed = Mathf.Clamp(moveSpeed += maxMoveSpeed / time, moveSpeed, maxMoveSpeed);
+				yield return new WaitForFixedUpdate();
+			}
+		}
+
+		private IEnumerator SlowDownCoroutine()
+		{
+			var time = 1 / Time.fixedDeltaTime * secondsUntilFullSprint;
+			while (moveSpeed > _baseMoveSpeed)
+			{
+				moveSpeed = Mathf.Clamp(moveSpeed -= maxMoveSpeed / time, _baseMoveSpeed, moveSpeed);
+				yield return new WaitForFixedUpdate();
+			}
+		}
 
 		/// <summary>
-		/// Sets the animationParameter that you set in the script to the _horizontalInput float so you can check
-		/// if you're walking and animate the character by checking if the animationParameter is greater than 0 or
-		/// less than -0. The Boolean feature also uses the _horizontalInput float but it uses a boolean based on if
-		/// _horizontalInput is greater than 0 or less than -0. It also decides to track either _horizontalInput or
-		/// _verticalInput based on what you set in inputToTrack.
+		/// Checks if you are pressing your horizontalInput keys and changes your velocity with the value of
+		/// horizontalInput which either is -1 for left, and 1 for right times the moveSpeed.
 		/// </summary>
-		private void AnimatorCheck()
+		private void Movement()
 		{
-			if (!_hasAnimator) return;
-
-			var inputType = inputToTrack switch
+			_rigidbody.velocity = new Vector2(_horizontalInput * moveSpeed,
+				topDown ? _verticalInput * moveSpeed : _rigidbody.velocity.y);
+			Direction = _horizontalInput switch
 			{
-				TrackInput.HorizontalInput => _horizontalInput,
-				TrackInput.VerticalInput => _verticalInput,
+				> 0 => Vector2.right,
+				< -0 => Vector2.left,
+				_ => Direction
 			};
-			
-			switch (animationType)
-			{
-				case AnimationType.Float:
-					_animator.SetFloat(animationParameter, inputType);
-					break;
-				case AnimationType.Boolean:
-					_animator.SetBool(animationParameter, inputType is > 0 or < -0);
-					break;
-			}
 		}
 
 		/// <summary>
@@ -209,6 +256,17 @@ namespace Jacob.Controllers
 			if (!checkForGround) return;
 			if (!col.collider.CompareTag(groundTag)) return;
 			_canJump = true;
+		}
+
+		/// <summary>
+		/// Checks if you are pressing your "Jump" key, which is Space on PC and checks if you canJump and it jumps.
+		/// </summary>
+		private void JumpCheck()
+		{
+			if (!Input.GetButtonDown("Jump")) return;
+			if (!_canJump) return;
+			_rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+			if (checkForGround) _canJump = false;
 		}
 
 		/// <summary>
@@ -299,20 +357,6 @@ namespace Jacob.Controllers
 		private static float CalculatePercentage(float number, float percentage)
 		{
 			return number * percentage / 100;
-		}
-
-		/// <summary>
-		/// Checks if you have the topDown bool enabled and changes the Player controller to act like a top down
-		/// controller with no Gravity Scale and no Jumping.
-		/// </summary>
-		private void TopDownCheck()
-		{
-			if (!topDown)
-			{
-				JumpCheck();
-			}
-
-			_rigidbody.gravityScale = topDown ? 0 : 1;
 		}
 	}
 }

@@ -4474,10 +4474,12 @@ MonoBehaviour:
   groundTag: 
   animationParameter: 
   animationType: 0
-  _inputToTrack: 0
+  inputToTrack: 0
   onFireAbilityKey: 0
   onFireAbilityUnlocked: 0
   onFireTimer: 0
+  maxMoveSpeed: 10
+  secondsUntilFullSprint: 2
 --- !u!50 &1408095790
 Rigidbody2D:
   serializedVersion: 4

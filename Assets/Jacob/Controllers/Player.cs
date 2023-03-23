@@ -8,6 +8,7 @@ namespace Jacob.Controllers
 	{
 		public float jumpForce;
 		public float moveSpeed;
+		public bool topDown;
 
 		[Header("Ground Check Properties")] public bool checkForGround;
 		public string groundTag;
@@ -31,6 +32,7 @@ namespace Jacob.Controllers
 		private bool _hasAnimator;
 		private bool _hasOnFire;
 		private bool _isOnFire;
+		private float _verticalInput;
 
 		private void Awake()
 		{
@@ -42,11 +44,17 @@ namespace Jacob.Controllers
 		private void Update()
 		{
 			if (_canControlMovement)
+			{
 				_horizontalInput = Input.GetAxis("Horizontal");
+				if (topDown)
+					_verticalInput = Input.GetAxis("Vertical");
+			}
+
 			AnimatorCheck();
-			JumpCheck();
+			TopDownCheck();
 			OnFireAbilityCheck();
 		}
+
 
 		private void FixedUpdate()
 		{
@@ -109,7 +117,8 @@ namespace Jacob.Controllers
 		/// </summary>
 		private void Movement()
 		{
-			_rigidbody.velocity = new Vector2(_horizontalInput * moveSpeed, _rigidbody.velocity.y);
+			_rigidbody.velocity = new Vector2(_horizontalInput * moveSpeed,
+				topDown ? _verticalInput * moveSpeed : _rigidbody.velocity.y);
 			Direction = _horizontalInput switch
 			{
 				> 0 => Vector2.right,
@@ -271,6 +280,20 @@ namespace Jacob.Controllers
 		private static float CalculatePercentage(float number, float percentage)
 		{
 			return number * percentage / 100;
+		}
+
+		/// <summary>
+		/// Checks if you have the topDown bool enabled and changes the Player controller to act like a top down
+		/// controller with no Gravity Scale and no Jumping.
+		/// </summary>
+		private void TopDownCheck()
+		{
+			if (!topDown)
+			{
+				JumpCheck();
+			}
+
+			_rigidbody.gravityScale = topDown ? 0 : 1;
 		}
 	}
 }

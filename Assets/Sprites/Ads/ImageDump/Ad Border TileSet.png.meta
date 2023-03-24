@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eafce8006fffcf449b713b845323f1c9
+guid: 750ec812674f0eb4a948b91668ea87d3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mr. Bit Walk_0
+      name: Ad Border TileSet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
-        width: 144
-        height: 144
+        y: 576
+        width: 288
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73a1a07ea7c47354d809eaa9a5f0d691
-      internalID: -1526873878
+      spriteID: 4c5c0cb5038ccab4b832a17967fd49f2
+      internalID: 1080952709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mr. Bit Walk_1
+      name: Ad Border TileSet_1
       rect:
         serializedVersion: 2
-        x: 144
-        y: 144
-        width: 144
-        height: 144
+        x: 288
+        y: 576
+        width: 288
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d340ad30fe9fd68469ddacc6adb327c5
-      internalID: -167673198
+      spriteID: ce3b7b04446a15d47a3b42caa8e9fe60
+      internalID: -155090439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mr. Bit Walk_2
+      name: Ad Border TileSet_2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 576
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a941fe90138a34d8b792c9a1db48d0
+      internalID: -1325305655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ad Border TileSet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c94232c0cb834498a668c17e348cb1
+      internalID: -577797201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ad Border TileSet_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 288
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ffa7e4ee24d1d64aaebde987176ba66
+      internalID: 624474670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ad Border TileSet_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 144
-        height: 144
+        width: 288
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,8 +247,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd2871e6c07aac74f9b1c1de57492c26
-      internalID: 501410595
+      spriteID: 53e5e77c31e84bc46a67cbbd3ec488ff
+      internalID: 1167995791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ad Border TileSet_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3dfdac07fa49434ab916df6ede62e47
+      internalID: 1922843380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ad Border TileSet_7
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f13d380336046341b1aab0d3252e975
+      internalID: 1351703869
       vertices: []
       indices: 
       edges: []
@@ -201,9 +306,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mr. Bit Walk_2: 501410595
-      Mr. Bit Walk_0: -1526873878
-      Mr. Bit Walk_1: -167673198
+      Ad Border TileSet_4: 624474670
+      Ad Border TileSet_0: 1080952709
+      Ad Border TileSet_2: -1325305655
+      Ad Border TileSet_3: -577797201
+      Ad Border TileSet_6: 1922843380
+      Ad Border TileSet_7: 1351703869
+      Ad Border TileSet_1: -155090439
+      Ad Border TileSet_5: 1167995791
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

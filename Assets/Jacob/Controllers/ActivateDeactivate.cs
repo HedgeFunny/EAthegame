@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,11 +6,13 @@ namespace Jacob.Controllers
 	[RequireComponent(typeof(Collider2D))]
 	public class ActivateDeactivate : MonoBehaviour
 	{
+		public bool clickToTrigger;
 		public List<GameObject> activate;
 		public List<GameObject> deactivate;
 
 		private void OnMouseDown()
 		{
+			if (!clickToTrigger) return;
 			Activate();
 			Deactivate();
 		}

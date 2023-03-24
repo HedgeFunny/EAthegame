@@ -293,15 +293,15 @@ namespace Jacob.Controllers
 		/// </summary>
 		public void EnableControllingMovement()
 		{
-			_canControlMovement = true;
 			_horizontalInput = 0;
+			_canControlMovement = true;
 		}
 
 		/// <summary>
 		/// Set the _horizontalInput var.
 		/// </summary>
 		/// <param name="horizontalInput">A number around -1 and 1.</param>
-		public void SetHorizontalInput(long horizontalInput)
+		public void SetHorizontalInput(float horizontalInput)
 		{
 			_horizontalInput = horizontalInput;
 		}
@@ -357,6 +357,46 @@ namespace Jacob.Controllers
 		private static float CalculatePercentage(float number, float percentage)
 		{
 			return number * percentage / 100;
+		}
+
+		/// <summary>
+		/// Fling the Player in a Direction stopping at a distance represented in Meters.
+		/// </summary>
+		/// <param name="direction">The Direction you want to fling the Player.</param>
+		/// <param name="meters">How many meters you want to fling them.</param>
+		public void FlingPlayer(Vector2 direction, float meters)
+		{
+			var originalTransform = new Vector3(0, 0, 0) + transform.position;
+			DisableControllingMovement();
+			moveSpeed = 30;
+			SetHorizontalInput(direction == Vector2.right ? 1 : -1);
+			StartCoroutine(FlingCoroutine(direction, originalTransform, meters));
+		}
+
+		/// <summary>
+		/// A Coroutine that checks while you can't control your movement, if your position is past the distance the
+		/// player will be flung and it will re-enable movement and it will stop the fling.
+		/// </summary>
+		/// <param name="direction">The Direction you want to fling the Player.</param>
+		/// <param name="meters">How many meters you want to fling them.</param>
+		/// <param name="originalTransform">The original Transform of the player.</param>
+		/// <returns></returns>
+		private IEnumerator FlingCoroutine(Vector2 direction, Vector3 originalTransform, float meters)
+		{
+			while (!_canControlMovement)
+			{
+				if (direction == Vector2.right
+					    ? transform.position.x > originalTransform.x + meters
+					    : transform.position.x < originalTransform.x - meters)
+				{
+					moveSpeed = _baseMoveSpeed;
+					EnableControllingMovement();
+				}
+				else
+				{
+					yield return new WaitForFixedUpdate();
+				}
+			}
 		}
 	}
 }

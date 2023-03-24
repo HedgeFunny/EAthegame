@@ -143,7 +143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &122318997
 Animator:
   serializedVersion: 4
@@ -873,7 +873,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 5
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -10864,8 +10864,8 @@ Tilemap:
     m_Data: {fileID: -707798794, guid: f505528cde795f144b24647215654154, type: 3}
   - m_RefCount: 81
     m_Data: {fileID: 2081320992, guid: f505528cde795f144b24647215654154, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 295358721, guid: f505528cde795f144b24647215654154, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 10
     m_Data: {fileID: 1707041481, guid: f505528cde795f144b24647215654154, type: 3}
   - m_RefCount: 1
@@ -10878,8 +10878,8 @@ Tilemap:
     m_Data: {fileID: 32983149, guid: f505528cde795f144b24647215654154, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -2117622992, guid: f505528cde795f144b24647215654154, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 295358721, guid: f505528cde795f144b24647215654154, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 996
     m_Data:
@@ -11094,7 +11094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1266680821
 Transform:
   m_ObjectHideFlags: 0
@@ -11228,7 +11228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1325592859
 Transform:
   m_ObjectHideFlags: 0
@@ -11241,8 +11241,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1364647631}
   - {fileID: 1689579332}
+  - {fileID: 1364647631}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11289,7 +11289,7 @@ Transform:
   m_Children:
   - {fileID: 449826240}
   m_Father: {fileID: 1325592859}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1420028110
 GameObject:
@@ -11433,7 +11433,7 @@ Transform:
   m_Children:
   - {fileID: 675672682}
   m_Father: {fileID: 1325592859}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1749638069
 GameObject:
@@ -11561,6 +11561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1873098884}
   - component: {fileID: 1873098885}
+  - component: {fileID: 1873098886}
   m_Layer: 0
   m_Name: Bag Of Chorters
   m_TagString: Untagged
@@ -11635,6 +11636,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1873098886
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873098883}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.88, y: 2.88, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1981427969
 GameObject:
   m_ObjectHideFlags: 0

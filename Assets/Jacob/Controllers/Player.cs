@@ -12,20 +12,20 @@ namespace Jacob.Controllers
 		public float moveSpeed;
 		public bool topDown;
 
-		[Header("Ground Check Properties")] public bool checkForGround;
-		public string groundTag;
-
-		[Header("Animation Properties")] public string animationParameter;
-		public AnimationType animationType;
-		public TrackInput inputToTrack;
-
-
-		[Header("On Fire Ability Properties")] public KeyCode onFireAbilityKey;
-		public bool onFireAbilityUnlocked;
-		public float onFireTimer;
-
 		[Header("Sprint Properties")] public float maxMoveSpeed;
 		public float secondsUntilFullSprint;
+
+		[Header("Ground Check Properties")] public bool checkForGround;
+		[HideInInspector] public string groundTag;
+
+		[HideInInspector] public string animationParameter;
+		[HideInInspector] public AnimationType animationType;
+		[HideInInspector] public TrackInput inputToTrack;
+
+
+		[HideInInspector] public KeyCode onFireAbilityKey;
+		[HideInInspector] public bool onFireAbilityUnlocked;
+		[HideInInspector] public float onFireTimer;
 
 		internal Vector2 Direction = Vector2.right;
 		private Rigidbody2D _rigidbody;
@@ -36,8 +36,8 @@ namespace Jacob.Controllers
 		private float _baseJumpForce;
 		private float _baseMoveSpeed;
 		private PlayerOnFire _playerOnFire;
-		private bool _hasAnimator;
-		private bool _hasOnFire;
+		internal bool HasAnimator;
+		internal bool HasOnFire;
 		private bool _isOnFire;
 		private float _verticalInput;
 
@@ -83,21 +83,21 @@ namespace Jacob.Controllers
 			if (GetComponent<Animator>())
 			{
 				_animator = GetComponent<Animator>();
-				_hasAnimator = true;
+				HasAnimator = true;
 			}
 			else
 			{
-				_hasAnimator = false;
+				HasAnimator = false;
 			}
 
 			if (GetComponent<PlayerOnFire>())
 			{
 				_playerOnFire = GetComponent<PlayerOnFire>();
-				_hasOnFire = true;
+				HasOnFire = true;
 			}
 			else
 			{
-				_hasOnFire = false;
+				HasOnFire = false;
 			}
 		}
 
@@ -127,7 +127,7 @@ namespace Jacob.Controllers
 		/// </summary>
 		private void AnimatorCheck()
 		{
-			if (!_hasAnimator) return;
+			if (!HasAnimator) return;
 
 			var inputType = inputToTrack switch
 			{
@@ -171,7 +171,7 @@ namespace Jacob.Controllers
 		/// </summary>
 		private void OnFireAbilityCheck()
 		{
-			if (!_hasOnFire) return;
+			if (!HasOnFire) return;
 			if (!onFireAbilityUnlocked) return;
 			if (!Input.GetKeyDown(onFireAbilityKey)) return;
 			if (_isOnFire) return;

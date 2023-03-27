@@ -269,6 +269,8 @@ MonoBehaviour:
   jumpForce: 10
   moveSpeed: 10
   topDown: 0
+  maxMoveSpeed: 0
+  secondsUntilFullSprint: 0
   checkForGround: 0
   groundTag: 
   animationParameter: 
@@ -277,8 +279,6 @@ MonoBehaviour:
   onFireAbilityKey: 0
   onFireAbilityUnlocked: 0
   onFireTimer: 0
-  maxMoveSpeed: 0
-  secondsUntilFullSprint: 0
 --- !u!50 &1137033548
 Rigidbody2D:
   serializedVersion: 4

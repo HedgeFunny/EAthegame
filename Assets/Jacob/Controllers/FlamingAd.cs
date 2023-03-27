@@ -1,14 +1,24 @@
-﻿using UnityEngine;
+﻿using System;
+using JetBrains.Annotations;
+using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace Jacob.Controllers
 {
 	[RequireComponent(typeof(Collider2D))]
 	public class FlamingAd : MonoBehaviour
 	{
+		[HideInInspector] public bool runObsoleteCode;
+
+		[Obsolete("Unable to find a use for this boolean. Might change in the future.")] [HideInInspector]
 		public bool mainSceneActive;
-		public string layer;
+
+		[Obsolete("We aren't clicking on this anymore. This Event is obsolete.")] [HideInInspector]
 		public UnityEvent onClickedEnough;
+
+		public string layer;
+		public Vector3 movePlayerTo;
 
 		private long _timesClicked;
 		private long _timesYouHaveToClick;
@@ -22,6 +32,8 @@ namespace Jacob.Controllers
 
 		private void OnMouseDown()
 		{
+			if (!runObsoleteCode) return;
+
 			if (mainSceneActive) return;
 
 			if (_timesClicked < _timesYouHaveToClick)
@@ -32,6 +44,14 @@ namespace Jacob.Controllers
 			if (_timesClicked >= _timesYouHaveToClick)
 			{
 				RunAdCode();
+			}
+		}
+
+		private void OnTriggerEnter2D(Collider2D col)
+		{
+			if (col.CompareTag("Player"))
+			{
+				RunAdCode(col.GetComponent<Player>());
 			}
 		}
 
@@ -55,11 +75,21 @@ namespace Jacob.Controllers
 		/// Method that contains the code that the Ad should run. You can run this externally or you click down on
 		/// the object 3-5 times.
 		/// </summary>
-		public void RunAdCode()
+		private void RunAdCode([CanBeNull] Player player = null)
 		{
 			if (!string.IsNullOrWhiteSpace(layer))
 				HideLayer();
-			onClickedEnough.Invoke();
+			if (runObsoleteCode)
+				onClickedEnough.Invoke();
+			else if (player != null)
+				Teleportation(player);
+		}
+
+		private void Teleportation(Player player)
+		{
+			player.transform.position = movePlayerTo;
+			player.DisableControllingMovement();
+			player.DisableJumping();
 		}
 	}
 }

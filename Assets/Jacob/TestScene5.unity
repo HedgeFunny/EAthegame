@@ -469,8 +469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c991eda3964237a3581e13bff938a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  runObsoleteCode: 1
   mainSceneActive: 0
-  layer: TransparentFX
   onClickedEnough:
     m_PersistentCalls:
       m_Calls:
@@ -486,6 +486,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  layer: TransparentFX
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1447931325
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,10 +630,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 5
   moveSpeed: 5
+  topDown: 0
   checkForGround: 0
   groundTag: 
-  hasAnimator: 0
   animationParameter: 
+  animationType: 0
+  inputToTrack: 0
+  onFireAbilityKey: 0
+  onFireAbilityUnlocked: 0
+  onFireTimer: 0
+  maxMoveSpeed: 0
+  secondsUntilFullSprint: 0
 --- !u!95 &1447931331
 Animator:
   serializedVersion: 4
@@ -662,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05ef6185c5c47f49696340f056cb7f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: Player
+  tagName: 
 --- !u!1 &1550494025
 GameObject:
   m_ObjectHideFlags: 0

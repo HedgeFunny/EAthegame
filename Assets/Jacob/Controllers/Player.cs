@@ -398,5 +398,21 @@ namespace Jacob.Controllers
 				}
 			}
 		}
+
+		/// <summary>
+		/// Disable jumping.
+		/// </summary>
+		public void DisableJumping()
+		{
+			_canJump = false;
+		}
+
+		/// <summary>
+		/// Enable jumping.
+		/// </summary>
+		public void EnableJumping()
+		{
+			_canJump = true;
+		}
 	}
 }

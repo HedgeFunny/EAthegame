@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 
-namespace Jacob.Controllers
+namespace Jacob.Scripts.Controllers
 {
 	public class TilemapTrigger: MonoBehaviour
 	{

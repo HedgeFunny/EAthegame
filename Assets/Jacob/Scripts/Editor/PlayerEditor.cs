@@ -1,11 +1,12 @@
-﻿using Jacob.Data;
+﻿using Jacob.Scripts.Controllers;
+using Jacob.Scripts.Data;
 using UnityEditor;
 using UnityEngine;
 
-namespace Jacob.Controllers
+namespace Jacob.Scripts.Editor
 {
 	[CustomEditor(typeof(Player), true)]
-	public class PlayerEditor : Editor
+	public class PlayerEditor : UnityEditor.Editor
 	{
 		public override void OnInspectorGUI()
 		{
@@ -15,7 +16,7 @@ namespace Jacob.Controllers
 
 			var animator = script.GetComponent<Animator>();
 			var onFire = script.GetComponent<PlayerOnFire>();
-			
+
 			using (var group = new EditorGUI.DisabledScope(!script.checkForGround))
 			{
 				script.groundTag = EditorGUILayout.TextField("Ground Tag", script.groundTag);
@@ -52,6 +53,8 @@ namespace Jacob.Controllers
 					EditorGUILayout.Toggle("On Fire Ability Unlocked", script.onFireAbilityUnlocked);
 				script.onFireTimer = EditorGUILayout.FloatField("On Fire Timer", script.onFireTimer);
 			}
+			
+			Utilities.CheckIfGUIChanged(script);
 		}
 	}
 }

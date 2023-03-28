@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Jacob.Controllers
+namespace Jacob.Scripts.Controllers
 {
     [RequireComponent(typeof(Collider2D))]
     public class FlingBack : MonoBehaviour

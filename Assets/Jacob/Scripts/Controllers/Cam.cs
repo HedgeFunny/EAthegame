@@ -1,8 +1,8 @@
-using Jacob.Data;
+using Jacob.Scripts.Data;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace Jacob.Controllers
+namespace Jacob.Scripts.Controllers
 {
 	public class Cam : MonoBehaviour
 	{

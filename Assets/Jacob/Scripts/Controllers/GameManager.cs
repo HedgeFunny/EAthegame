@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Jacob.Controllers
+namespace Jacob.Scripts.Controllers
 {
 	public class GameManager : MonoBehaviour
 	{

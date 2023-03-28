@@ -1,4 +1,4 @@
-﻿namespace Jacob.Data
+﻿namespace Jacob.Scripts.Data
 {
 	public enum AnimationType
 	{

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Jacob.Data
+namespace Jacob.Scripts.Data
 {
 	public class TilemapBounds
 	{

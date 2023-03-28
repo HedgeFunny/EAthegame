@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Jacob.Controllers
+namespace Jacob.Scripts.Controllers
 {
 	[RequireComponent(typeof(Collider2D))]
 	public class ActivateDeactivate : MonoBehaviour

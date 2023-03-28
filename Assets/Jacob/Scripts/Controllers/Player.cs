@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
-using Jacob.Data;
+using Jacob.Scripts.Data;
 using UnityEngine;
 
-namespace Jacob.Controllers
+namespace Jacob.Scripts.Controllers
 {
 	[RequireComponent(typeof(Rigidbody2D))]
 	public class Player : MonoBehaviour

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
-namespace Jacob.Controllers
+namespace Jacob.Scripts.Controllers
 {
 	[RequireComponent(typeof(Collider2D))]
 	public class FlamingAd : MonoBehaviour

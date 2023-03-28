@@ -1,9 +1,9 @@
-﻿using Jacob.Controllers;
-using Jacob.Data;
+﻿using Jacob.Scripts.Controllers;
+using Jacob.Scripts.Data;
 using UnityEditor;
 using UnityEngine;
 
-namespace Jacob.Editor
+namespace Jacob.Scripts.Editor
 {
 	[CustomEditor(typeof(Player), true)]
 	public class PlayerEditor : UnityEditor.Editor

@@ -1,9 +1,7 @@
-using Jacob.Controllers;
+using Jacob.Scripts.Controllers;
 using UnityEditor;
-using UnityEditor.SceneManagement;
-using UnityEngine;
 
-namespace Jacob.Editor
+namespace Jacob.Scripts.Editor
 {
 	[CustomEditor(typeof(FlamingAd))]
 	public class FlamingAdEditor : UnityEditor.Editor

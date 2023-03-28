@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Jacob.Controllers
+namespace Jacob.Scripts.Controllers
 {
 	public class PlayerOnFire : MonoBehaviour
 	{

@@ -2,7 +2,7 @@
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-namespace Jacob.Editor
+namespace Jacob.Scripts.Editor
 {
 	public abstract class Utilities
 	{

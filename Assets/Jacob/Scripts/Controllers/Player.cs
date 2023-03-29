@@ -36,8 +36,8 @@ namespace Jacob.Scripts.Controllers
 		private float _baseJumpForce;
 		private float _baseMoveSpeed;
 		private PlayerOnFire _playerOnFire;
-		internal bool HasAnimator;
-		internal bool HasOnFire;
+		private bool _hasAnimator;
+		private bool _hasOnFire;
 		private bool _isOnFire;
 		private float _verticalInput;
 
@@ -83,21 +83,21 @@ namespace Jacob.Scripts.Controllers
 			if (GetComponent<Animator>())
 			{
 				_animator = GetComponent<Animator>();
-				HasAnimator = true;
+				_hasAnimator = true;
 			}
 			else
 			{
-				HasAnimator = false;
+				_hasAnimator = false;
 			}
 
 			if (GetComponent<PlayerOnFire>())
 			{
 				_playerOnFire = GetComponent<PlayerOnFire>();
-				HasOnFire = true;
+				_hasOnFire = true;
 			}
 			else
 			{
-				HasOnFire = false;
+				_hasOnFire = false;
 			}
 		}
 
@@ -127,7 +127,7 @@ namespace Jacob.Scripts.Controllers
 		/// </summary>
 		private void AnimatorCheck()
 		{
-			if (!HasAnimator) return;
+			if (!_hasAnimator) return;
 
 			var inputType = inputToTrack switch
 			{
@@ -171,7 +171,7 @@ namespace Jacob.Scripts.Controllers
 		/// </summary>
 		private void OnFireAbilityCheck()
 		{
-			if (!HasOnFire) return;
+			if (!_hasOnFire) return;
 			if (!onFireAbilityUnlocked) return;
 			if (!Input.GetKeyDown(onFireAbilityKey)) return;
 			if (_isOnFire) return;

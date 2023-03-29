@@ -37,7 +37,7 @@ public class TargetingManager : MonoBehaviour
         Cannons = GameObject.FindGameObjectsWithTag("Cannon").Length;
      GStorages = GameObject.FindGameObjectsWithTag("GoldStorage").Length;
         EStorages = GameObject.FindGameObjectsWithTag("ElixirStorage").Length;
-        TownHalls = GameObject.FindGameObjectsWithTag("ElixirStorage").Length;
+        TownHalls = GameObject.FindGameObjectsWithTag("TownHall").Length;
 
         //Makes the Ad stop when you lose
         if (TownHalls == 0)

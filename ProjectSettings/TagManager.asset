@@ -8,6 +8,8 @@ TagManager:
   - Spike
   - Fire
   - Fall
+  - Cannon
+  - GoldPile
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - UI
   - Chorter
   - Stage-1
-  - 
+  - Kerfuffle
   - 
   - 
   - 

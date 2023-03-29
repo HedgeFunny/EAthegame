@@ -235,7 +235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &21688397
 RectTransform:
   m_ObjectHideFlags: 0
@@ -451,10 +451,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previousAd:
   - {fileID: 1603544653}
-  - {fileID: 1573896709}
+  - {fileID: 1356384032}
   nextAd:
-  - {fileID: 77359237}
-  - {fileID: 158480199}
+  - {fileID: 1515409259}
+  - {fileID: 1129823322}
   PenultimateAd: 0
   BackGround: {fileID: 0}
 --- !u!114 &42033200
@@ -1860,7 +1860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 289515633}
   m_Layer: 5
-  m_Name: KoobyAd (Ad 2) (5)
+  m_Name: InsertAd (Ad 7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1945,10 +1945,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previousAd:
   - {fileID: 1644052622}
-  - {fileID: 1573896709}
+  - {fileID: 1132940072}
   nextAd:
-  - {fileID: 77359237}
-  - {fileID: 158480199}
+  - {fileID: 1641581002}
+  - {fileID: 1127708307}
   PenultimateAd: 0
   BackGround: {fileID: 0}
 --- !u!114 &302160310
@@ -2383,8 +2383,8 @@ MonoBehaviour:
   - {fileID: 1515409259}
   - {fileID: 1129823322}
   nextAd:
-  - {fileID: 1725245877}
-  - {fileID: 2091457904}
+  - {fileID: 1865659101}
+  - {fileID: 1949072552}
   PenultimateAd: 0
   BackGround: {fileID: 0}
 --- !u!114 &360994034
@@ -3720,8 +3720,8 @@ MonoBehaviour:
   - {fileID: 77359237}
   - {fileID: 158480199}
   nextAd:
-  - {fileID: 81598414}
-  - {fileID: 1864349810}
+  - {fileID: 887657910}
+  - {fileID: 1830346295}
   PenultimateAd: 0
   BackGround: {fileID: 0}
 --- !u!1 &696344484
@@ -4184,10 +4184,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previousAd:
   - {fileID: 1865659101}
-  - {fileID: 1573896709}
+  - {fileID: 1949072552}
   nextAd:
-  - {fileID: 77359237}
-  - {fileID: 158480199}
+  - {fileID: 1725245877}
+  - {fileID: 2091457904}
   PenultimateAd: 0
   BackGround: {fileID: 0}
 --- !u!114 &785581162
@@ -4567,7 +4567,7 @@ GameObject:
   - component: {fileID: 924005445}
   - component: {fileID: 924005444}
   m_Layer: 0
-  m_Name: Insert Ad audio
+  m_Name: Insert Ad audioSource (Ad 7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4583,7 +4583,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b1576dad44bf04c4ebae0323ca23e140, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -5428,7 +5428,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b1576dad44bf04c4ebae0323ca23e140, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -5586,8 +5586,8 @@ MonoBehaviour:
   - {fileID: 1641581002}
   - {fileID: 1127708307}
   nextAd:
-  - {fileID: 1515409259}
-  - {fileID: 1129823322}
+  - {fileID: 1603544653}
+  - {fileID: 1356384032}
   PenultimateAd: 0
   BackGround: {fileID: 0}
 --- !u!114 &1265144706
@@ -5787,7 +5787,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 17b1e7a8ae00d124a8bfb93e2f5ca52c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -5945,8 +5945,8 @@ MonoBehaviour:
   - {fileID: 1725245877}
   - {fileID: 2091457904}
   nextAd:
-  - {fileID: 2138639751}
-  - {fileID: 336587344}
+  - {fileID: 289515632}
+  - {fileID: 924005443}
   PenultimateAd: 0
   BackGround: {fileID: 0}
 --- !u!114 &1366754092
@@ -6542,7 +6542,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 02feaf8b0d9a575488af91b0d1bc9819, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8408c4355ee58544aa6e14c519edd82b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6865,10 +6865,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previousAd:
   - {fileID: 887657910}
-  - {fileID: 1573896709}
+  - {fileID: 1830346295}
   nextAd:
-  - {fileID: 77359237}
-  - {fileID: 158480199}
+  - {fileID: 81598414}
+  - {fileID: 1864349810}
   PenultimateAd: 0
   BackGround: {fileID: 0}
 --- !u!114 &1484161190
@@ -7099,7 +7099,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1fc6d58d1effb7544ba80be74dc48b8d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ee86891d41dc8a439cda314d7d31bdf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7611,7 +7611,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1642538721
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7820,8 +7820,8 @@ MonoBehaviour:
   - {fileID: 81598414}
   - {fileID: 1864349810}
   nextAd:
-  - {fileID: 1641581002}
-  - {fileID: 1127708307}
+  - {fileID: 1644052622}
+  - {fileID: 1132940072}
   PenultimateAd: 0
   BackGround: {fileID: 0}
 --- !u!114 &1675789178
@@ -8561,10 +8561,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previousAd:
   - {fileID: 289515632}
-  - {fileID: 1573896709}
+  - {fileID: 924005443}
   nextAd:
-  - {fileID: 77359237}
-  - {fileID: 158480199}
+  - {fileID: 2138639751}
+  - {fileID: 336587344}
   PenultimateAd: 0
   BackGround: {fileID: 0}
 --- !u!114 &1815158706
@@ -8728,7 +8728,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b1576dad44bf04c4ebae0323ca23e140, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -9330,7 +9330,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b1576dad44bf04c4ebae0323ca23e140, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -9489,7 +9489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1fc6d58d1effb7544ba80be74dc48b8d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

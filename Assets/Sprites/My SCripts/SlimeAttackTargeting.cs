@@ -37,7 +37,7 @@ public class SlimeAttackTargeting : MonoBehaviour
 
 
       //Priority Targeting (Elixir Storage)
-      if(Are)
+     // if(Are)
 
       //Priority Targeting (Town Hall)
     }

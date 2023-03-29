@@ -36,7 +36,7 @@ namespace Jacob.Scripts.Controllers
 						whenMoneyChangesFloat.Invoke(_money);
 						break;
 					case GameManagerReturnType.String:
-						whenMoneyChangesString.Invoke($"Money: {_money.ToString()}");
+						whenMoneyChangesString.Invoke($"Money: ${_money.ToString()}");
 						break;
 				}
 			}
@@ -124,7 +124,7 @@ namespace Jacob.Scripts.Controllers
 		/// <returns>The currently active GameManager object.</returns>
 		public static GameManager Get()
 		{
-			return GameObject.Find(_gameManagerName).GetComponent<GameManager>();
+			return FindObjectOfType<GameManager>();
 		}
 	}
 }

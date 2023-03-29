@@ -59,9 +59,10 @@ public class SlimeAttackTargeting : MonoBehaviour
 
             }
 
-            //Find the direction to the closest object
-            /*
-             (destination.transform.postion - origin.transform.position).normalize <-- Vector2
+
+      //Priority Targeting (Elixir Storage)
+     // if(Are)
+
 
              */
             //Move To Building

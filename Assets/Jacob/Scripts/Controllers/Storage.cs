@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Jacob.Scripts.Controllers
 {
-	public class GoldStorage: MonoBehaviour
+	public class Storage: MonoBehaviour
 	{
 		public float amountYouWantToGenerate;
 		public float timeBetweenGeneration;
@@ -15,6 +15,7 @@ namespace Jacob.Scripts.Controllers
 		private void Awake()
 		{
 			_gameManager = GameManager.Get();
+			_coroutineStarted = true;
 			StartCoroutine(GeneratingCoroutine());
 		}
 

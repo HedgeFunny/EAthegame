@@ -24,31 +24,12 @@ namespace Jacob.Scripts.Controllers
 		/// </summary>
 		internal double Health { get; private set; }
 
-		internal float Money
-		{
-			get => _money;
-			private set
-			{
-				_money = value;
-				switch (returnType)
-				{
-					case GameManagerReturnType.Float:
-						whenMoneyChangesFloat.Invoke(_money);
-						break;
-					case GameManagerReturnType.String:
-						whenMoneyChangesString.Invoke($"Money: ${_money.ToString()}");
-						break;
-				}
-			}
-		}
-
+		internal CashSystem Cash;
 
 		/// <summary>
 		/// The name of the GameObject the GameManager is on.
 		/// </summary>
 		private static string _gameManagerName;
-
-		private float _money;
 
 		private void Awake()
 		{
@@ -59,6 +40,23 @@ namespace Jacob.Scripts.Controllers
 		private void InitializeStats()
 		{
 			Health = maxHealth;
+			Cash = new CashSystem
+			{
+				SetAction = SetAction
+			};
+		}
+
+		private void SetAction()
+		{
+			switch (returnType)
+			{
+				case GameManagerReturnType.Float:
+					whenMoneyChangesFloat.Invoke(Cash.Money);
+					break;
+				case GameManagerReturnType.String:
+					whenMoneyChangesString.Invoke($"Money: ${Cash.Money.ToString()}");
+					break;
+			}
 		}
 
 		/// <summary>
@@ -90,33 +88,6 @@ namespace Jacob.Scripts.Controllers
 			if (Health != 0) Health = 0;
 			whenYouDie.Invoke();
 		}
-
-		/// <summary>
-		/// Adds money based on the number you give to the method.
-		/// </summary>
-		/// <param name="money">The money you want to add.</param>
-		public void AddMoney(float money) => Money += money;
-
-		/// <summary>
-		/// Subtracts money based on the number you give to the Method. Returns 0 if your money is 0 and it doesn't
-		/// subtract more.
-		/// </summary>
-		/// <param name="money">The money you want to subtract.</param>
-		public void SubtractMoney(float money)
-		{
-			Money = Money < 0 ? Money -= money : 0;
-		}
-
-		/// <summary>
-		/// Sets money to the number specified in the method.
-		/// </summary>
-		/// <param name="money">The number you want to set the money to.</param>
-		public void SetMoney(float money) => Money = money;
-
-		/// <summary>
-		/// Bankrupt your money.
-		/// </summary>
-		public void Bankrupt() => SetMoney(0);
 
 		/// <summary>
 		/// Get the active GameManager. Adapts to the name of the GameObject your GameManager is on.

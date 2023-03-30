@@ -34,7 +34,11 @@ public class SlimeAttackTargeting : MonoBehaviour
 	{
 		//Move To Building
 		transform.Translate((destroyMe.transform.position - gameObject.transform.position) * speed * Time.deltaTime);
+
+
+
 	}
+
 
 
 

@@ -36,7 +36,7 @@ namespace Jacob.Scripts.Controllers
 		{
 			Health = new HealthSystem(maxHealth)
 			{
-				whenYouDie = () => whenYouDie.Invoke()
+				WhenYouDie = () => whenYouDie.Invoke()
 			};
 			Cash = new CashSystem
 			{

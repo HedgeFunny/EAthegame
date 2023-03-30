@@ -1,17 +1,26 @@
 ﻿using System;
+using JetBrains.Annotations;
 
 namespace Jacob.Scripts.Data
 {
 	public class HealthSystem
 	{
+		/// <summary>
+		/// A constructor that will return a HealthSystem.
+		/// </summary>
+		/// <param name="maxHealth">The maximum amount of health your Object has.</param>
 		public HealthSystem(double maxHealth)
 		{
 			_maxHealth = maxHealth;
+			Health = maxHealth;
 		}
 
-		private double _maxHealth;
+		private readonly double _maxHealth;
 
-		public Action whenYouDie;
+		/// <summary>
+		/// An Action that will run when you Die. Needs to be assigned to a method or nothing will happen.
+		/// </summary>
+		[CanBeNull] public Action WhenYouDie;
 		
 		/// <summary>
 		/// A Health stat.
@@ -45,7 +54,7 @@ namespace Jacob.Scripts.Data
 		public void Kill()
 		{
 			if (Health != 0) Health = 0;
-			whenYouDie.Invoke();
+			WhenYouDie?.Invoke();
 		}
 	}
 }

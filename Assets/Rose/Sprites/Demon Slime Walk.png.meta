@@ -1,5 +1,7 @@
 fileFormatVersion: 2
+
 guid: 6f1e31f5fed56d647bced5000c02e6b8
+
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +44,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+
   spriteMode: 2
+
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -76,6 +80,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -295,6 +300,7 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+
     outline: []
     physicsShape: []
     bones: []
@@ -305,6 +311,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+
     nameFileIdTable:
       Demon Slime Walk_4: -213223698
       Demon Slime Walk_7: -510943360
@@ -314,6 +321,7 @@ TextureImporter:
       Demon Slime Walk_2: -1336847164
       Demon Slime Walk_0: -269279823
       Demon Slime Walk_6: -975896566
+
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

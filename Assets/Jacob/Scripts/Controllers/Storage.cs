@@ -39,7 +39,7 @@ namespace Jacob.Scripts.Controllers
 		{
 			while (generatingMoney)
 			{
-				_gameManager.AddMoney(amountYouWantToGenerate);
+				_gameManager.Cash.AddMoney(amountYouWantToGenerate);
 				yield return new WaitForSeconds(timeBetweenGeneration);
 			}
 

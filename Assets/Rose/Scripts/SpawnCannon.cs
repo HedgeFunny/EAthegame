@@ -15,16 +15,19 @@ public class SpawnCannon : MonoBehaviour
     public GameObject spawnPoint4;
 
     //Buutons
-    public Button Postions;
     public Button buyCannon;
-    public Button location1;
-    public Button location2;
-    public Button location3;
-    public Button location4;
     public Button Buy;
 
+    // Spawn Points
+    private Vector2 Spawn1 = new Vector2(-5.7f, 1.8f);
+    private Vector2 Spawn2 = new Vector2(5.7f, 1.8f);
+    private Vector2 Spawn3 = new Vector2(-5.7f, -4.1f);
+    private Vector2 Spawn4 = new Vector2(5.7f, 4.1f);
+
     //Misc
-    public GameObject PositionButtons;
+    public GameObject PositionButtons;//Sorting GameObject to turn on and off Position Buttons all at once
+    public GameObject CannonLeft;
+    public GameObject CannonRight;
 
     // Start is called before the first frame update
     void Start()
@@ -39,21 +42,38 @@ public class SpawnCannon : MonoBehaviour
     }
 
 
-    //Turns on spawnpoints
 
+
+    //Turns on spawnpoints
     public void TurnOnPositions()
     {
         PositionButtons.SetActive(true);
     }
 
 
-    //Spawns Cannon at Position 1
-
+    //Spawns Cannon at Position 1 and then turns of the position buttons
     public void ToPostion1()
     {
-        Instantiate()
+        Instantiate(CannonLeft,Spawn1, transform.rotation);
+        PositionButtons.SetActive(false);
     }
-    //Spawns Cannon at Position 2
-    //Spawns Cannon at Position 3
-    //Spawns Cannon at Position 4
+    //Spawns Cannon at Position 2 and then turns of the position buttons
+    public void ToPosition2()
+    {
+        Instantiate(CannonRight, Spawn2, transform.rotation);
+        PositionButtons.SetActive(false);
+    }
+    //Spawns Cannon at Position 3 and then turns of the position buttons
+    public void ToPosition3()
+    {
+        Instantiate(CannonLeft, Spawn3, transform.rotation);
+        PositionButtons.SetActive(false);
+    }
+    //Spawns Cannon at Position 4 and then turns of the position buttons
+    public void ToPosition4()
+    {
+        Instantiate(CannonRight, Spawn4, transform.rotation);
+        PositionButtons.SetActive(false);
+    }
+
 }

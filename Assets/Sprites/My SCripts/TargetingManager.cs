@@ -19,7 +19,8 @@ public class TargetingManager : MonoBehaviour
     public GameObject TownHall;
     public GameObject GoldStorage;
     public GameObject ElixirStorage;
-    public GameObject Cannon;
+    public GameObject CannonFrontLeft;
+    public GameObject CannonFrontRight;
 
     //Losing
     public bool YouLose = false;

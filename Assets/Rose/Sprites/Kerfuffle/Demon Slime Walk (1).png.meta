@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aaf1da8e0d5b8ed42b1836b5c48e219c
+guid: fee368077d3cb2a46853c9744a57ffd7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -140,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Demon Slime Walk Left_0
+      name: Demon Slime Walk (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -154,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d59cca0c2808ba4e9587c94daa22c85
-      internalID: -1160518849
+      spriteID: 2b16f1f253346f24e8c563d8c89bddfe
+      internalID: -811687915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon Slime Walk Left_1
+      name: Demon Slime Walk (1)_1
       rect:
         serializedVersion: 2
         x: 96
@@ -175,14 +175,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27f51b38dcf10c048a6c2ab3b9cc0e6b
-      internalID: 1645440716
+      spriteID: 4445663b9e15616428767554fe5276fc
+      internalID: -1477617456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon Slime Walk Left_2
+      name: Demon Slime Walk (1)_2
       rect:
         serializedVersion: 2
         x: 192
@@ -196,14 +196,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8864761decf9834ebc05297ece7fac4
-      internalID: 252411532
+      spriteID: 4c9582cc63468664f8a8882fe576b434
+      internalID: 2079696527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon Slime Walk Left_3
+      name: Demon Slime Walk (1)_3
       rect:
         serializedVersion: 2
         x: 0
@@ -217,14 +217,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8eec67a9107bea4c9ded26c31da4390
-      internalID: -121064951
+      spriteID: 724f57f64f34fd248a5e5b66365edccd
+      internalID: -1582114932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon Slime Walk Left_4
+      name: Demon Slime Walk (1)_4
       rect:
         serializedVersion: 2
         x: 96
@@ -238,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c388f7084d5cba4280e998768266c31
-      internalID: 1767926625
+      spriteID: e03364d65885efb4e9bfd8f9d958aace
+      internalID: -207717912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon Slime Walk Left_5
+      name: Demon Slime Walk (1)_5
       rect:
         serializedVersion: 2
         x: 192
@@ -259,14 +259,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20e9cd410c750314680e54e595ccdf71
-      internalID: 47165917
+      spriteID: ec6012ae28dd93342801e6d65d9e77af
+      internalID: -1403068549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon Slime Walk Left_6
+      name: Demon Slime Walk (1)_6
       rect:
         serializedVersion: 2
         x: 0
@@ -280,14 +280,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f476b5fa48304c4b81d39fef8177612
-      internalID: 1695526251
+      spriteID: 93df491d4d9ba9f46a6ce057dbc7a40c
+      internalID: -1689279710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon Slime Walk Left_7
+      name: Demon Slime Walk (1)_7
       rect:
         serializedVersion: 2
         x: 96
@@ -301,8 +301,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87ac21fb3b43aa94a86931a246eace16
-      internalID: 2027574405
+      spriteID: d17e1643de51452449083ed3092d891e
+      internalID: -873240896
       vertices: []
       indices: 
       edges: []
@@ -318,14 +318,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Demon Slime Walk Left_1: 1645440716
-      Demon Slime Walk Left_6: 1695526251
-      Demon Slime Walk Left_7: 2027574405
-      Demon Slime Walk Left_0: -1160518849
-      Demon Slime Walk Left_4: 1767926625
-      Demon Slime Walk Left_2: 252411532
-      Demon Slime Walk Left_5: 47165917
-      Demon Slime Walk Left_3: -121064951
+      Demon Slime Walk (1)_2: 2079696527
+      Demon Slime Walk (1)_3: -1582114932
+      Demon Slime Walk (1)_7: -873240896
+      Demon Slime Walk (1)_0: -811687915
+      Demon Slime Walk (1)_5: -1403068549
+      Demon Slime Walk (1)_1: -1477617456
+      Demon Slime Walk (1)_4: -207717912
+      Demon Slime Walk (1)_6: -1689279710
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

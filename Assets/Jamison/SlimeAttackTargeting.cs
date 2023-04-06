@@ -22,6 +22,8 @@ public class SlimeAttackTargeting : MonoBehaviour
 	[Header("Other")] public GameObject TManager;
 	public TargetingManager targetManager;
 
+	//Animator
+	[Header("Animator")] public Animator slimeanim;
 
 	// Start is called before the first frame update
 	void Start()

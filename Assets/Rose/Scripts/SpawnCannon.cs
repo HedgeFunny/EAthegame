@@ -8,24 +8,20 @@ using TMPro;
 public class SpawnCannon : MonoBehaviour
 {
     //Variables
-    //Spawnpoints for Cannons
-    public GameObject spawnPoint1;
-    public GameObject spawnPoint2;
-    public GameObject spawnPoint3;
-    public GameObject spawnPoint4;
+
 
     //Buutons
-    public Button buyCannon;
-    public Button Buy;
+    [Header("Buttons")]public Button buyCannon;
+    //public Button Buy;
 
     // Spawn Points
-    private Vector2 Spawn1 = new Vector2(-5.7f, 1.8f);
-    private Vector2 Spawn2 = new Vector2(5.7f, 1.8f);
-    private Vector2 Spawn3 = new Vector2(-5.7f, -4.1f);
-    private Vector2 Spawn4 = new Vector2(5.7f, 4.1f);
+    private Vector2 Spawn1 = new Vector2(-5.7f, 2.5f);
+    private Vector2 Spawn2 = new Vector2(5.7f, 2.5f);
+    private Vector2 Spawn3 = new Vector2(-5.7f, -3.4f);
+    private Vector2 Spawn4 = new Vector2(5.7f, -3.4f);
 
     //Misc
-    public GameObject PositionButtons;//Sorting GameObject to turn on and off Position Buttons all at once
+    [Header("Misc")]public GameObject PositionButtons;//Sorting GameObject to turn on and off Position Buttons all at once
     public GameObject CannonLeft;
     public GameObject CannonRight;
 
@@ -54,7 +50,7 @@ public class SpawnCannon : MonoBehaviour
     //Spawns Cannon at Position 1 and then turns of the position buttons
     public void ToPostion1()
     {
-        Instantiate(CannonLeft,Spawn1, transform.rotation);
+        Instantiate(CannonLeft, Spawn1, transform.rotation);
         PositionButtons.SetActive(false);
     }
     //Spawns Cannon at Position 2 and then turns of the position buttons

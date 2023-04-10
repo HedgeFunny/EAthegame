@@ -57,8 +57,6 @@ namespace Jacob.Scripts.Controllers
 			}
 		}
 
-		
-
 		/// <summary>
 		/// Get the active GameManager. Adapts to the name of the GameObject your GameManager is on.
 		/// </summary>

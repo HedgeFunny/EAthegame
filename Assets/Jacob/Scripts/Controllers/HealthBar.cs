@@ -23,6 +23,7 @@ namespace Jacob.Scripts.Controllers
 
 		private void WatchHealth()
 		{
+			if (!GameManager) return;
 			var percentage = Math.Clamp(GameManager.Health.Health, 0, GameManager.Health.Health) / GameManager.maxHealth;
 			var frame = Math.Round(_frames * percentage);
 			PlayAtFrame((int)frame);

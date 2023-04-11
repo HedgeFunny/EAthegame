@@ -10,10 +10,9 @@ namespace Jacob.Scripts.Editor
 		public override void OnInspectorGUI()
 		{
 			var script = target as HealthBar;
-			var animator = script.GetComponent<Animator>();
 			var gameManager = FindObjectOfType<GameManager>();
 
-			if (animator)
+			if (script.TryGetComponent<Animator>(out var animator))
 			{
 				script.animator = animator;
 			}

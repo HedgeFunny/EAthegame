@@ -49,3 +49,17 @@ function Checkout($branch) {
 function DeleteBranch($branch) {
 	git branch -d ${branch}
 }
+
+function Push() {
+	param(
+		[string]$Branch,
+		[string]$Remote
+	)
+	if (!$Branch) {
+		$Branch = "";
+	}
+	if (!$Remote) {
+		$Remote = "origin"
+	}
+	git push $Remote $Branch
+}

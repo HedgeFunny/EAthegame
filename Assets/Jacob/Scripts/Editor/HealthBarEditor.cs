@@ -25,17 +25,17 @@ namespace Jacob.Scripts.Editor
 
 			if (gameManager)
 			{
-				script.gameManager = gameManager;
+				script.GameManager = gameManager;
 			}
 			else
 			{
-				script.gameManager = null;
+				script.GameManager = null;
 				EditorGUILayout.LabelField("This Script requires a GameManager to be in your Scene.");
 			}
 
 			using var group = new EditorGUI.DisabledScope(true);
 			EditorGUILayout.ObjectField("Animator", script.animator, typeof(Animator));
-			EditorGUILayout.ObjectField("Game Manager", script.gameManager, typeof(GameManager));
+			EditorGUILayout.ObjectField("Game Manager", script.GameManager, typeof(GameManager));
 
 			Utilities.CheckIfGUIChanged(script);
 		}

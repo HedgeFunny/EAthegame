@@ -10,10 +10,9 @@ namespace Jacob.Scripts.Editor
 		public override void OnInspectorGUI()
 		{
 			var script = target as HealthBar;
-			var animator = script.GetComponent<Animator>();
 			var gameManager = FindObjectOfType<GameManager>();
 
-			if (animator)
+			if (script.TryGetComponent<Animator>(out var animator))
 			{
 				script.animator = animator;
 			}
@@ -25,17 +24,17 @@ namespace Jacob.Scripts.Editor
 
 			if (gameManager)
 			{
-				script.gameManager = gameManager;
+				script.GameManager = gameManager;
 			}
 			else
 			{
-				script.gameManager = null;
+				script.GameManager = null;
 				EditorGUILayout.LabelField("This Script requires a GameManager to be in your Scene.");
 			}
 
 			using var group = new EditorGUI.DisabledScope(true);
 			EditorGUILayout.ObjectField("Animator", script.animator, typeof(Animator));
-			EditorGUILayout.ObjectField("Game Manager", script.gameManager, typeof(GameManager));
+			EditorGUILayout.ObjectField("Game Manager", script.GameManager, typeof(GameManager));
 
 			Utilities.CheckIfGUIChanged(script);
 		}

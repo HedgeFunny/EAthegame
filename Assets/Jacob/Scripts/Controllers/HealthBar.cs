@@ -6,7 +6,7 @@ namespace Jacob.Scripts.Controllers
 	public class HealthBar : MonoBehaviour
 	{
 		public Animator animator;
-		public GameManager gameManager;
+		[NonSerialized] public GameManager GameManager;
 		private float _frames;
 
 		private void Awake()
@@ -23,7 +23,8 @@ namespace Jacob.Scripts.Controllers
 
 		private void WatchHealth()
 		{
-			var percentage = Math.Clamp(gameManager.Health.Health, 0, gameManager.Health.Health) / gameManager.maxHealth;
+			if (!GameManager) return;
+			var percentage = Math.Clamp(GameManager.Health.Health, 0, GameManager.Health.Health) / GameManager.maxHealth;
 			var frame = Math.Round(_frames * percentage);
 			PlayAtFrame((int)frame);
 		}
@@ -31,7 +32,7 @@ namespace Jacob.Scripts.Controllers
 		private void PlayAtFrame(int frame)
 		{
 			var normalizedTime = frame / _frames - 0.01f;
-			animator.Play("HealthBar", 0, Math.Clamp(normalizedTime, 0, normalizedTime));
+			animator.Play("HealthBar", 0, Math.Clamp(normalizedTime, 0, normalizedTime < 0 ? 0 : normalizedTime));
 		}
 	}
 }

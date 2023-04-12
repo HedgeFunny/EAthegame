@@ -88,8 +88,8 @@ namespace Jacob.Scripts.Controllers
 		private void Teleportation(Player player)
 		{
 			player.transform.position = movePlayerTo;
-			player.DisableControllingMovement();
-			player.DisableJumping();
+			//player.DisableControllingMovement();
+			//player.DisableJumping();
 		}
 	}
 }

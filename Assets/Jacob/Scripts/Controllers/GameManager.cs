@@ -26,10 +26,18 @@ namespace Jacob.Scripts.Controllers
 		/// </summary>
 		private static string _gameManagerName;
 
+		private GameObject _pauseMenu;
+
 		private void Awake()
 		{
 			_gameManagerName = gameObject.name;
 			InitializeStats();
+			_pauseMenu = Resources.Load<GameObject>("Pause Menu");
+		}
+
+		private void Update()
+		{
+			PauseMenuCheck();
 		}
 
 		private void InitializeStats()
@@ -57,6 +65,13 @@ namespace Jacob.Scripts.Controllers
 			}
 		}
 
+		private void PauseMenuCheck()
+		{
+			if (!Input.GetKeyDown(KeyCode.P)) return;
+			if (PauseMenu.Initialized) return;
+			Instantiate(_pauseMenu, _pauseMenu.transform.position, _pauseMenu.transform.rotation);
+		}
+		
 		/// <summary>
 		/// Get the active GameManager. Adapts to the name of the GameObject your GameManager is on.
 		/// </summary>

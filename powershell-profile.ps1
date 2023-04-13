@@ -72,12 +72,26 @@ function Push() {
 		[string]$Remote
 	)
 	if (!$Branch) {
-		$Branch = "";
+		$Branch = ""
 	}
 	if (!$Remote) {
 		$Remote = "origin"
 	}
 	git push $Remote $Branch
+}
+
+function Pull() {
+	param(
+		[string]$Branch,
+		[string]$Remote
+	)
+	if (!$Branch) {
+		$Branch = ""
+	}
+	if (!$Remote) {
+		$Remote = "origin"
+	}
+	git pull $Remote $Branch
 }
 
 Register-ArgumentCompleter -CommandName Fetch -ParameterName Branch -ScriptBlock {

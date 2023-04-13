@@ -33,6 +33,7 @@ namespace Jacob.Scripts.Controllers
 			_gameManagerName = gameObject.name;
 			InitializeStats();
 			_pauseMenu = Resources.Load<GameObject>("Pause Menu");
+			InitializeVolume.SetVolume();
 		}
 
 		private void Update()

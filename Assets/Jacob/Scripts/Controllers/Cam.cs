@@ -7,6 +7,7 @@ namespace Jacob.Scripts.Controllers
 	public class Cam : MonoBehaviour
 	{
 		public Transform followedObject;
+		public bool clampToTilemap;
 		public TilemapCollider2D tilemap;
 		public bool clampVerticalPosition;
 
@@ -17,13 +18,24 @@ namespace Jacob.Scripts.Controllers
 		private void Awake()
 		{
 			_camera = GetComponent<Camera>()!;
-			CalculateSize(tilemap.bounds);
+			if (clampToTilemap)
+			{
+				CalculateSize(tilemap.bounds);
+			}
 		}
 
 		private void Update()
 		{
-			transform.position = new Vector3(GetClampedHorizontalPosition(),
-				clampVerticalPosition ? GetClampedVerticalPosition() : 0, -10);
+			if (clampToTilemap)
+			{
+				transform.position = new Vector3(GetClampedHorizontalPosition(),
+					clampVerticalPosition ? GetClampedVerticalPosition() : 0, -10);
+			}
+			else
+			{
+				transform.position = new Vector3(followedObject.transform.position.x,
+					followedObject.transform.position.y, -10);
+			}
 		}
 
 		private float GetClampedHorizontalPosition()

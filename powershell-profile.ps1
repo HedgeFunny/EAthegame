@@ -1,22 +1,32 @@
-function Fetch($branch) {
-	Switch($branch) {
+function Fetch() {
+	param(
+		[string]$Branch
+	)
+	Switch($Branch) {
 		"working" {
 			git fetch origin WorkingBranch:WorkingBranch
+			break
 		}
 		"jacob" {
 			git fetch origin JacobBranch:JacobBranch
+			break
 		}
 		"" {
 			Write-Output "Please provide a branch"
+			break
 		}
 		Default {
 			git fetch origin ${branch}:${branch}
+			break
 		}
 	}
 }
 
-function Rebase($branch) {
-	Switch($branch) {
+function Rebase() {
+	param(
+		[string]$Branch
+	)
+	Switch($Branch) {
 		"working" {
 			git rebase WorkingBranch
 		}
@@ -29,8 +39,11 @@ function Rebase($branch) {
 	}
 }
 
-function Checkout($branch) {
-	Switch($branch) {
+function Checkout() {
+	param(
+		[string]$Branch
+	)
+	Switch($Branch) {
 		"working" {
 			git checkout WorkingBranch
 		}
@@ -46,8 +59,11 @@ function Checkout($branch) {
 	}
 }
 
-function DeleteBranch($branch) {
-	git branch -d ${branch}
+function DeleteBranch() {
+	param(
+		[string]$Branch
+	)
+	git branch -d ${Branch}
 }
 
 function Push() {
@@ -62,4 +78,16 @@ function Push() {
 		$Remote = "origin"
 	}
 	git push $Remote $Branch
+}
+
+Register-ArgumentCompleter -CommandName Fetch -ParameterName Branch -ScriptBlock {
+	"working","jacob"
+}
+
+Register-ArgumentCompleter -CommandName Rebase -ParameterName Branch -ScriptBlock {
+	"working"
+}
+
+Register-ArgumentCompleter -CommandName Checkout -ParameterName Branch -ScriptBlock {
+	"working","jacob"
 }

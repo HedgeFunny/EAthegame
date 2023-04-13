@@ -7,10 +7,7 @@ public class ChortersSquishtowin : MonoBehaviour
     //Variables
     public Animator chortAnim;
     public bool isCrunching = false;
-    public float counter = 0;
-    public int counterToReach = 3;
-    public GameObject otherObject;
-    public ScriptToRunAfterCollision scriptToRun;
+    public bool isCrunched = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,14 +24,19 @@ public class ChortersSquishtowin : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && isCrunching == false)
+        if (collision.gameObject.CompareTag("Player") && isCrunching == false && isCrunched == false)
         {
-            CollisionCounter();
             isCrunching = true;
             chortAnim.SetBool("isTouched", isCrunching);
             StartCoroutine(Stall());
 
 
+        }
+        if (collision.gameObject.CompareTag("Player")  && isCrunching == false && isCrunched == false)
+        {
+            isCrunched = true;
+            chortAnim.SetBool("isTouched", isCrunched);
+            StartCoroutine(Stall2());
         }
     }
 
@@ -44,16 +46,12 @@ public class ChortersSquishtowin : MonoBehaviour
         isCrunching = false;
         chortAnim.SetBool("isTouched", isCrunching);
     }
-    private void CollisionCounter()
+
+    IEnumerator Stall2()
     {
-        counter++;
+        yield return new WaitForSeconds(3);
+        isCrunched = false;
+        chortAnim.SetBool("isTouched", isCrunched);
     }
 
-    private void Collider()
-    {
-        float HittoWin = Random.Range(0, 5);
-        
-
-
-    }
 }

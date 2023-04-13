@@ -3,6 +3,9 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
+using System.Collections.Generic;
+using System.Collections;
+
 
 namespace Jacob.Scripts.Controllers
 {
@@ -23,6 +26,16 @@ namespace Jacob.Scripts.Controllers
 		private long _timesClicked;
 		private long _timesYouHaveToClick;
 		private Camera _mainCamera;
+
+		//(ROSE) 
+		public int collisionCount = 0;
+		public int targetCollisionCount = 3;
+		public GameObject otherObject;
+		public List<GameObject> activate;
+		public List<GameObject> deactivate;
+		public Animator chortAnim;
+		public bool isCrunching = false;
+		public bool isCrunched = false;
 
 		private void Awake()
 		{
@@ -66,9 +79,80 @@ namespace Jacob.Scripts.Controllers
 		/// <summary>
 		/// Hides the layer that you set on the layer property. Uses the Camera's culling mask to hide the layer.
 		/// </summary>
-		private void HideLayer()
+		public void HideLayer()
 		{
 			_mainCamera.cullingMask &= ~(1 << LayerMask.NameToLayer(layer));
+		}
+
+
+		/// <summary>
+		/// This is to keep track of the number of times a collision occurs and then hide a layer at a set number of collisions.
+		/// </summary>
+		/// <param name="collision"></param>
+		void OnCollisionEnter2D(Collision2D collision)
+		{
+			if (collision.gameObject.Equals(otherObject))
+			{
+				collisionCount++;
+				StartCoroutine(Stall());
+
+
+
+			}
+		}
+
+		//Animations 
+
+		IEnumerator Stall()
+		{
+
+			isCrunching = true;
+			chortAnim.SetBool("isTouched", isCrunching);
+			yield return new WaitForSeconds(3);
+			isCrunching = false;
+			if (collisionCount >= targetCollisionCount)
+			{
+				StartCoroutine(Stall2());
+				Teleportation(collision.gameObject.GetComponent<Player>());
+				HideLayer();
+				collisionCount = 0;
+				if (!collision.gameObject.CompareTag("Player")) return;
+				Deactivate();
+				Activate();
+			}
+		}
+
+		IEnumerator Stall2()
+		{
+
+			isCrunched = true;
+			chortAnim.SetBool("isTouched", isCrunched);
+			yield return new WaitForSeconds(3);
+			isCrunched = false;
+		}
+
+		/// <summary>
+		/// Activates GameObjects if theres GameObjects in the activate array
+		/// </summary>
+		private void Activate()
+		{
+			if (activate.Count <= 0) return;
+			foreach (var o in activate)
+			{
+				o.SetActive(true);
+			}
+		}
+
+		/// <summary>
+		/// Deactivates GameObjects if theres GameObjects in the deactivate array
+		/// </summary>
+		private void Deactivate()
+		{
+			if (deactivate.Count <= 0) return;
+			foreach (var o in deactivate)
+			{
+				o.SetActive(false);
+			}
 		}
 
 		/// <summary>

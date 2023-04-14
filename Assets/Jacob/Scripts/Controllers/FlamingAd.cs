@@ -27,6 +27,14 @@ namespace Jacob.Scripts.Controllers
 		private long _timesYouHaveToClick;
 		private Camera _mainCamera;
 
+
+		//Animation Components
+		[Header("Animation Variables")]
+		public GameObject ChorterBag;
+		public Animator ChortBagAnimator;
+
+		public bool 
+
 		//(ROSE) 
 		public int collisionCount = 0;
 		public int targetCollisionCount = 3;
@@ -37,10 +45,14 @@ namespace Jacob.Scripts.Controllers
 		public bool isCrunching = false;
 		public bool isCrunched = false;
 
+
 		private void Awake()
 		{
 			GenerateRandomNumber();
 			_mainCamera = Camera.main;
+
+			//Component Declaration
+			ChortBagAnimator = ChorterBag.GetComponent<Animator>();
 		}
 
 		private void OnMouseDown()

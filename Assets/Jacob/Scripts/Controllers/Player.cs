@@ -29,7 +29,7 @@ namespace Jacob.Scripts.Controllers
 
 		internal Vector2 Direction = Vector2.right;
 		private Rigidbody2D _rigidbody;
-		private Animator _animator;
+		public Animator _animator;
 		private float _horizontalInput;
 		private bool _canJump = true;
 		private bool _canControlMovement = true;
@@ -41,15 +41,25 @@ namespace Jacob.Scripts.Controllers
 		private bool _isOnFire;
 		private float _verticalInput;
 
+		[Header("Animation Variables")]
+		public bool IsWalking;
+		
+
 		private void Awake()
 		{
 			GetComponents();
 			SetupRigidbody();
 			RecordBaseStats();
+
+
 		}
 
 		private void Update()
 		{
+			//Animator Declarations
+			_animator.SetBool("IsJumping", _canJump);
+			_animator.SetBool("IsWalking", IsWalking);
+
 			if (_canControlMovement)
 			{
 				_horizontalInput = Input.GetAxis("Horizontal");

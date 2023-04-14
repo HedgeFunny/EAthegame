@@ -71,13 +71,10 @@ function Push() {
 		[string]$Branch,
 		[string]$Remote
 	)
-	if (!$Branch) {
-		$Branch = ""
-	}
 	if (!$Remote) {
 		$Remote = "origin"
 	}
-	git push $Remote $Branch
+	git push $Remote $(if ($Branch) {$Branch})
 }
 
 function Pull() {
@@ -85,13 +82,10 @@ function Pull() {
 		[string]$Branch,
 		[string]$Remote
 	)
-	if (!$Branch) {
-		$Branch = ""
-	}
 	if (!$Remote) {
 		$Remote = "origin"
 	}
-	git pull $Remote $Branch
+	git pull $Remote $(if ($Branch) {$Branch})
 }
 
 Register-ArgumentCompleter -CommandName Fetch -ParameterName Branch -ScriptBlock {

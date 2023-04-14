@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using Jacob.Scripts.Data;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,8 +10,22 @@ namespace Jacob.Scripts.Controllers
 	public class Socket : MonoBehaviour
 	{
 		public UnityEvent onSocketEnter;
+		public Action<SocketsSocket> OnSocketEnterAction;
+		[NonSerialized] public SocketsSocket SocketsSocket;
+
+		public GameObject heldObject
+		{
+			get => _heldObject;
+			set
+			{
+				value.transform.parent = transform;
+				_heldObject = value;
+			}
+		}
+
 		private bool _startedCoroutine;
 		private bool _breakFromCoroutine;
+		private GameObject _heldObject;
 
 		private void OnTriggerEnter2D(Collider2D col)
 		{
@@ -61,11 +77,12 @@ namespace Jacob.Scripts.Controllers
 			{
 				rigidBody2D.isKinematic = true;
 			}
-			
-			obj.transform.parent = transform;
+
+			heldObject = obj.gameObject;
 			obj.transform.localPosition = new Vector3(0, 0, 0);
 			obj.DisableDragging();
 			onSocketEnter?.Invoke();
+			OnSocketEnterAction?.Invoke(SocketsSocket);
 		}
 	}
 }

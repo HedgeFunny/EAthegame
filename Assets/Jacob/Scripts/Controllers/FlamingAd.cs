@@ -89,23 +89,19 @@ namespace Jacob.Scripts.Controllers
 		/// This is to keep track of the number of times a collision occurs and then hide a layer at a set number of collisions.
 		/// </summary>
 		/// <param name="collision"></param>
-		void OnCollisionEnter2D(Collision2D collision)
+		private void OnCollisionEnter2D(Collision2D collision)
 		{
-			if (collision.gameObject.Equals(otherObject))
+			if (collision.gameObject.CompareTag("Player"))
 			{
 				collisionCount++;
-				StartCoroutine(Stall());
-
-
-
+				StartCoroutine(Stall(collision, collision.gameObject.GetComponent<Player>()));
 			}
 		}
 
 		//Animations 
 
-		IEnumerator Stall()
+		private IEnumerator Stall(Collision2D collision, Player playerComponent)
 		{
-
 			isCrunching = true;
 			chortAnim.SetBool("isTouched", isCrunching);
 			yield return new WaitForSeconds(3);
@@ -113,10 +109,10 @@ namespace Jacob.Scripts.Controllers
 			if (collisionCount >= targetCollisionCount)
 			{
 				StartCoroutine(Stall2());
-				Teleportation(collision.gameObject.GetComponent<Player>());
+				Teleportation(playerComponent);
 				HideLayer();
 				collisionCount = 0;
-				if (!collision.gameObject.CompareTag("Player")) return;
+				if (!collision.gameObject.CompareTag("Player")) yield break;
 				Deactivate();
 				Activate();
 			}

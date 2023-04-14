@@ -6,7 +6,9 @@ public class CameraPan : MonoBehaviour
 {
     //This is the Camera
     [Header("Camera")]
-    public GameObject Camera;
+    public Camera Camera;
+    public Vector3 CameraPOS;
+        
 
     //These Variables are used to Move the Camera over a certain time
     [Header("Movement Variables")]
@@ -29,18 +31,36 @@ public class CameraPan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Updates CameraPOS
+        Camera.transform.position = CameraPOS;
+
         //Starts Coroutine, only starts once.
         if(IsCoroutineUsable == true)
         {
             StartCoroutine(MovementTime());
         }
+
+        //Backwards Movement
+        if(CanMove == true)
+        {
+            Camera.orthographicSize += BackMovementSpeed * Time.deltaTime;
+        }
+
+        //Down Movement
+        if (CanMove == true)
+        {
+            transform.Translate(CameraPOS * DownMovementSpeed * Time.deltaTime );
+        }
     }
 
-    //Thecooldown
+    //Makes Camera unable to move after a certain amount of time
     IEnumerator MovementTime()
     {
-
+        IsCoroutineUsable = false;
+        CanMove = true;
 
         yield return new WaitForSeconds(TimeBetweenMovement);
+
+        CanMove = false;
     }
 }

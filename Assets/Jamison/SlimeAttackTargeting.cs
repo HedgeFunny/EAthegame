@@ -22,6 +22,8 @@ public class SlimeAttackTargeting : MonoBehaviour
 	[Header("Other")] public GameObject TManager;
 	public TargetingManager targetManager;
 
+	//Animator
+	[Header("Animator")] public Animator slimeanim;
 
 	// Start is called before the first frame update
 	void Start()
@@ -32,19 +34,24 @@ public class SlimeAttackTargeting : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		//Move To Building
+		transform.Translate((destroyMe.transform.position - gameObject.transform.position) * speed * Time.deltaTime);
+
+
+
 	}
 
 
-<<<<<<< HEAD
-             
-            //Move To Building
-            transform.Translate((destroyMe.transform.position - gameObject.transform.position) * speed * Time.deltaTime);
-=======
+
+
+
+
+
 	//Destroys Objects by Tag
 	public void DestroyByTag(string tagToDestroy)
 	{
 		GameObject[] thingsToDestroy = GameObject.FindGameObjectsWithTag(tagToDestroy);
->>>>>>> 5fbcecac0800118da896fd572e28519592a02318
+
 
 		GameObject closestObject = thingsToDestroy[0];
 		float distanceToClosestObject = (closestObject.transform.position - transform.position).magnitude;
@@ -66,34 +73,35 @@ public class SlimeAttackTargeting : MonoBehaviour
 
 			//Move To Building
 			transform.Translate((destroyMe.transform.position - gameObject.transform.position) * speed * Time.deltaTime);
-            Destroy(closestObject);
+			Destroy(closestObject);
 
 
 
 
-	}
-
-	//Finds Each Building
-	void FindTargets()
-	{
-		if (targetManager.Cannons >= 1)
-		{
-			DestroyByTag("Cannon");
 		}
 
-		if (targetManager.GStorages >= 1 && targetManager.Cannons <= 0)
+		//Finds Each Building
+		void FindTargets()
 		{
-			DestroyByTag("GoldStorage");
+			if (targetManager.Cannons >= 1)
+			{
+				DestroyByTag("Cannon");
+			}
+
+			if (targetManager.GStorages >= 1 && targetManager.Cannons <= 0)
+			{
+				DestroyByTag("GoldStorage");
+			}
+
+			if (targetManager.EStorages >= 1 && targetManager.GStorages <= 0)
+			{
+				DestroyByTag("ElixirStorage");
+			}
 		}
 
-		if (targetManager.EStorages >= 1 && targetManager.GStorages <= 0)
+		//Moves to Closest building
+		void Movement()
 		{
-			DestroyByTag("ElixirStorage");
 		}
-	}
-
-	//Moves to Closest building
-	void Movement()
-	{
 	}
 }

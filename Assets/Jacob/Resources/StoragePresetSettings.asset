@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92db88646cd9459baba8f655cfce55b3, type: 3}
   m_Name: StoragePresetSettings
   m_EditorClassIdentifier: 
-  goldStorageAmount: 1
-  goldStorageTime: 1
-  elixirAmount: 8
+  goldStorageAmount: 50
+  goldStorageTime: 5
+  elixirAmount: 50
   elixirTime: 5

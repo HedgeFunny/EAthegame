@@ -24,10 +24,20 @@ namespace Jacob.Scripts.Controllers
 		private long _timesYouHaveToClick;
 		private Camera _mainCamera;
 
+		//Animation Components
+		[Header("Animation Variables")]
+		public GameObject ChorterBag;
+		public Animator ChortBagAnimator;
+
+		public bool 
+
 		private void Awake()
 		{
 			GenerateRandomNumber();
 			_mainCamera = Camera.main;
+
+			//Component Declaration
+			ChortBagAnimator = ChorterBag.GetComponent<Animator>();
 		}
 
 		private void OnMouseDown()

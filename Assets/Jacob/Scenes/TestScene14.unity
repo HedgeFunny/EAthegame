@@ -1504,6 +1504,8 @@ MonoBehaviour:
   onFireAbilityKey: 0
   onFireAbilityUnlocked: 0
   onFireTimer: 0
+  _animator: {fileID: 0}
+  IsWalking: 0
 --- !u!50 &1137033548
 Rigidbody2D:
   serializedVersion: 4
@@ -1902,12 +1904,20 @@ MonoBehaviour:
   sockets:
   - socket: {fileID: 632292055}
     correctGameObject: {fileID: 315917587}
+    incorrectObjectPosition: {x: 8, y: 10}
+    overrideDefaultProtection: 0
   - socket: {fileID: 1016575196}
     correctGameObject: {fileID: 428565551}
+    incorrectObjectPosition: {x: 0, y: 0}
+    overrideDefaultProtection: 0
   - socket: {fileID: 2022081935}
     correctGameObject: {fileID: 1433215481}
+    incorrectObjectPosition: {x: 0, y: 0}
+    overrideDefaultProtection: 0
   - socket: {fileID: 626809943}
     correctGameObject: {fileID: 303329537}
+    incorrectObjectPosition: {x: 0, y: 0}
+    overrideDefaultProtection: 0
   onAllSocketsCorrect:
     m_PersistentCalls:
       m_Calls: []

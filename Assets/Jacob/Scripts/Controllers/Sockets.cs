@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace Jacob.Scripts.Controllers
 {
-	public class Sockets: MonoBehaviour
+	public class Sockets : MonoBehaviour
 	{
 		public SocketsSocket[] sockets;
 		public UnityEvent onAllSocketsCorrect;
@@ -24,8 +24,33 @@ namespace Jacob.Scripts.Controllers
 
 		private static void EnterSocket(SocketsSocket socketsSocket)
 		{
-			if (socketsSocket.socket.heldObject != socketsSocket.correctGameObject) return;
-			socketsSocket.Correct = true;
+			if (socketsSocket.socket.heldObject != socketsSocket.correctGameObject)
+			{
+				if (!socketsSocket.socket.heldObject.TryGetComponent<DragAndDrop>(out var drop)) return;
+
+				drop.transform.parent = null;
+
+				if (drop.Collider2D)
+				{
+					drop.Collider2D.isTrigger = false;
+				}
+
+				if (drop.Rigidbody)
+				{
+					drop.Rigidbody.isKinematic = false;
+				}
+
+				drop.EnableDragging();
+
+				if (!socketsSocket.overrideDefaultProtection &&
+				    socketsSocket.incorrectObjectPosition == Vector2.zero) return;
+
+				drop.transform.position = socketsSocket.incorrectObjectPosition;
+			}
+			else
+			{
+				socketsSocket.Correct = true;
+			}
 		}
 
 		private IEnumerator AllCorrectCoroutine()
@@ -34,7 +59,7 @@ namespace Jacob.Scripts.Controllers
 			{
 				yield return new WaitForEndOfFrame();
 			}
-			
+
 			print("all are correct");
 			onAllSocketsCorrect?.Invoke();
 		}

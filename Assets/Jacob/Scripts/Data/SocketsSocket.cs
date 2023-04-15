@@ -9,6 +9,8 @@ namespace Jacob.Scripts.Data
 	{
 		public Socket socket;
 		public GameObject correctGameObject;
+		public Vector2 incorrectObjectPosition;
+		public bool overrideDefaultProtection;
 		[NonSerialized] public bool Correct;
 	}
 }

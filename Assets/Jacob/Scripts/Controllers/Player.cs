@@ -51,15 +51,13 @@ namespace Jacob.Scripts.Controllers
 			GetComponents();
 			SetupRigidbody();
 			RecordBaseStats();
-
-
 		}
 
 		private void Update()
 		{
 			//Animator Declarations
-			_animator.SetBool("IsJumping", _canJump);
-			_animator.SetBool("IsWalking", IsWalking);
+			// _animator.SetBool("IsJumping", _canJump);
+			// _animator.SetBool("IsWalking", IsWalking);
 
 			if (_canControlMovement)
 			{

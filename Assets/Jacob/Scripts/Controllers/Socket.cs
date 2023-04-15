@@ -68,14 +68,14 @@ namespace Jacob.Scripts.Controllers
 
 		private void SocketObject(DragAndDrop obj)
 		{
-			if (obj.TryGetComponent<BoxCollider2D>(out var collider))
+			if (obj.Collider2D)
 			{
-				collider.isTrigger = true;
+				obj.Collider2D.isTrigger = true;
 			}
 			
-			if (obj.TryGetComponent<Rigidbody2D>(out var rigidBody2D))
+			if (obj.Rigidbody)
 			{
-				rigidBody2D.isKinematic = true;
+				obj.Rigidbody.isKinematic = true;
 			}
 
 			heldObject = obj.gameObject;

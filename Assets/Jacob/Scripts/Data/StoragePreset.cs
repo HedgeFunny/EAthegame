@@ -30,11 +30,13 @@ namespace Jacob.Scripts.Data
 			       storage.elixirAmount == ElixirAmount && storage.elixirTime == ElixirTime;
 		}
 
+		#if UNITY_EDITOR
 		public static StoragePreset CreateStoragePreset()
 		{
 			var storage = CreateInstance<StoragePreset>();
 			AssetDatabase.CreateAsset(storage, "Assets/Jacob/Resources/StoragePresetSettings.asset");
 			return storage;
 		}
+		#endif
 	}
 }

@@ -42,11 +42,23 @@ namespace Jacob.Scripts.Editor
 		{
 			var script = target as Player;
 
+			EditorGUILayout.LabelField("Movement Properties", EditorStyles.boldLabel);
 			script.jumpForce = EditorGUILayout.FloatField("Jump Force", script.jumpForce);
 			script.moveSpeed = EditorGUILayout.FloatField("Move Speed", script.moveSpeed);
 			script.topDown = EditorGUILayout.Toggle("Top Down View", script.topDown);
+			script.flipWhenTurningDirection =
+				EditorGUILayout.Toggle("Flip When Turning Direction", script.flipWhenTurningDirection);
 
 			EditorGUILayout.LabelField("Sprint Properties", EditorStyles.boldLabel);
+			script.enableSprinting = EditorGUILayout.Toggle("Enable Sprinting", script.enableSprinting);
+			using (new EditorGUI.DisabledScope(!script.enableSprinting))
+			{
+				script.maxMoveSpeed = EditorGUILayout.FloatField("Max Move Speed", script.maxMoveSpeed);
+				script.secondsUntilFullSprint =
+					EditorGUILayout.FloatField("Seconds until Full Sprint", script.secondsUntilFullSprint);
+			}
+
+			EditorGUILayout.LabelField("Jumping Properties", EditorStyles.boldLabel);
 			script.checkForGround = EditorGUILayout.Toggle("Check for Ground", script.checkForGround);
 
 			using (new EditorGUI.DisabledScope(!script.checkForGround))

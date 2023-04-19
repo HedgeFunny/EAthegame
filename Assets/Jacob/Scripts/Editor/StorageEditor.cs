@@ -26,7 +26,7 @@ namespace Jacob.Scripts.Editor
 
 			if (!gameManager)
 			{
-				EditorGUILayout.LabelField("You need a GameManager for this script to work.");
+				EditorGUILayout.HelpBox("You need a GameManager for this script to work.", MessageType.Error);
 			}
 
 			using var group = new EditorGUI.DisabledScope(!gameManager);

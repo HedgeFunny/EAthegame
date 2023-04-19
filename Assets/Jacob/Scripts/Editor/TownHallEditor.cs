@@ -10,7 +10,7 @@ namespace Jacob.Scripts.Editor
 		public override void OnInspectorGUI()
 		{
 			var script = target as TownHall;
-			var collider = script.GetComponent<Collider2D>();
+			var collider = script.TryGetComponent<Collider2D>(out _);
 
 			EditorGUILayout.LabelField("Health Properties", EditorStyles.boldLabel);
 			script.maxHealth = EditorGUILayout.DoubleField("Max Health", script.maxHealth);
@@ -19,7 +19,16 @@ namespace Jacob.Scripts.Editor
 
 			if (!collider)
 			{
-				EditorGUILayout.LabelField("You need to have a Collider on your Object to use these properties.");
+				if (script.TryGetComponent<Collider>(out _))
+				{
+					EditorGUILayout.HelpBox("Using a 3D Collider is not compatible with this script. Use a Collider2D.",
+						MessageType.Error);
+				}
+				else
+				{
+					EditorGUILayout.HelpBox("You need to have a Collider2D on your Object to use these properties.",
+						MessageType.Warning);
+				}
 			}
 
 			using (var _ = new EditorGUI.DisabledScope(!collider))

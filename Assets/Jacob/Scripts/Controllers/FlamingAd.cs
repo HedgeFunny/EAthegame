@@ -6,12 +6,12 @@ using Random = UnityEngine.Random;
 using System.Collections.Generic;
 using System.Collections;
 
-
 namespace Jacob.Scripts.Controllers
 {
 	[RequireComponent(typeof(Collider2D))]
 	public class FlamingAd : MonoBehaviour
 	{
+		/* Begin: Controlled by the FlamingAdEditor Script */
 		[HideInInspector] public bool runObsoleteCode;
 
 		[Obsolete("Unable to find a use for this boolean. Might change in the future.")] [HideInInspector]
@@ -20,9 +20,10 @@ namespace Jacob.Scripts.Controllers
 		[Obsolete("We aren't clicking on this anymore. This Event is obsolete.")] [HideInInspector]
 		public UnityEvent onClickedEnough;
 
-		public string layer;
-		public Vector3 movePlayerTo;
-
+		[HideInInspector] public string layer;
+		[HideInInspector] public Vector2 movePlayerTo;
+		/* End: Controlled by the FlamingAdEditor Script */
+		
 		private long _timesClicked;
 		private long _timesYouHaveToClick;
 		private Camera _mainCamera;
@@ -32,7 +33,12 @@ namespace Jacob.Scripts.Controllers
 		[Header("Animation Variables")]
 		public GameObject ChorterBag;
 		public Animator ChortBagAnimator;
+
+
+		
+
  
+
 
 		//(ROSE) 
 		public int collisionCount = 0;
@@ -171,7 +177,7 @@ namespace Jacob.Scripts.Controllers
 			if (!string.IsNullOrWhiteSpace(layer))
 				HideLayer();
 			if (runObsoleteCode)
-				onClickedEnough.Invoke();
+				onClickedEnough?.Invoke();
 			else if (player != null)
 				Teleportation(player);
 		}

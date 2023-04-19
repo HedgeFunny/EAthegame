@@ -663,6 +663,7 @@ GameObject:
   - component: {fileID: 1137033548}
   - component: {fileID: 1137033551}
   - component: {fileID: 1137033547}
+  - component: {fileID: 1137033552}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -690,13 +691,12 @@ MonoBehaviour:
   checkForGround: 0
   groundTag: 
   animationParameter: 
-  animationType: 0
+  animationType: 1
   inputToTrack: 0
+  jumpingAnimationParameter: 
   onFireAbilityKey: 0
   onFireAbilityUnlocked: 0
   onFireTimer: 0
-  _animator: {fileID: 0}
-  IsWalking: 0
 --- !u!50 &1137033548
 Rigidbody2D:
   serializedVersion: 4
@@ -801,6 +801,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!95 &1137033552
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137033546}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!224 &1328786236 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9201228225465261148, guid: f1f2b07ba71bd3a43a59488793352e4b, type: 3}

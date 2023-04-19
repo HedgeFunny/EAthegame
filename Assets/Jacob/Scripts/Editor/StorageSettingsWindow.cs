@@ -35,7 +35,7 @@ namespace Jacob.Scripts.Editor
 				EditorUtility.SetDirty(storage);
 			}
 
-			using (var _ = new EditorGUI.DisabledScope(!EditorUtility.IsDirty(storage)))
+			using (new EditorGUI.DisabledScope(!EditorUtility.IsDirty(storage)))
 			{
 				if (GUILayout.Button("Save"))
 				{
@@ -44,7 +44,7 @@ namespace Jacob.Scripts.Editor
 				}
 			}
 
-			using (var _ = new EditorGUI.DisabledScope(StoragePreset.IsDefault(storage)))
+			using (new EditorGUI.DisabledScope(StoragePreset.IsDefault(storage)))
 			{
 				if (!GUILayout.Button("Reset to Default")) return;
 				EditorUtility.SetDirty(storage);

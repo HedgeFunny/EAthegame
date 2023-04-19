@@ -22,7 +22,7 @@ namespace Jacob.Scripts.Editor
 				);
 			}
 
-			using (var group = new EditorGUI.DisabledScope(!hasCollider))
+			using (new EditorGUI.DisabledScope(!hasCollider))
 			{
 				script.clickToTrigger = EditorGUILayout.Toggle("Click to Trigger", script.clickToTrigger);
 				script.collideToTrigger = EditorGUILayout.Toggle("Collide to Trigger", script.collideToTrigger);
@@ -30,6 +30,10 @@ namespace Jacob.Scripts.Editor
 
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("activate"));
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("deactivate"));
+
+			serializedObject.ApplyModifiedProperties();
+			
+			Utilities.CheckIfGUIChanged(script);
 		}
 	}
 }

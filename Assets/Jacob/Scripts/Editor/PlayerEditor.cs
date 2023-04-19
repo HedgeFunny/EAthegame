@@ -68,6 +68,8 @@ namespace Jacob.Scripts.Editor
 			using (new EditorGUI.DisabledScope(!_animator))
 			{
 				EditorGUILayout.LabelField("Walking", EditorStyles.boldLabel);
+				script.animationParameter ??= "";
+				script.jumpingAnimationParameter ??= "";
 				script.animationParameter =
 					StringPopup(script.animationParameter, "Animation Parameter", script.animationType);
 				script.animationType =

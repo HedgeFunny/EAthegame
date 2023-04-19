@@ -37,7 +37,7 @@ namespace Jacob.Scripts.Editor
 			{
 				if (GUILayout.Button("Set Gold Storage Preset"))
 				{
-					if (IfPreset(script, 100, 1)) return;
+					if (IfPreset(script, storage.goldStorageAmount, storage.goldStorageTime)) return;
 					script.amountYouWantToGenerate = storage.goldStorageAmount;
 					script.timeBetweenGeneration = storage.goldStorageTime;
 					Utilities.CheckIfGUIChanged(script);
@@ -48,7 +48,7 @@ namespace Jacob.Scripts.Editor
 			{
 				if (GUILayout.Button("Set Elixir Storage Preset"))
 				{
-					if (IfPreset(script, 1000, 10)) return;
+					if (IfPreset(script, storage.elixirAmount, storage.elixirTime)) return;
 					script.amountYouWantToGenerate = storage.elixirAmount;
 					script.timeBetweenGeneration = storage.elixirTime;
 					Utilities.CheckIfGUIChanged(script);

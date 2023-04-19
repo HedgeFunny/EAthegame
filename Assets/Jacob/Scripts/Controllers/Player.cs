@@ -40,6 +40,7 @@ namespace Jacob.Scripts.Controllers
 		private bool _hasOnFire;
 		private bool _isOnFire;
 		private float _verticalInput;
+		private bool _firedAnimationError;
 
 		[Header("Animation Variables")]
 		public bool IsWalking;
@@ -50,15 +51,13 @@ namespace Jacob.Scripts.Controllers
 			GetComponents();
 			SetupRigidbody();
 			RecordBaseStats();
-
-
 		}
 
 		private void Update()
 		{
 			//Animator Declarations
-			_animator.SetBool("IsJumping", _canJump);
-			_animator.SetBool("IsWalking", IsWalking);
+			// _animator.SetBool("IsJumping", _canJump);
+			// _animator.SetBool("IsWalking", IsWalking);
 
 			if (_canControlMovement)
 			{
@@ -67,7 +66,19 @@ namespace Jacob.Scripts.Controllers
 					_verticalInput = Input.GetAxis("Vertical");
 			}
 
-			AnimatorCheck();
+			if (!string.IsNullOrWhiteSpace(animationParameter))
+			{
+				AnimatorCheck();
+			}
+			else
+			{
+				if (!_firedAnimationError)
+				{
+					PrintWarning("You don't have an animationParameter defined. This means animations won't work.");
+					_firedAnimationError = true;
+				}
+			}
+
 			TopDownCheck();
 			OnFireAbilityCheck();
 			SprintCheck();
@@ -138,6 +149,7 @@ namespace Jacob.Scripts.Controllers
 		private void AnimatorCheck()
 		{
 			if (!_hasAnimator) return;
+
 
 			var inputType = inputToTrack switch
 			{
@@ -423,6 +435,11 @@ namespace Jacob.Scripts.Controllers
 		public void EnableJumping()
 		{
 			_canJump = true;
+		}
+
+		private void PrintWarning(string warning)
+		{
+			Debug.unityLogger.Log(LogType.Warning, message:warning, context:_animator);
 		}
 	}
 }

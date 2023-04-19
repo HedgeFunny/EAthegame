@@ -1,24 +1,33 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Jacob.Scripts.Controllers
 {
-	[RequireComponent(typeof(Collider2D))]
 	public class ActivateDeactivate : MonoBehaviour
 	{
 		public bool clickToTrigger;
+		public bool collideToTrigger;
 		public List<GameObject> activate;
 		public List<GameObject> deactivate;
 
+		private bool _hasCollider;
+
+		private void Awake()
+		{
+			_hasCollider = TryGetComponent<Collider2D>(out _);
+		}
+
 		private void OnMouseDown()
 		{
-			if (!clickToTrigger) return;
+			if (!clickToTrigger && !_hasCollider) return;
 			Activate();
 			Deactivate();
 		}
 
 		private void OnTriggerEnter2D(Collider2D col)
 		{
+			if (!collideToTrigger && !_hasCollider);
 			if (!col.CompareTag("Player")) return;
 			Activate();
 			Deactivate();
@@ -27,7 +36,7 @@ namespace Jacob.Scripts.Controllers
 		/// <summary>
 		/// Activates GameObjects if theres GameObjects in the activate array
 		/// </summary>
-		private void Activate()
+		public void Activate()
 		{
 			if (activate.Count <= 0) return;
 			foreach (var o in activate)
@@ -39,7 +48,7 @@ namespace Jacob.Scripts.Controllers
 		/// <summary>
 		/// Deactivates GameObjects if theres GameObjects in the deactivate array
 		/// </summary>
-		private void Deactivate()
+		public void Deactivate()
 		{
 			if (deactivate.Count <= 0) return;
 			foreach (var o in deactivate)

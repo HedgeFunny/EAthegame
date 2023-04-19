@@ -33,7 +33,11 @@ namespace Jacob.Scripts.Controllers
 		public GameObject ChorterBag;
 		public Animator ChortBagAnimator;
 
+
 		
+
+ 
+
 
 		//(ROSE) 
 		public int collisionCount = 0;

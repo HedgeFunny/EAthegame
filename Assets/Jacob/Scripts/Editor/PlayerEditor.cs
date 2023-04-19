@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Jacob.Scripts.Controllers;
 using Jacob.Scripts.Data;
+using Unity.EditorCoroutines.Editor;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -15,6 +17,7 @@ namespace Jacob.Scripts.Editor
 		private static AnimatorController _animatorController;
 		private Animator _animator;
 		private PlayerOnFire _onFire;
+		private bool _monitoringAnimatorController;
 
 		private void OnEnable()
 		{
@@ -22,18 +25,16 @@ namespace Jacob.Scripts.Editor
 
 			script.TryGetComponent(out _animator);
 
-			if (!_animatorController && _animator)
-			{
-				_animatorController =
-					AssetDatabase.LoadAssetAtPath<AnimatorController>(
-						AssetDatabase.GetAssetPath(_animator.runtimeAnimatorController));
-			}
+			_monitoringAnimatorController = true;
+			EditorCoroutineUtility.StartCoroutineOwnerless(MonitorAnimatorController());
 
 			script.TryGetComponent(out _onFire);
 		}
 
+
 		private void OnDisable()
 		{
+			_monitoringAnimatorController = false;
 			_animatorController = null;
 		}
 
@@ -101,7 +102,7 @@ namespace Jacob.Scripts.Editor
 			Utilities.CheckIfGUIChanged(script);
 		}
 
-		private static (string[], Dictionary<string, int>) GetAnimationParameters(AnimatorControllerParameterType type,
+		private static AnimationParameters GetAnimationParameters(AnimatorControllerParameterType type,
 			IEnumerable<AnimatorControllerParameter> parameterList)
 		{
 			var array = (from parameter in parameterList where parameter.type == type select parameter.name).ToArray();
@@ -111,7 +112,11 @@ namespace Jacob.Scripts.Editor
 				dict.Add(array[i], i);
 			}
 
-			return (array, dict);
+			return new AnimationParameters
+			{
+				ParameterArray = array,
+				StringToIndexDictionary = dict
+			};
 		}
 
 		private string StringPopup(string animationParameterString, string label, AnimationType type)
@@ -138,15 +143,66 @@ namespace Jacob.Scripts.Editor
 				return animationParameterString;
 			}
 
+			if (_animatorController.parameters.Length == 0)
+			{
+				EditorGUILayout.HelpBox(
+					"Your Animation Controller has no Parameters. " +
+					"Please add some Parameters to your Animation Controller.",
+					MessageType.Error
+				);
+
+				using (new EditorGUI.DisabledScope(true))
+				{
+					EditorGUILayout.Popup(selectedIndex: 0, displayedOptions: new[] { animationParameterString },
+						label: label);
+				}
+
+				return animationParameterString;
+			}
+
 			var parameters = GetAnimationParameters(convertedType, _animatorController.parameters);
 			var popup = EditorGUILayout.Popup(
-				selectedIndex: parameters.Item2.ContainsKey(animationParameterString)
-					? parameters.Item2[animationParameterString]
+				selectedIndex: parameters.StringToIndexDictionary.ContainsKey(animationParameterString)
+					? parameters.StringToIndexDictionary[animationParameterString]
 					: 0,
-				displayedOptions: parameters.Item1,
+				displayedOptions: parameters.ParameterArray,
 				label: label
 			);
 			return _animatorController.parameters[popup].name;
+		}
+
+		private void SetAnimatorController()
+		{
+			_animatorController =
+				AssetDatabase.LoadAssetAtPath<AnimatorController>(
+					AssetDatabase.GetAssetPath(_animator.runtimeAnimatorController));
+		}
+
+		private IEnumerator MonitorAnimatorController()
+		{
+			while (_monitoringAnimatorController)
+			{
+				if (_animator)
+				{
+					if (!_animator.runtimeAnimatorController && _animatorController)
+					{
+						_animatorController = null;
+					}
+
+					if (_animator.runtimeAnimatorController && !_animatorController)
+					{
+						SetAnimatorController();
+					}
+
+					if (_animatorController && _animator.runtimeAnimatorController &&
+					    _animatorController.name != _animator.runtimeAnimatorController.name)
+					{
+						SetAnimatorController();
+					}
+				}
+
+				yield return new WaitForEndOfFrame();
+			}
 		}
 	}
 }

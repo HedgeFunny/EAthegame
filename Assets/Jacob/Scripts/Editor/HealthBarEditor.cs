@@ -19,7 +19,8 @@ namespace Jacob.Scripts.Editor
 			else
 			{
 				script.animator = null;
-				EditorGUILayout.LabelField("This Script requires an Animator attached to this GameObject.");
+				EditorGUILayout.HelpBox("This Script requires an Animator attached to this GameObject.",
+					MessageType.Error);
 			}
 
 			if (gameManager)
@@ -29,7 +30,7 @@ namespace Jacob.Scripts.Editor
 			else
 			{
 				script.GameManager = null;
-				EditorGUILayout.LabelField("This Script requires a GameManager to be in your Scene.");
+				EditorGUILayout.HelpBox("This Script requires a GameManager to be in your Scene.", MessageType.Error);
 			}
 
 			using var group = new EditorGUI.DisabledScope(true);

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using Jacob.Scripts.Data;
+using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Jacob.Scripts.Controllers
 {
@@ -12,24 +14,25 @@ namespace Jacob.Scripts.Controllers
 		public float moveSpeed;
 		public bool topDown;
 
-		[Header("Sprint Properties")] public float maxMoveSpeed;
+		public float maxMoveSpeed;
 		public float secondsUntilFullSprint;
 
-		[Header("Ground Check Properties")] public bool checkForGround;
-		[HideInInspector] public string groundTag;
+		public bool checkForGround;
+		public string groundTag;
 
-		[HideInInspector] public string animationParameter;
-		[HideInInspector] public AnimationType animationType;
-		[HideInInspector] public TrackInput inputToTrack;
+		public string animationParameter;
+		public AnimationType animationType;
+		public TrackInput inputToTrack;
+		
+		public string jumpingAnimationParameter;
 
-
-		[HideInInspector] public KeyCode onFireAbilityKey;
-		[HideInInspector] public bool onFireAbilityUnlocked;
-		[HideInInspector] public float onFireTimer;
+		public KeyCode onFireAbilityKey;
+		public bool onFireAbilityUnlocked;
+		public float onFireTimer;
 
 		internal Vector2 Direction = Vector2.right;
 		private Rigidbody2D _rigidbody;
-		public Animator _animator;
+		private Animator _animator;
 		private float _horizontalInput;
 		private bool _canJump = true;
 		private bool _canControlMovement = true;
@@ -41,10 +44,6 @@ namespace Jacob.Scripts.Controllers
 		private bool _isOnFire;
 		private float _verticalInput;
 		private bool _firedAnimationError;
-
-		[Header("Animation Variables")]
-		public bool IsWalking;
-		
 
 		private void Awake()
 		{
@@ -100,26 +99,8 @@ namespace Jacob.Scripts.Controllers
 		private void GetComponents()
 		{
 			_rigidbody = GetComponent<Rigidbody2D>();
-
-			if (GetComponent<Animator>())
-			{
-				_animator = GetComponent<Animator>();
-				_hasAnimator = true;
-			}
-			else
-			{
-				_hasAnimator = false;
-			}
-
-			if (GetComponent<PlayerOnFire>())
-			{
-				_playerOnFire = GetComponent<PlayerOnFire>();
-				_hasOnFire = true;
-			}
-			else
-			{
-				_hasOnFire = false;
-			}
+			_hasAnimator = TryGetComponent(out _animator);
+			_hasOnFire = TryGetComponent(out _playerOnFire);
 		}
 
 		/// <summary>
@@ -149,7 +130,6 @@ namespace Jacob.Scripts.Controllers
 		private void AnimatorCheck()
 		{
 			if (!_hasAnimator) return;
-
 
 			var inputType = inputToTrack switch
 			{

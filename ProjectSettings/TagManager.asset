@@ -13,6 +13,7 @@ TagManager:
   - TownHall
   - ElixirStorage
   - GoldStorage
+  - Slime
   layers:
   - Default
   - TransparentFX

@@ -18,7 +18,7 @@ public class WatchAd : MonoBehaviour
     //DeathManager - Acsessing Variables
     [Header("Death Manager")]
     public GameObject Player;
-    public DeathManager deathMan;
+    //public DeathManager deathMan;
     public GameObject adAnchor;
 
     //Other
@@ -27,10 +27,11 @@ public class WatchAd : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        deathMan = Player.GetComponent<DeathManager>();
+        //deathMan = Player.GetComponent<DeathManager>();
     }
 
     //Brings up Specific Ads If player has died in a Specific Way
+    /*
     void AdMaker()
     {
         //Declarations
@@ -59,5 +60,7 @@ public class WatchAd : MonoBehaviour
 
             deathMan.DiedtoMugging = false;
         }
+    
     }
+    */
 }

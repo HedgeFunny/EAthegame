@@ -144,6 +144,7 @@ MonoBehaviour:
   jumpForce: 5.1
   moveSpeed: 5
   topDown: 0
+  enableSprinting: 0
   maxMoveSpeed: 0
   secondsUntilFullSprint: 0
   checkForGround: 1

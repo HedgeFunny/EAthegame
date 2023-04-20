@@ -66,12 +66,18 @@ namespace Jacob.Scripts.Controllers
 		{
 			if (Ads.Count == 0) return;
 			_gameManager.CurrentlyActiveScene.SetActive(false);
-			
+
 			var chosenObj = _indexToGameObject[_selectedOption].gameObject;
 			var debugSupport = chosenObj.GetComponent<DebugSupport>();
 			chosenObj.SetActive(true);
-			_player.transform.position = debugSupport.locationToTeleportTo;
 			
+			_player.SetActive(debugSupport.enableMainPlayer);
+			
+			if (debugSupport.enableMainPlayer)
+			{
+				_player.transform.position = debugSupport.locationToTeleportTo;
+			}
+
 			Exit();
 		}
 	}

@@ -20,27 +20,21 @@ namespace Jacob.Scripts.Controllers
 		[SerializeField] [HideInInspector] public UnityEvent<float> whenMoneyChangesFloat;
 		[SerializeField] [HideInInspector] public UnityEvent<string> whenMoneyChangesString;
 		[NonSerialized] public GameObject CurrentlyActiveScene;
-		public List<DebugAd> ads;
 
 		internal HealthSystem Health;
 		internal CashSystem Cash;
 
-		/// <summary>
-		/// The name of the GameObject the GameManager is on.
-		/// </summary>
-		private static string _gameManagerName;
-
 		private GameObject _pauseMenu;
 		private GameObject _debugMenu;
-		
+		private List<DebugAd> _ads;
 
 		private void Awake()
 		{
-			_gameManagerName = gameObject.name;
 			InitializeStats();
 			_pauseMenu = Resources.Load<GameObject>("Pause Menu");
 			_debugMenu = Resources.Load<GameObject>("Debug Menu");
 			InitializeVolume.SetVolume();
+			_ads = FindObjectOfType<AdList>()?.ads;
 		}
 
 		private void Update()
@@ -86,9 +80,10 @@ namespace Jacob.Scripts.Controllers
 			if (!Input.GetKeyDown(KeyCode.O)) return;
 			if (DebugMenu.Initialized) return;
 			if (!CurrentlyActiveScene) return;
+			if (_ads == null) return;
 			var debugMenu = Instantiate(_debugMenu, _debugMenu.transform.position, _debugMenu.transform.rotation);
 			if (!debugMenu.TryGetComponent<DebugMenu>(out var debug)) return;
-			debug.Ads = ads;
+			debug.Ads = _ads;
 			debug.InitializeMenu();
 		}
 

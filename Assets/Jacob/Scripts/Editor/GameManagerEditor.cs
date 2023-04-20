@@ -9,9 +9,11 @@ namespace Jacob.Scripts.Editor
 	{
 		public override void OnInspectorGUI()
 		{
-			base.OnInspectorGUI();
-
 			var script = target as GameManager;
+
+			EditorGUILayout.LabelField("Health Properties", EditorStyles.boldLabel);
+			script.maxHealth = EditorGUILayout.DoubleField("Max Health", script.maxHealth);
+			EditorGUILayout.PropertyField(serializedObject.FindProperty("whenYouDie"));
 
 			EditorGUILayout.LabelField("Currency Properties", EditorStyles.boldLabel);
 			script.returnType = (GameManagerReturnType)EditorGUILayout.EnumPopup("Return Type", script.returnType);
@@ -24,6 +26,8 @@ namespace Jacob.Scripts.Editor
 					EditorGUILayout.PropertyField(serializedObject.FindProperty("whenMoneyChangesString"));
 					break;
 			}
+
+			EditorGUILayout.PropertyField(serializedObject.FindProperty("ads"));
 
 			serializedObject.ApplyModifiedProperties();
 			Utilities.CheckIfGUIChanged(script);

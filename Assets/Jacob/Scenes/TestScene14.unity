@@ -792,6 +792,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ads: []
 --- !u!4 &454288596
 Transform:
   m_ObjectHideFlags: 0
@@ -1494,6 +1495,8 @@ MonoBehaviour:
   jumpForce: 10
   moveSpeed: 10
   topDown: 0
+  flipWhenTurningDirection: 0
+  enableSprinting: 0
   maxMoveSpeed: 0
   secondsUntilFullSprint: 0
   checkForGround: 0
@@ -1501,11 +1504,10 @@ MonoBehaviour:
   animationParameter: 
   animationType: 0
   inputToTrack: 0
+  jumpingAnimationParameter: 
   onFireAbilityKey: 0
   onFireAbilityUnlocked: 0
   onFireTimer: 0
-  _animator: {fileID: 0}
-  IsWalking: 0
 --- !u!50 &1137033548
 Rigidbody2D:
   serializedVersion: 4

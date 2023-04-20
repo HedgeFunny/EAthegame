@@ -27,7 +27,7 @@ namespace Jacob.Scripts.Controllers
 
 		private void OnTriggerEnter2D(Collider2D col)
 		{
-			if (!collideToTrigger && !_hasCollider);
+			if (!collideToTrigger && !_hasCollider) return;
 			if (!col.CompareTag("Player")) return;
 			Activate();
 			Deactivate();
@@ -41,7 +41,7 @@ namespace Jacob.Scripts.Controllers
 			if (activate.Count <= 0) return;
 			foreach (var o in activate)
 			{
-				o.SetActive(true);
+				o?.SetActive(true);
 			}
 		}
 
@@ -53,7 +53,7 @@ namespace Jacob.Scripts.Controllers
 			if (deactivate.Count <= 0) return;
 			foreach (var o in deactivate)
 			{
-				o.SetActive(false);
+				o?.SetActive(false);
 			}
 		}
 	}

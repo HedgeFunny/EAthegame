@@ -3,16 +3,16 @@ using UnityEngine.Events;
 
 public class OnActivateDeactivate : MonoBehaviour
 {
-	public UnityEvent onActivate;
-	public UnityEvent onDeactivate;
+	public UnityEvent<GameObject> onActivate;
+	public UnityEvent<GameObject> onDeactivate;
 
 	private void OnEnable()
 	{
-		onActivate?.Invoke();
+		onActivate?.Invoke(gameObject);
 	}
 
 	private void OnDisable()
 	{
-		onDeactivate?.Invoke();
+		onDeactivate?.Invoke(gameObject);
 	}
 }

@@ -59,7 +59,7 @@ public class DeathManager : MonoBehaviour
             DiedbyFire = true;
 
             //Starts Cooldown
-            StartCoroutine(SummonCoolDown());
+           
 
             //Brings up death screen when cooldown is over
             if (IsDeathCooldownover == true)
@@ -77,7 +77,7 @@ public class DeathManager : MonoBehaviour
             DiedToPit = true;
 
             //Starts Cooldown
-            StartCoroutine(SummonCoolDown());
+            
 
             //Brings up death screen when cooldown is over
             if (IsDeathCooldownover == true)
@@ -95,7 +95,7 @@ public class DeathManager : MonoBehaviour
             DiedtoMugging = true;
 
             //Starts Cooldown
-            StartCoroutine(SummonCoolDown());
+            
 
             //Brings up death screen when cooldown is over
             if (IsDeathCooldownover == true)
@@ -111,12 +111,23 @@ public class DeathManager : MonoBehaviour
     }
 
     //This brings up the Watch Ad Gameobject after some time.
-    public IEnumerator SummonCoolDown()
+    public IEnumerator SummonCoolDown(string adToSpawn)
     {
         yield return new WaitForSeconds(TimeBetweenDeathScreen);
-
+        AdSpawner(adToSpawn);
         IsDeathCooldownover = true;
-        IsDeathCooldownover = false;
+
+
+    
+    }
+
+    public void AdSpawner(string adToSpawn)
+    {
+        if(adToSpawn =="fire" )
+        {
+            //Instantiate your fire ad
+        }
+
     }
 
     //Resets Booleans when called on

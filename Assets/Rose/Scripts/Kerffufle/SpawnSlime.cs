@@ -7,34 +7,29 @@ public class SpawnSlime : MonoBehaviour
     //Variables
 
     public GameObject slimePrefab;
-    public Vector2[] spawnPos;
-    public int index ;
-    public int numberOfSlimes = 0;
-    private int maxRounds = 3;
-    private int rounds = 0;
+    public GameObject spawnPoint;
+    private int randomNumber;
+ 
     // Start is called before the first frame update
     void Start()
     {
+    
     }
 
     // Update is called once per frame
     void Update()
     {
-        int numberOfSlimes = GameObject.FindGameObjectsWithTag("Slime").Length;
+
     }
 
-IEnumerator SpawnWave()
+    public void AssignRandomNumber(int number)
     {
-        if(rounds <= maxRounds)
-        {
-            rounds++;
-            SpawnSlimes(index);
-            yield return new WaitForSeconds(30);
-            SpawnWave();
-        }
-        yield return new WaitForSeconds(30);
+        randomNumber = number;
+        Debug.Log("Assigned random number " + randomNumber + " to " + gameObject.name); // Optional debug message to confirm that the random number was assigned correctly
     }
 
+
+    /*
     public void SpawnSlimes1()
     {
         //Internal Variables
@@ -62,10 +57,11 @@ IEnumerator SpawnWave()
         Vector2 spawnPos = new Vector2(12, -10);
         Instantiate(slimePrefab, spawnPos, slimePrefab.transform.rotation);
     }
-
-    public void SpawnSlimes(int index)
+    */
+    public void SpawnSlimes()
     {
-        Instantiate(slimePrefab, spawnPos[index], slimePrefab.transform.rotation);
+        Vector2 spawnPos = spawnPoint.transform.position;
+        Instantiate(slimePrefab, spawnPos, slimePrefab.transform.rotation);
 
     }
 }

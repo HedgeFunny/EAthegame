@@ -16,6 +16,7 @@ namespace Jacob.Scripts.Controllers
 		private Dictionary<int, GameObject> _indexToGameObject;
 		private int _selectedOption;
 		private GameManager _gameManager;
+		private GameObject _player;
 
 		public void InitializeMenu()
 		{
@@ -32,6 +33,7 @@ namespace Jacob.Scripts.Controllers
 			var optionData = Ads.Select(ad => new TMP_Dropdown.OptionData { text = ad.adName }).ToList();
 			_dropdown.options = optionData;
 			_gameManager = GameManager.Get();
+			_player = GameObject.FindWithTag("Player");
 		}
 
 		private void Update()
@@ -64,7 +66,12 @@ namespace Jacob.Scripts.Controllers
 		{
 			if (Ads.Count == 0) return;
 			_gameManager.CurrentlyActiveScene.SetActive(false);
-			_indexToGameObject[_selectedOption].gameObject.SetActive(true);
+			
+			var chosenObj = _indexToGameObject[_selectedOption].gameObject;
+			var debugSupport = chosenObj.GetComponent<DebugSupport>();
+			chosenObj.SetActive(true);
+			_player.transform.position = debugSupport.locationToTeleportTo;
+			
 			Exit();
 		}
 	}

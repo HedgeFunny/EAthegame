@@ -12,12 +12,13 @@ public class CameraFindAnObjectTaggedAsPlayer : MonoBehaviour
     void Start()
     {
         // followScript = FindObjectOfType<FollowSomthingScript>();
-        camScript = FindObjectOfType<Cam>().GetComponent<Cam>();
+      //  camScript = FindObjectOfType<Cam>().GetComponent<Cam>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        camScript = FindObjectOfType<Cam>().GetComponent<Cam>();
         currentPlayer = GameObject.FindGameObjectWithTag("Player");
       //  followScript.ThingYouWantThisObjectToFollow = currentPlayer;
         camScript.followedObject = currentPlayer.transform;

@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
 using Jacob.Scripts.Data;
-using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Jacob.Scripts.Controllers
 {
@@ -13,7 +11,9 @@ namespace Jacob.Scripts.Controllers
 		public float jumpForce;
 		public float moveSpeed;
 		public bool topDown;
+		public bool flipWhenTurningDirection;
 
+		public bool enableSprinting;
 		public float maxMoveSpeed;
 		public float secondsUntilFullSprint;
 
@@ -44,6 +44,7 @@ namespace Jacob.Scripts.Controllers
 		private bool _isOnFire;
 		private float _verticalInput;
 		private bool _firedAnimationError;
+		private SpriteRenderer _spriteRenderer;
 
 		private void Awake()
 		{
@@ -81,6 +82,7 @@ namespace Jacob.Scripts.Controllers
 			TopDownCheck();
 			OnFireAbilityCheck();
 			SprintCheck();
+			FlipCheck();
 		}
 
 		private void FixedUpdate()
@@ -101,6 +103,7 @@ namespace Jacob.Scripts.Controllers
 			_rigidbody = GetComponent<Rigidbody2D>();
 			_hasAnimator = TryGetComponent(out _animator);
 			_hasOnFire = TryGetComponent(out _playerOnFire);
+			_spriteRenderer = GetComponent<SpriteRenderer>();
 		}
 
 		/// <summary>
@@ -201,6 +204,8 @@ namespace Jacob.Scripts.Controllers
 		/// </summary>
 		private void SprintCheck()
 		{
+			if (!enableSprinting) return;
+			
 			if (Input.GetKeyUp(KeyCode.LeftShift))
 			{
 				StartCoroutine(SlowDownCoroutine());
@@ -210,6 +215,24 @@ namespace Jacob.Scripts.Controllers
 			print(Time.fixedDeltaTime);
 
 			StartCoroutine(SprintCoroutine());
+		}
+
+		/// <summary>
+		/// Flips the Sprite of the Player if the flipWhenTurningDirection boolean is enabled.
+		/// Tracks the Player's Direction variable.
+		/// </summary>
+		private void FlipCheck()
+		{
+			if (!_canControlMovement) return;
+			if (!flipWhenTurningDirection) return;
+
+			if (Direction == Vector2.right)
+			{
+				_spriteRenderer.flipX = false;
+			} else if (Direction == Vector2.left)
+			{
+				_spriteRenderer.flipX = true;
+			}
 		}
 
 		private IEnumerator SprintCoroutine()

@@ -1044,19 +1044,40 @@ MonoBehaviour:
   mainSceneActive: 0
   onClickedEnough:
     m_PersistentCalls:
-      m_Calls: []
-  layer: Chorter
+      m_Calls:
+      - m_Target: {fileID: 1266680823}
+        m_TargetAssemblyTypeName: Jacob.Scripts.Controllers.ActivateDeactivate, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1266680823}
+        m_TargetAssemblyTypeName: Jacob.Scripts.Controllers.ActivateDeactivate, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  layer: 
   movePlayerTo: {x: 0, y: 0.1}
   ChorterBag: {fileID: 5585760735162836829}
   ChortBagAnimator: {fileID: 5585760735162836820}
   collisionCount: 0
   targetCollisionCount: 3
   otherObject: {fileID: 0}
-  activate:
-  - {fileID: 0}
-  - {fileID: 0}
-  deactivate:
-  - {fileID: 5585760735764519978}
+  activate: []
+  deactivate: []
   chortAnim: {fileID: 0}
   isCrunching: 0
   isCrunched: 0
@@ -1552,6 +1573,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5585760735764519979}
+  - component: {fileID: 871188687}
+  - component: {fileID: 1266680823}
   m_Layer: 6
   m_Name: Chorters Ad
   m_TagString: Untagged
@@ -1580,6 +1603,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &871188687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5585760735764519978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f177b7067e55f1d20b9c530e73b6b206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableMainPlayer: 1
+  locationToTeleportTo: {x: 0, y: 0.1}
+--- !u!114 &1266680823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5585760735764519978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502add81f5e7fee4f9603af14388bb2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickToTrigger: 0
+  collideToTrigger: 0
+  activate:
+  - {fileID: 0}
+  - {fileID: 0}
+  deactivate:
+  - {fileID: 5585760735764519978}
 --- !u!1 &5585760735841132830
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,12 +7,14 @@ public class SpawnSlime : MonoBehaviour
     //Variables
 
     public GameObject slimePrefab;
-    public GameObject spawnPoint;
+    private SlimeSpawnerManager slimeManager;
+
     private int randomNumber;
  
     // Start is called before the first frame update
     void Start()
     {
+        slimeManager = GameObject.Find("DemonSlimeSpawnerManager").GetComponent<SlimeSpawnerManager>();
     
     }
 
@@ -60,8 +62,8 @@ public class SpawnSlime : MonoBehaviour
     */
     public void SpawnSlimes()
     {
-        Vector2 spawnPos = spawnPoint.transform.position;
-        Instantiate(slimePrefab, spawnPos, slimePrefab.transform.rotation);
+        Vector2 position = gameObject.transform.position;
+        Instantiate(slimePrefab, position, slimePrefab.transform.rotation);
 
     }
 }

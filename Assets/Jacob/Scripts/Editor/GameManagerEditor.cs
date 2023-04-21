@@ -1,6 +1,8 @@
-﻿using Jacob.Scripts.Controllers;
+﻿using System.Collections.Generic;
+using Jacob.Scripts.Controllers;
 using Jacob.Scripts.Data;
 using UnityEditor;
+using UnityEngine;
 
 namespace Jacob.Scripts.Editor
 {
@@ -26,8 +28,6 @@ namespace Jacob.Scripts.Editor
 					EditorGUILayout.PropertyField(serializedObject.FindProperty("whenMoneyChangesString"));
 					break;
 			}
-
-			EditorGUILayout.PropertyField(serializedObject.FindProperty("ads"));
 
 			serializedObject.ApplyModifiedProperties();
 			Utilities.CheckIfGUIChanged(script);

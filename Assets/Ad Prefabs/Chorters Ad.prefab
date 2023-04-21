@@ -1593,6 +1593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f177b7067e55f1d20b9c530e73b6b206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableMainPlayer: 1
   locationToTeleportTo: {x: 0, y: 0.1}
 --- !u!1 &5585760735841132830
 GameObject:

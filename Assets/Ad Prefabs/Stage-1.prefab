@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f177b7067e55f1d20b9c530e73b6b206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableMainPlayer: 0
   locationToTeleportTo: {x: 0, y: 0}
 --- !u!1 &7622392985570775201
 GameObject:
@@ -65397,7 +65398,8 @@ PrefabInstance:
       propertyPath: runObsoleteCode
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5615330745685123146, guid: 3fa730627695a0a44be8cc5dff843a34, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3fa730627695a0a44be8cc5dff843a34, type: 3}
 --- !u!4 &7622392987555143388 stripped
 Transform:

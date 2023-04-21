@@ -36,15 +36,15 @@ public class WatchAd : MonoBehaviour
         adAnchor = deathMan.AdAnchor;
 
         //Sets Adtoplay to a specific Gameobject depending on which deathmanager boolean is true
-        if (deathMan.DiedbyFire)
+        if (deathMan.DiedbyFire == true)
         {
             AdtoPlay = ChedChortersAd;
         }
-        else if (deathMan.DiedToPit)
+        else if (deathMan.DiedToPit == true)
         {
             AdtoPlay = IDEAad;
         }
-        else if (deathMan.DiedtoMugging)
+        else if (deathMan.DiedtoMugging == true)
         {
             AdtoPlay = TwoTongueAd;
         }

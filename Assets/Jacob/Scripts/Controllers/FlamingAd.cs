@@ -12,33 +12,17 @@ namespace Jacob.Scripts.Controllers
 	public class FlamingAd : MonoBehaviour
 	{
 		/* Begin: Controlled by the FlamingAdEditor Script */
-		[HideInInspector] public bool runObsoleteCode;
-
-		[Obsolete("Unable to find a use for this boolean. Might change in the future.")] [HideInInspector]
-		public bool mainSceneActive;
-
-		[Obsolete("We aren't clicking on this anymore. This Event is obsolete.")] [HideInInspector]
-		public UnityEvent onClickedEnough;
-
-		[HideInInspector] public string layer;
+		[HideInInspector] public UnityEvent onClickedEnough;
 		[HideInInspector] public Vector2 movePlayerTo;
 		/* End: Controlled by the FlamingAdEditor Script */
-		
+
 		private long _timesClicked;
 		private long _timesYouHaveToClick;
 		private Camera _mainCamera;
 
-
 		//Animation Components
-		[Header("Animation Variables")]
-		public GameObject ChorterBag;
+		[Header("Animation Variables")] public GameObject ChorterBag;
 		public Animator ChortBagAnimator;
-
-
-		
-
- 
-
 
 		//(ROSE) 
 		public int collisionCount = 0;
@@ -49,7 +33,6 @@ namespace Jacob.Scripts.Controllers
 		public Animator chortAnim;
 		public bool isCrunching = false;
 		public bool isCrunched = false;
-
 
 		private void Awake()
 		{
@@ -62,10 +45,6 @@ namespace Jacob.Scripts.Controllers
 
 		private void OnMouseDown()
 		{
-			if (!runObsoleteCode) return;
-
-			if (mainSceneActive) return;
-
 			if (_timesClicked < _timesYouHaveToClick)
 			{
 				_timesClicked++;
@@ -94,15 +73,6 @@ namespace Jacob.Scripts.Controllers
 		}
 
 		/// <summary>
-		/// Hides the layer that you set on the layer property. Uses the Camera's culling mask to hide the layer.
-		/// </summary>
-		public void HideLayer()
-		{
-			_mainCamera.cullingMask &= ~(1 << LayerMask.NameToLayer(layer));
-		}
-
-
-		/// <summary>
 		/// This is to keep track of the number of times a collision occurs and then hide a layer at a set number of collisions.
 		/// </summary>
 		/// <param name="collision"></param>
@@ -127,7 +97,6 @@ namespace Jacob.Scripts.Controllers
 			{
 				StartCoroutine(Stall2());
 				Teleportation(playerComponent);
-				HideLayer();
 				collisionCount = 0;
 				if (!collision.gameObject.CompareTag("Player")) yield break;
 				Deactivate();
@@ -137,7 +106,6 @@ namespace Jacob.Scripts.Controllers
 
 		IEnumerator Stall2()
 		{
-
 			isCrunched = true;
 			chortAnim.SetBool("isTouched", isCrunched);
 			yield return new WaitForSeconds(3);
@@ -174,12 +142,7 @@ namespace Jacob.Scripts.Controllers
 		/// </summary>
 		private void RunAdCode([CanBeNull] Player player = null)
 		{
-			if (!string.IsNullOrWhiteSpace(layer))
-				HideLayer();
-			if (runObsoleteCode)
-				onClickedEnough?.Invoke();
-			else if (player != null)
-				Teleportation(player);
+			onClickedEnough?.Invoke();
 		}
 
 		private void Teleportation(Player player)

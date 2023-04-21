@@ -48,6 +48,16 @@ public class DeathManager : MonoBehaviour
         animator.SetBool("DiedToFire", DiedbyFire);
         animator.SetBool("DiedToPit", DiedToPit);
         animator.SetBool("DiedToMugging", DiedtoMugging);
+
+        //Brings up death screen when cooldown is over
+        if (IsDeathCooldownover == true)
+        {
+        Instantiate(WatchAd, AdAnchor.transform.position, AdAnchor.transform.rotation);
+
+        //Makes bool False quickly after to prevent multiple instantiations
+        IsDeathCooldownover = false;
+        }
+
     }
 
     //This part checks to see if any object that the player collides with is a hazard
@@ -59,62 +69,35 @@ public class DeathManager : MonoBehaviour
             DiedbyFire = true;
 
             //Starts Cooldown
-           
-
-            //Brings up death screen when cooldown is over
-            if (IsDeathCooldownover == true)
-            {
-                Instantiate(WatchAd, AdAnchor.transform.position, AdAnchor.transform.rotation);
-
-                //Makes bool False quickly after to prevent multiple instantiations
-                IsDeathCooldownover = false;
-            }
+            StartCoroutine(SummonCoolDown());
         }
 
         //Fire Hazard Check
-        if (collision.gameObject.CompareTag("Falling Hazard"))
+       else if (collision.gameObject.CompareTag("Falling Hazard"))
         {
             DiedToPit = true;
 
             //Starts Cooldown
-            
-
-            //Brings up death screen when cooldown is over
-            if (IsDeathCooldownover == true)
-            {
-                Instantiate(WatchAd, AdAnchor.transform.position, AdAnchor.transform.rotation);
-
-                //Makes bool False quickly after to prevent multiple instantiations
-                IsDeathCooldownover = false;
-            }
+            StartCoroutine(SummonCoolDown());
         }
 
         //Mugging Hazard Check
-        if (collision.gameObject.CompareTag("Mugging Hazard"))
+       else if (collision.gameObject.CompareTag("Mugging Hazard"))
         {
             DiedtoMugging = true;
 
             //Starts Cooldown
-            
-
-            //Brings up death screen when cooldown is over
-            if (IsDeathCooldownover == true)
-            {
-                Instantiate(WatchAd, AdAnchor.transform.position, AdAnchor.transform.rotation);
-
-                //Makes bool False quickly after to prevent multiple instantiations
-                IsDeathCooldownover = false;
-            }
+            StartCoroutine(SummonCoolDown());
 
         }
 
     }
 
     //This brings up the Watch Ad Gameobject after some time.
-    public IEnumerator SummonCoolDown(string adToSpawn)
+    public IEnumerator SummonCoolDown()
     {
         yield return new WaitForSeconds(TimeBetweenDeathScreen);
-        AdSpawner(adToSpawn);
+       
         IsDeathCooldownover = true;
 
 

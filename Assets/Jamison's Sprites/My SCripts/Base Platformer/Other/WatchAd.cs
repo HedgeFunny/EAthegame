@@ -30,37 +30,32 @@ public class WatchAd : MonoBehaviour
         deathMan = Player.GetComponent<DeathManager>();
     }
 
-    //Brings up Specific Ads If player has died in a Specific Way
-    
-    void AdMaker()
+    private void Update()
     {
         //Declarations
         adAnchor = deathMan.AdAnchor;
 
-        if(deathMan.DiedbyFire == true)
+        //Sets Adtoplay to a specific Gameobject depending on which deathmanager boolean is true
+        if (deathMan.DiedbyFire)
         {
-
-            Instantiate(ChedChortersAd, adAnchor.transform.position, adAnchor.transform.rotation);
-
-            deathMan.DiedbyFire = false;
+            AdtoPlay = ChedChortersAd;
         }
-
-        if (deathMan.DiedToPit == true)
+        else if (deathMan.DiedToPit)
         {
-
-            Instantiate(IDEAad, adAnchor.transform.position, adAnchor.transform.rotation);
-
-            deathMan.DiedToPit = false;
+            AdtoPlay = IDEAad;
         }
-
-        if (deathMan.DiedtoMugging == true)
+        else if (deathMan.DiedtoMugging)
         {
-
-            Instantiate(TwoTongueAd, adAnchor.transform.position, adAnchor.transform.rotation);
-
-            deathMan.DiedtoMugging = false;
+            AdtoPlay = TwoTongueAd;
         }
-    
     }
+
+    //plays AdToPlay when button is pressed
+    public void HahaAdGoBrrrrrr()
+    {
+        Instantiate(AdtoPlay, adAnchor.transform.position, adAnchor.transform.rotation);
+    }
+    
+    
     
 }

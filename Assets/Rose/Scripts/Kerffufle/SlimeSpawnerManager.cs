@@ -7,7 +7,7 @@ public class SlimeSpawnerManager : MonoBehaviour
     //Variables
     private int maxRounds = 3;
     private int rounds = 0;
-    public SpawnSlime slimeSpawner;
+    private SpawnSlime slimeSpawner;
     public int numberOfSlimes = 0;
     public GameObject[] demonSlimeSpawner;
     

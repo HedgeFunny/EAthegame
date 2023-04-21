@@ -22,6 +22,6 @@ public class FollowSomthingScript : MonoBehaviour
 
         }
       */
-        transform.position = ThingYouWantThisObjectToFollow.transform.position + offset;
+        // transform.position = ThingYouWantThisObjectToFollow.transform.position + offset;
     }
 }

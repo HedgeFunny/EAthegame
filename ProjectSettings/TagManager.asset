@@ -13,9 +13,7 @@ TagManager:
   - TownHall
   - ElixirStorage
   - GoldStorage
-  - Fire Hazard
-  - Falling Hazard
-  - Mugging Hazard
+  - Slime
   layers:
   - Default
   - TransparentFX

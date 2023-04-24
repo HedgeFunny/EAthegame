@@ -17333,17 +17333,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+
   - component: {fileID: 8043530765025452817}
   - component: {fileID: 8043530765025452816}
   - component: {fileID: 8043530765025452819}
+
   m_Layer: 0
   m_Name: Gold Container Tower
   m_TagString: GoldStorage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+
   m_IsActive: 1
 --- !u!4 &8043530765025452817
+
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17354,12 +17358,59 @@ Transform:
   m_LocalPosition: {x: -2.16, y: -3.258307, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
+
   m_Children: []
   m_Father: {fileID: 2759389702146431194}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8043530765025452816
 SpriteRenderer:
+
+  m_Children:
+  - {fileID: 2759389700279130972}
+  - {fileID: 2759389700703260699}
+  - {fileID: 2759389700842408174}
+  - {fileID: 2759389701806598392}
+  - {fileID: 2759389702034048561}
+  - {fileID: 2759389701489371175}
+  - {fileID: 2759389701498135833}
+  - {fileID: 2759389701123667283}
+  - {fileID: 2759389700907624120}
+  - {fileID: 2759389701479492298}
+  - {fileID: 2759389701973871661}
+  - {fileID: 8043530765025452817}
+  - {fileID: 8043530765745201534}
+  - {fileID: 4415030871094294918}
+  - {fileID: 4415030870041839564}
+  - {fileID: 2759389700699241911}
+  - {fileID: 2759389700430716440}
+  - {fileID: 2759389700517984606}
+  - {fileID: 2759389700514915794}
+  - {fileID: 2759389700575469745}
+  - {fileID: 2759389702062169174}
+  - {fileID: 2759389701805322227}
+  - {fileID: 2759389700637926902}
+  - {fileID: 8923625413510836918}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &655182362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759389702146431195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f177b7067e55f1d20b9c530e73b6b206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableMainPlayer: 0
+  locationToTeleportTo: {x: 0, y: 0}
+--- !u!1001 &2387199785227604807
+PrefabInstance:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -17431,6 +17482,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8043530765745201534}
@@ -17444,6 +17496,144 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8043530765745201534
+
+--- !u!1001 &2759389701055677596
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2759389702146431194}
+    m_Modifications:
+    - target: {fileID: -7146691369692451416, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+      propertyPath: tagToCheck
+      value: Slime
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745341490680935976, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+      propertyPath: m_Name
+      value: Town Hall Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745341490680935976, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745341490680935978, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745341490680935978, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.42821503
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745341490680935978, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.91147614
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745341490680935978, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745341490680935978, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745341490680935978, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745341490680935978, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745341490680935978, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745341490680935978, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745341490680935978, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745341490680935978, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+--- !u!4 &8923625413510836918 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6745341490680935978, guid: 0811884fb7025d84cb52d3c06b269aab, type: 3}
+  m_PrefabInstance: {fileID: 2759389701055677596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2759389701126332084
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2759389702146431194}
+    m_Modifications:
+    - target: {fileID: 1949501732848723762, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949501732848723762, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949501732848723762, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1157844
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949501732848723762, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949501732848723762, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949501732848723762, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949501732848723762, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949501732848723762, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949501732848723762, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949501732848723762, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949501732848723762, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949501732848723772, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+      propertyPath: generatingMoney
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949501732848723772, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+      propertyPath: amountYouWantToGenerate
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949501732848723773, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+      propertyPath: m_Name
+      value: Magic Juice Container Tower
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a3180ef02ad87d240aa63aae54f5affa, type: 3}
+--- !u!4 &4415030871094294918 stripped
+
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

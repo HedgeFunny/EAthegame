@@ -6,6 +6,7 @@ namespace Jacob.Scripts.Controllers
 	[RequireComponent(typeof(Collider2D))]
 	public class DragAndDrop : MonoBehaviour
 	{
+		public bool snapBackToStartingPos;
 		[NonSerialized] public bool IsBeingHeld;
 		[NonSerialized] public Rigidbody2D Rigidbody;
 		[NonSerialized] public Collider2D Collider2D;
@@ -14,12 +15,14 @@ namespace Jacob.Scripts.Controllers
 		private Vector3 MouseWorldPos => _camera.ScreenToWorldPoint(Input.mousePosition);
 		private Vector3 _mousePositionOffset;
 		private bool _isDraggable = true;
+		private Vector3 _startingPosition;
 
 		private void Awake()
 		{
 			_camera = Camera.main;
 			TryGetComponent(out Rigidbody);
 			TryGetComponent(out Collider2D);
+			_startingPosition = transform.position;
 		}
 
 		private void OnMouseDown()
@@ -39,6 +42,7 @@ namespace Jacob.Scripts.Controllers
 		{
 			if (!_isDraggable) return;
 			IsBeingHeld = false;
+			if (snapBackToStartingPos) SnapBackToStartingPosition();
 			if (!Rigidbody) return;
 			Rigidbody.velocity = new Vector2(0,0);
 		}
@@ -51,6 +55,11 @@ namespace Jacob.Scripts.Controllers
 		public void EnableDragging()
 		{
 			_isDraggable = true;
+		}
+
+		public void SnapBackToStartingPosition()
+		{
+			transform.position = _startingPosition;
 		}
 	}
 }

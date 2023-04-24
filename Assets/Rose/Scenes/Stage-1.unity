@@ -186,7 +186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 571123465526197725, guid: 543757839b7baf490a8a7918dfb2c590, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 571123465526197726, guid: 543757839b7baf490a8a7918dfb2c590, type: 3}
       propertyPath: m_RootOrder
@@ -425,6 +425,10 @@ PrefabInstance:
     - target: {fileID: 7622392985546967271, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
       propertyPath: m_Name
       value: Stage-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622392985546967271, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7622392986417793584, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
       propertyPath: deactivate.Array.size
@@ -761,10 +765,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Idea
       objectReference: {fileID: 0}
-    - target: {fileID: 4488996694826276416, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4488996694826276417, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -809,13 +809,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4488996695246682647, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
-      propertyPath: activate.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4488996695246682647, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
-      propertyPath: deactivate.Array.size
-      value: 1
+    - target: {fileID: 4488996695236860498, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
+      propertyPath: moveSpeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4488996695246682647, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
       propertyPath: activate.Array.data[0]
@@ -829,10 +825,6 @@ PrefabInstance:
       propertyPath: activate.Array.data[2]
       value: 
       objectReference: {fileID: 282903443}
-    - target: {fileID: 4488996695246682647, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
-      propertyPath: deactivate.Array.data[1]
-      value: 
-      objectReference: {fileID: 1789715415}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
 --- !u!1 &1789715415 stripped
@@ -1005,6 +997,10 @@ PrefabInstance:
     - target: {fileID: 2759389702146431195, guid: e7541e0801bb12a4182e7323c9c05daf, type: 3}
       propertyPath: m_Name
       value: Kerfuffle of Kongragations
+      objectReference: {fileID: 0}
+    - target: {fileID: 2759389702146431195, guid: e7541e0801bb12a4182e7323c9c05daf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7541e0801bb12a4182e7323c9c05daf, type: 3}

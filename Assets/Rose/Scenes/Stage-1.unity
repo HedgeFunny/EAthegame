@@ -331,7 +331,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779847200}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d08e8e1d0f070a141b742d66ae740081, type: 3}
   m_Name: 
@@ -405,6 +405,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2171243916303177714, guid: 82b6e5c99da39ec45b5337c5e49c35f6, type: 3}
   m_PrefabInstance: {fileID: 7363717192074852166}
   m_PrefabAsset: {fileID: 0}
+
+  m_GameObject: {fileID: 779847200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d4d6763d0c47bf8e6b34b0c2517938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ads:
+  - adName: Idea
+    adObject: {fileID: 1789715415}
+  - adName: Main Stage
+    adObject: {fileID: 1105252641}
+  - adName: Kerfuffle
+    adObject: {fileID: 655182360}
+  - adName: Chorters
+    adObject: {fileID: 1266680820}
+  - adName: TwoTounge
+    adObject: {fileID: 2111232790}
+--- !u!1001 &992721438
+
 --- !u!1 &826469076 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 571123465526197725, guid: 543757839b7baf490a8a7918dfb2c590, type: 3}
@@ -416,6 +436,7 @@ GameObject:
   m_PrefabInstance: {fileID: 2893070532110371591}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1261003243
+
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1087,7 +1108,7 @@ RectTransform:
   - {fileID: 2052416507}
   m_Father: {fileID: 0}
 
-  m_RootOrder: 13
+  m_RootOrder: 12
 
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1102,7 +1123,88 @@ RectTransform:
   m_PrefabInstance: {fileID: 3391182524292434294}
   m_PrefabAsset: {fileID: 0}
 
---- !u!1001 &2893070532110371591
+--- !u!1001 &2111232789
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6854322876659779004, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854322876659779004, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.979511
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854322876659779004, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.44140476
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854322876659779004, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.7784023
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854322876659779004, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854322876659779004, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854322876659779004, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854322876659779004, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854322876659779004, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854322876659779004, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854322876659779004, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854322876659779005, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+      propertyPath: m_Name
+      value: TwoTongue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854322876659779005, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+--- !u!1 &2111232790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6854322876659779005, guid: 9aa1e0a25106f6241857620894973032, type: 3}
+  m_PrefabInstance: {fileID: 2111232789}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2111232791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111232790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f177b7067e55f1d20b9c530e73b6b206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableMainPlayer: 0
+  locationToTeleportTo: {x: 0, y: 0}
+--- !u!1001 &2759389701692609219
+
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2

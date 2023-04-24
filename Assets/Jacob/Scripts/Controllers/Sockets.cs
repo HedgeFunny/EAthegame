@@ -24,11 +24,12 @@ namespace Jacob.Scripts.Controllers
 
 		private static void EnterSocket(SocketsSocket socketsSocket)
 		{
-			if (socketsSocket.socket.heldObject != socketsSocket.correctGameObject)
+			if (socketsSocket.socket.HeldObject != socketsSocket.correctGameObject)
 			{
-				if (!socketsSocket.socket.heldObject.TryGetComponent<DragAndDrop>(out var drop)) return;
+				if (!socketsSocket.socket.HeldObject.TryGetComponent<DragAndDrop>(out var drop)) return;
 
 				drop.transform.parent = null;
+				socketsSocket.socket.HeldObject = null;
 
 				if (drop.Collider2D)
 				{
@@ -43,7 +44,12 @@ namespace Jacob.Scripts.Controllers
 				drop.EnableDragging();
 
 				if (!socketsSocket.overrideDefaultProtection &&
-				    socketsSocket.incorrectObjectPosition == Vector2.zero) return;
+				    socketsSocket.incorrectObjectPosition == Vector2.zero)
+				{
+					if (drop.snapBackToStartingPos)
+						drop.SnapBackToStartingPosition();
+					return;
+				}
 
 				drop.transform.position = socketsSocket.incorrectObjectPosition;
 			}

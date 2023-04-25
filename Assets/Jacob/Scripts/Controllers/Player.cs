@@ -30,6 +30,8 @@ namespace Jacob.Scripts.Controllers
 		public bool onFireAbilityUnlocked;
 		public float onFireTimer;
 
+		public bool isWalking;
+
 		internal Vector2 Direction = Vector2.right;
 		private Rigidbody2D _rigidbody;
 		private Animator _animator;
@@ -45,6 +47,9 @@ namespace Jacob.Scripts.Controllers
 		private float _verticalInput;
 		private bool _firedAnimationError;
 		private SpriteRenderer _spriteRenderer;
+
+		public AudioSource audioSource;
+		public AudioClip clip;
 
 		private void Awake()
 		{
@@ -62,6 +67,8 @@ namespace Jacob.Scripts.Controllers
 			if (_canControlMovement)
 			{
 				_horizontalInput = Input.GetAxis("Horizontal");
+				isWalking = _horizontalInput is > 0 or < -0;
+
 				if (topDown)
 					_verticalInput = Input.GetAxis("Vertical");
 			}

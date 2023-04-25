@@ -1411,6 +1411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6854322876659779004}
+  - component: {fileID: 8590392487619249215}
   m_Layer: 0
   m_Name: TwoTongue
   m_TagString: Untagged
@@ -1439,6 +1440,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8590392487619249215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6854322876659779005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502add81f5e7fee4f9603af14388bb2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickToTrigger: 0
+  collideToTrigger: 0
+  activate: []
+  deactivate: []
 --- !u!1 &6854322876856933301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2744,4 +2761,28 @@ MonoBehaviour:
     overrideDefaultProtection: 0
   onAllSocketsCorrect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8590392487619249215}
+        m_TargetAssemblyTypeName: Jacob.Scripts.Controllers.ActivateDeactivate, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8590392487619249215}
+        m_TargetAssemblyTypeName: Jacob.Scripts.Controllers.ActivateDeactivate, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

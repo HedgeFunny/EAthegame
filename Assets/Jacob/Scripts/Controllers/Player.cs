@@ -23,7 +23,7 @@ namespace Jacob.Scripts.Controllers
 		public string animationParameter;
 		public AnimationType animationType;
 		public TrackInput inputToTrack;
-		
+
 		public string jumpingAnimationParameter;
 
 		public KeyCode onFireAbilityKey;
@@ -205,7 +205,7 @@ namespace Jacob.Scripts.Controllers
 		private void SprintCheck()
 		{
 			if (!enableSprinting) return;
-			
+
 			if (Input.GetKeyUp(KeyCode.LeftShift))
 			{
 				StartCoroutine(SlowDownCoroutine());
@@ -229,7 +229,8 @@ namespace Jacob.Scripts.Controllers
 			if (Direction == Vector2.right)
 			{
 				_spriteRenderer.flipX = false;
-			} else if (Direction == Vector2.left)
+			}
+			else if (Direction == Vector2.left)
 			{
 				_spriteRenderer.flipX = true;
 			}
@@ -281,6 +282,8 @@ namespace Jacob.Scripts.Controllers
 			if (!checkForGround) return;
 			if (!col.collider.CompareTag(groundTag)) return;
 			_canJump = true;
+			if (_hasAnimator && !string.IsNullOrWhiteSpace(jumpingAnimationParameter))
+				_animator.SetBool(jumpingAnimationParameter, false);
 		}
 
 		/// <summary>
@@ -290,6 +293,8 @@ namespace Jacob.Scripts.Controllers
 		{
 			if (!Input.GetButtonDown("Jump")) return;
 			if (!_canJump) return;
+			if (_hasAnimator && !string.IsNullOrWhiteSpace(jumpingAnimationParameter))
+				_animator.SetBool(jumpingAnimationParameter, true);
 			_rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			if (checkForGround) _canJump = false;
 		}
@@ -442,7 +447,7 @@ namespace Jacob.Scripts.Controllers
 
 		private void PrintWarning(string warning)
 		{
-			Debug.unityLogger.Log(LogType.Warning, message:warning, context:_animator);
+			Debug.unityLogger.Log(LogType.Warning, message: warning, context: _animator);
 		}
 	}
 }

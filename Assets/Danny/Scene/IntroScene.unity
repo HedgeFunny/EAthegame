@@ -3827,7 +3827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &460358930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11490,7 +11490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068252677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.378724, y: -1.0735991, z: -10}
+  m_LocalPosition: {x: -0.81314373, y: 0.066421986, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11824,6 +11824,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5898758180130658516, guid: 2ed9645d4d8dfba4785e992599ea67ae, type: 3}
+      propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 512277181}
+    - target: {fileID: 5898758180130658516, guid: 2ed9645d4d8dfba4785e992599ea67ae, type: 3}
+      propertyPath: onDeactivate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 512277181}
+    - target: {fileID: 5898758180130658516, guid: 2ed9645d4d8dfba4785e992599ea67ae, type: 3}
+      propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6937433770224047864, guid: 2ed9645d4d8dfba4785e992599ea67ae, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -11872,9 +11884,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialAd
       objectReference: {fileID: 0}
-    - target: {fileID: 6937433770224047865, guid: 2ed9645d4d8dfba4785e992599ea67ae, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 6937433771061917016, guid: 2ed9645d4d8dfba4785e992599ea67ae, type: 3}
+      propertyPath: animationType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937433771061917016, guid: 2ed9645d4d8dfba4785e992599ea67ae, type: 3}
+      propertyPath: jumpingAnimationParameter
+      value: IsJumping
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ed9645d4d8dfba4785e992599ea67ae, type: 3}
@@ -11893,48 +11909,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6937433770224047864, guid: 2ed9645d4d8dfba4785e992599ea67ae, type: 3}
   m_PrefabInstance: {fileID: 1658253668448106793}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5898758180130658516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5898758180130658514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f9670974c40f1954a90cbe6521bac47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onActivate:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 512277181}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  onDeactivate:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 512277181}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &5898758180446370674 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6937433771061917017, guid: 2ed9645d4d8dfba4785e992599ea67ae, type: 3}

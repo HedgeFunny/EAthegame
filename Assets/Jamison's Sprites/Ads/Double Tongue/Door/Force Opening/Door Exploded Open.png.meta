@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -68,7 +68,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -1179,9 +1179,9 @@ TextureImporter:
       Door Exploded Open_4: -1937948534
       Door Exploded Open_39: -1228840976
       Door Exploded Open_29: 543227784
+      Door Exploded Open_40: -140773860
       Door Exploded Open_36: 1754722353
       Door Exploded Open_20: 310080304
-      Door Exploded Open_40: -140773860
       Door Exploded Open_42: -1157008359
       Door Exploded Open_5: 1204777946
       Door Exploded Open_7: 1973235538

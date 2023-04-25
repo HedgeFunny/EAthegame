@@ -13,12 +13,13 @@ namespace Jacob.Scripts.Controllers
 		public Action<SocketsSocket> OnSocketEnterAction;
 		[NonSerialized] public SocketsSocket SocketsSocket;
 
-		public GameObject heldObject
+		public GameObject HeldObject
 		{
 			get => _heldObject;
 			set
 			{
-				value.transform.parent = transform;
+				if (value)
+					value.transform.parent = transform;
 				_heldObject = value;
 			}
 		}
@@ -29,12 +30,11 @@ namespace Jacob.Scripts.Controllers
 
 		private void OnTriggerEnter2D(Collider2D col)
 		{
-			if (col.TryGetComponent<DragAndDrop>(out var obj) && !_startedCoroutine && obj.IsBeingHeld)
-			{
-				print("drop");
-				StartCoroutine(HoverCoroutine(obj));
-				_startedCoroutine = true;
-			}
+			if (HeldObject) return;
+			if (!col.TryGetComponent<DragAndDrop>(out var obj) || _startedCoroutine || !obj.IsBeingHeld) return;
+			print("drop");
+			StartCoroutine(HoverCoroutine(obj));
+			_startedCoroutine = true;
 		}
 
 		private void OnTriggerExit2D(Collider2D other)
@@ -78,7 +78,7 @@ namespace Jacob.Scripts.Controllers
 				obj.Rigidbody.isKinematic = true;
 			}
 
-			heldObject = obj.gameObject;
+			HeldObject = obj.gameObject;
 			obj.transform.localPosition = new Vector3(0, 0, 0);
 			obj.DisableDragging();
 			onSocketEnter?.Invoke();

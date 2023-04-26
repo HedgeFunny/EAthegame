@@ -91,6 +91,15 @@ public class DeathManager : MonoBehaviour
 
         }
 
+        //Spike Hazard Check
+        else if(collision.gameObject.CompareTag("Spike Hazard"))
+        {
+            DiedToSpikes = true;
+
+            //Starts cooldown
+            StartCoroutine(SummonCoolDown());
+        }
+
     }
 
     //This brings up the Watch Ad Gameobject after some time.

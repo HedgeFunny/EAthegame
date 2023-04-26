@@ -4,11 +4,11 @@ function Fetch() {
 	)
 	Switch($Branch) {
 		"working" {
-			git fetch origin WorkingBranch:WorkingBranch
+			git fetch origin WorkingBranch3:WorkingBranch3
 			break
 		}
 		"jacob" {
-			git fetch origin JacobBranch:JacobBranch
+			git fetch origin JacobBranch1:JacobBranch1
 			break
 		}
 		"" {
@@ -28,7 +28,7 @@ function Rebase() {
 	)
 	Switch($Branch) {
 		"working" {
-			git rebase WorkingBranch
+			git rebase WorkingBranch3
 		}
 		"" {
 			Write-Output "Please provide a branch"
@@ -45,10 +45,10 @@ function Checkout() {
 	)
 	Switch($Branch) {
 		"working" {
-			git checkout WorkingBranch
+			git checkout WorkingBranch3
 		}
 		"jacob" {
-			git checkout JacobBranch
+			git checkout JacobBranch1
 		}
 		"" {
 			Write-Output "Please provide a branch"

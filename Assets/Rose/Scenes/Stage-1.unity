@@ -254,7 +254,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &125886966 stripped
 GameObject:
@@ -362,6 +362,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 571123465526197726, guid: 543757839b7baf490a8a7918dfb2c590, type: 3}
   m_PrefabInstance: {fileID: 423444628}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &423444630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10711217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288a73dc04d64bd48c5c0a709c51f0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &655182360 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2759389702146431195, guid: e7541e0801bb12a4182e7323c9c05daf, type: 3}
@@ -1111,7 +1123,7 @@ RectTransform:
   m_Children:
   - {fileID: 2052416507}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

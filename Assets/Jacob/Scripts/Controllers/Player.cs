@@ -23,12 +23,14 @@ namespace Jacob.Scripts.Controllers
 		public string animationParameter;
 		public AnimationType animationType;
 		public TrackInput inputToTrack;
-		
+
 		public string jumpingAnimationParameter;
 
 		public KeyCode onFireAbilityKey;
 		public bool onFireAbilityUnlocked;
 		public float onFireTimer;
+
+		public bool isWalking;
 
 		internal Vector2 Direction = Vector2.right;
 		private Rigidbody2D _rigidbody;
@@ -46,6 +48,9 @@ namespace Jacob.Scripts.Controllers
 		private bool _firedAnimationError;
 		private SpriteRenderer _spriteRenderer;
 
+		public AudioSource audioSource;
+		public AudioClip clip;
+
 		private void Awake()
 		{
 			GetComponents();
@@ -62,6 +67,8 @@ namespace Jacob.Scripts.Controllers
 			if (_canControlMovement)
 			{
 				_horizontalInput = Input.GetAxis("Horizontal");
+				isWalking = _horizontalInput is > 0 or < -0;
+
 				if (topDown)
 					_verticalInput = Input.GetAxis("Vertical");
 			}
@@ -205,7 +212,7 @@ namespace Jacob.Scripts.Controllers
 		private void SprintCheck()
 		{
 			if (!enableSprinting) return;
-			
+
 			if (Input.GetKeyUp(KeyCode.LeftShift))
 			{
 				StartCoroutine(SlowDownCoroutine());
@@ -229,7 +236,8 @@ namespace Jacob.Scripts.Controllers
 			if (Direction == Vector2.right)
 			{
 				_spriteRenderer.flipX = false;
-			} else if (Direction == Vector2.left)
+			}
+			else if (Direction == Vector2.left)
 			{
 				_spriteRenderer.flipX = true;
 			}
@@ -281,6 +289,8 @@ namespace Jacob.Scripts.Controllers
 			if (!checkForGround) return;
 			if (!col.collider.CompareTag(groundTag)) return;
 			_canJump = true;
+			if (_hasAnimator && !string.IsNullOrWhiteSpace(jumpingAnimationParameter))
+				_animator.SetBool(jumpingAnimationParameter, false);
 		}
 
 		/// <summary>
@@ -290,6 +300,8 @@ namespace Jacob.Scripts.Controllers
 		{
 			if (!Input.GetButtonDown("Jump")) return;
 			if (!_canJump) return;
+			if (_hasAnimator && !string.IsNullOrWhiteSpace(jumpingAnimationParameter))
+				_animator.SetBool(jumpingAnimationParameter, true);
 			_rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			if (checkForGround) _canJump = false;
 		}
@@ -442,7 +454,7 @@ namespace Jacob.Scripts.Controllers
 
 		private void PrintWarning(string warning)
 		{
-			Debug.unityLogger.Log(LogType.Warning, message:warning, context:_animator);
+			Debug.unityLogger.Log(LogType.Warning, message: warning, context: _animator);
 		}
 	}
 }

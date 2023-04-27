@@ -35,7 +35,7 @@ namespace Jacob.Scripts.Data
 		/// <param name="money">The money you want to subtract.</param>
 		public void SubtractMoney(float money)
 		{
-			Money = Money < 0 ? Money -= money : 0;
+			Money = Money > 0 ? Money -= money : 0;
 		}
 
 		/// <summary>

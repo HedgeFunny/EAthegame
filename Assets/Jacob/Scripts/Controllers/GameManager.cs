@@ -21,8 +21,8 @@ namespace Jacob.Scripts.Controllers
 		[SerializeField] [HideInInspector] public UnityEvent<string> whenMoneyChangesString;
 		[NonSerialized] public GameObject CurrentlyActiveScene;
 
-		internal HealthSystem Health;
-		internal CashSystem Cash;
+		public HealthSystem Health;
+		public CashSystem Cash;
 
 		private GameObject _pauseMenu;
 		private GameObject _debugMenu;

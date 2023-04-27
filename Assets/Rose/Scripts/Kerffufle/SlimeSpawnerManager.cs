@@ -15,7 +15,7 @@ public class SlimeSpawnerManager : MonoBehaviour
     void Start()
     {
         slimeSpawner = GameObject.Find("DemonSlimeSpawner").GetComponent<SpawnSlime>();
-        int numberOfSlimes = GameObject.FindGameObjectsWithTag("Slime").Length;
+
         foreach (GameObject obj in demonSlimeSpawner)
         {
             int randomNumber = Random.Range(0, 5); // Generate a random number between 1 and 100
@@ -29,6 +29,7 @@ public class SlimeSpawnerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int numberOfSlimes = GameObject.FindGameObjectsWithTag("Slime").Length;
 
     }
 

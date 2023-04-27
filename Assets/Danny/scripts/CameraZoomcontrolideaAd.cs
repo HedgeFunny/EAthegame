@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraZoomcontrolideaAd : MonoBehaviour
 {
     public Camera cam;
-    public GameObject IdeaAd;
     public bool testCameraZoomOutBool;
     public float zoomOutScale;
     public float zoomInScale;
@@ -21,14 +20,6 @@ public class CameraZoomcontrolideaAd : MonoBehaviour
 
     private void Update()
     {
-        if (IdeaAd.activeInHierarchy)
-        {
-            testCameraZoomOutBool = true;
-        }
-        else
-        {
-            testCameraZoomOutBool = false;
-        }
         if (testCameraZoomOutBool)
         {
             cam.orthographicSize = zoomOutScale;

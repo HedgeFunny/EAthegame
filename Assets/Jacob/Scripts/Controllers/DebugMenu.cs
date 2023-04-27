@@ -33,7 +33,7 @@ namespace Jacob.Scripts.Controllers
 			var optionData = Ads.Select(ad => new TMP_Dropdown.OptionData { text = ad.adName }).ToList();
 			_dropdown.options = optionData;
 			_gameManager = GameManager.Get();
-			_player = GameObject.FindWithTag("Player");
+			_player = _gameManager.MainPlayer;
 		}
 
 		private void Update()

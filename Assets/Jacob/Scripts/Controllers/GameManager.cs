@@ -20,6 +20,7 @@ namespace Jacob.Scripts.Controllers
 		[SerializeField] [HideInInspector] public UnityEvent<float> whenMoneyChangesFloat;
 		[SerializeField] [HideInInspector] public UnityEvent<string> whenMoneyChangesString;
 		[NonSerialized] public GameObject CurrentlyActiveScene;
+		[NonSerialized] public GameObject MainPlayer;
 
 		public HealthSystem Health;
 		public CashSystem Cash;

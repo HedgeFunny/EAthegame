@@ -14,6 +14,7 @@ TagManager:
   - ElixirStorage
   - GoldStorage
   - Slime
+  - Building
   layers:
   - Default
   - TransparentFX

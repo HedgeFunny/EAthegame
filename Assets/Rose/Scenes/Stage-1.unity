@@ -295,8 +295,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickToTrigger: 0
   collideToTrigger: 0
-  activate: []
-  deactivate: []
+  activate:
+  - {fileID: 655182360}
+  deactivate:
+  - {fileID: 1105252641}
+  - {fileID: 10711217}
 --- !u!61 &105651443
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -310,7 +313,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.06526184, y: 0.6204797}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -321,7 +324,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.72, y: 0.72}
+  m_Size: {x: 1.2065277, y: 2.8478305}
   m_EdgeRadius: 0
 --- !u!212 &105651444
 SpriteRenderer:
@@ -382,13 +385,22 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105651441}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 82.38009, y: -1.3556044, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 110.84, y: 0.703, z: 0.38917038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Children:
+  - {fileID: 337946235}
+  - {fileID: 1255774515}
+  - {fileID: 859303684}
+  - {fileID: 1060979402}
+  - {fileID: 596616583}
+  - {fileID: 179205921}
+  - {fileID: 1034298370}
+  - {fileID: 839243124}
+  - {fileID: 97881017}
+  m_Father: {fileID: 1105252643}
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &125886966
 GameObject:

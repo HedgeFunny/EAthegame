@@ -8,6 +8,7 @@ public class CameraZoomcontrolideaAd : MonoBehaviour
     public bool testCameraZoomOutBool;
     public float zoomOutScale;
     public float zoomInScale;
+    public GameObject IdeaAd;
     public void ZoomOut()
     {
         cam.orthographicSize = zoomOutScale;
@@ -20,14 +21,24 @@ public class CameraZoomcontrolideaAd : MonoBehaviour
 
     private void Update()
     {
-        if (testCameraZoomOutBool)
+        if (IdeaAd.activeInHierarchy)
         {
-            cam.orthographicSize = zoomOutScale;
+            testCameraZoomOutBool = true;
         }
         else
         {
-            cam.orthographicSize = zoomInScale;
+            testCameraZoomOutBool = false;
         }
+
+        if (testCameraZoomOutBool)
+        {
+            ZoomOut();
+        }
+        else
+        {
+            ZoomIn();
+        }
+
     }
 
  /*   private void OnTriggerEnter2D(Collider2D collision)

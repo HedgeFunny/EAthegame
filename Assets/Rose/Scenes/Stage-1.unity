@@ -2059,6 +2059,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1789715418, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1305014880}
+    - target: {fileID: 1789715418, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
+      propertyPath: IdeaAd
+      value: 
+      objectReference: {fileID: 1789715415}
     - target: {fileID: 4488996694826276416, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
       propertyPath: m_Name
       value: Idea

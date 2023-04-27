@@ -131,10 +131,10 @@ TextureImporter:
       name: Tutorial Terrain TileSet_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 48
-        width: 16
-        height: 16
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,8 +142,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f97a6ffa94803aa42b8ea7fb4a371562
-      internalID: -1488717692
+      spriteID: 62ab0d9aaa8b0214e91b1f5b9cc60c8f
+      internalID: -1415775701
       vertices: []
       indices: 
       edges: []
@@ -155,7 +155,7 @@ TextureImporter:
         x: 16
         y: 48
         width: 16
-        height: 16
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab15e05c679862e489a8e7b8db72fae5
-      internalID: -720794367
+      spriteID: 737832463fb351d4b9e3112ae5bc1361
+      internalID: 1887589177
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
         serializedVersion: 2
         x: 32
         y: 48
-        width: 16
-        height: 16
+        width: 12
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,8 +184,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e66245aede1dfa4884d57b97c4c14c5
-      internalID: -1257993441
+      spriteID: b3be2c59652b539438bad42175214d18
+      internalID: -689505207
       vertices: []
       indices: 
       edges: []
@@ -194,10 +194,10 @@ TextureImporter:
       name: Tutorial Terrain TileSet_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 50
         y: 48
-        width: 16
-        height: 16
+        width: 12
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,8 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb8588b3b6e30ca4fbb1650a676f9b2b
-      internalID: 523144898
+      spriteID: 47123a979b4ab4b42b5617b7874027bc
+      internalID: 1732722935
       vertices: []
       indices: 
       edges: []
@@ -215,9 +215,9 @@ TextureImporter:
       name: Tutorial Terrain TileSet_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 32
-        width: 16
+        width: 13
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -226,8 +226,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dbaa35460b92d7468f4c55e55cf8abc
-      internalID: 851636374
+      spriteID: 69a3934ae1c32244b8b7dcbf0ee36ddd
+      internalID: -447190289
       vertices: []
       indices: 
       edges: []
@@ -247,8 +247,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bab27ca30240d564c94c8ce1895f3273
-      internalID: -484908725
+      spriteID: 94a12d653cbb8b942b405981e1dd80fd
+      internalID: -1178418110
       vertices: []
       indices: 
       edges: []
@@ -259,7 +259,7 @@ TextureImporter:
         serializedVersion: 2
         x: 32
         y: 32
-        width: 16
+        width: 12
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -268,8 +268,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c65bb64c93daae044b78efe3776f4420
-      internalID: -805813818
+      spriteID: bf754a4b031665c43ab254492cf66a3d
+      internalID: -247479902
       vertices: []
       indices: 
       edges: []
@@ -278,9 +278,9 @@ TextureImporter:
       name: Tutorial Terrain TileSet_7
       rect:
         serializedVersion: 2
-        x: 48
+        x: 50
         y: 32
-        width: 16
+        width: 12
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -289,8 +289,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f7b90854be1fc44b8f3c087cd06bd2a
-      internalID: -97864572
+      spriteID: 49eef13beb5be9d4db2c13ef0195f40b
+      internalID: 532839059
       vertices: []
       indices: 
       edges: []
@@ -299,10 +299,10 @@ TextureImporter:
       name: Tutorial Terrain TileSet_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
+        x: 3
+        y: 20
+        width: 13
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,8 +310,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87c7232be282e924d9191c7eedacd0eb
-      internalID: -145636199
+      spriteID: d312fae6f793f434da5950ab5b326e3b
+      internalID: 1258184722
       vertices: []
       indices: 
       edges: []
@@ -321,9 +321,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 16
+        y: 20
         width: 16
-        height: 16
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,8 +331,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 626a4a061fee4064e8bd406df8bd2975
-      internalID: -229355530
+      spriteID: 5c4160ba3d3faf44982eef6259d7c43e
+      internalID: -1766956462
       vertices: []
       indices: 
       edges: []
@@ -342,9 +342,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 16
-        width: 16
-        height: 16
+        y: 20
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,8 +352,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62fb87189b3d72340bc8c3d992cfd692
-      internalID: 1246974262
+      spriteID: 43315ac6699293745b4f9505fec7e067
+      internalID: 414576732
       vertices: []
       indices: 
       edges: []
@@ -362,10 +362,10 @@ TextureImporter:
       name: Tutorial Terrain TileSet_11
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
+        x: 50
+        y: 20
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,8 +373,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df5e586f0bfd9c647a0e4af4257cea3f
-      internalID: -1953753832
+      spriteID: 4d3d6c843cf576d4d901993c0f24668e
+      internalID: 378379390
       vertices: []
       indices: 
       edges: []
@@ -383,10 +383,10 @@ TextureImporter:
       name: Tutorial Terrain TileSet_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
+        x: 3
+        y: 2
+        width: 13
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,8 +394,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 109bc2314a53849418e89662c8599db7
-      internalID: -366927224
+      spriteID: 8932a81ffd261e946826970cd2b4251b
+      internalID: 1932856500
       vertices: []
       indices: 
       edges: []
@@ -405,9 +405,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 0
+        y: 2
         width: 16
-        height: 16
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,8 +415,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64af84be8d5e68645b3adc82f5cb7cea
-      internalID: 272931632
+      spriteID: 9a238ba7669433243b212c3f4632f687
+      internalID: 171303408
       vertices: []
       indices: 
       edges: []
@@ -426,9 +426,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
-        width: 16
-        height: 16
+        y: 2
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,8 +436,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a957eb06d3cbc174bb13ea284c704891
-      internalID: 473352956
+      spriteID: 38fbfbb4a52b4c4498b3e8ffb79e1fea
+      internalID: 816644971
       vertices: []
       indices: 
       edges: []
@@ -446,10 +446,10 @@ TextureImporter:
       name: Tutorial Terrain TileSet_15
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
+        x: 50
+        y: 2
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,8 +457,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b964903455901e4459959f663dc8e919
-      internalID: 58852984
+      spriteID: 91a00b45a520efd44ab67cac541f109f
+      internalID: 1352850702
       vertices: []
       indices: 
       edges: []
@@ -474,22 +474,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tutorial Terrain TileSet_2: -1257993441
-      Tutorial Terrain TileSet_4: 851636374
-      Tutorial Terrain TileSet_7: -97864572
-      Tutorial Terrain TileSet_3: 523144898
-      Tutorial Terrain TileSet_5: -484908725
-      Tutorial Terrain TileSet_15: 58852984
-      Tutorial Terrain TileSet_13: 272931632
-      Tutorial Terrain TileSet_14: 473352956
-      Tutorial Terrain TileSet_11: -1953753832
-      Tutorial Terrain TileSet_0: -1488717692
-      Tutorial Terrain TileSet_9: -229355530
-      Tutorial Terrain TileSet_6: -805813818
-      Tutorial Terrain TileSet_12: -366927224
-      Tutorial Terrain TileSet_8: -145636199
-      Tutorial Terrain TileSet_10: 1246974262
-      Tutorial Terrain TileSet_1: -720794367
+      Tutorial Terrain TileSet_2: -689505207
+      Tutorial Terrain TileSet_4: -447190289
+      Tutorial Terrain TileSet_7: 532839059
+      Tutorial Terrain TileSet_3: 1732722935
+      Tutorial Terrain TileSet_5: -1178418110
+      Tutorial Terrain TileSet_15: 1352850702
+      Tutorial Terrain TileSet_13: 171303408
+      Tutorial Terrain TileSet_14: 816644971
+      Tutorial Terrain TileSet_11: 378379390
+      Tutorial Terrain TileSet_0: -1415775701
+      Tutorial Terrain TileSet_9: -1766956462
+      Tutorial Terrain TileSet_6: -247479902
+      Tutorial Terrain TileSet_12: 1932856500
+      Tutorial Terrain TileSet_8: 1258184722
+      Tutorial Terrain TileSet_10: 414576732
+      Tutorial Terrain TileSet_1: 1887589177
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

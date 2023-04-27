@@ -8,40 +8,30 @@ namespace Jacob.Scripts.Controllers
 	[RequireComponent(typeof(Rigidbody2D))]
 	public class Player : MonoBehaviour
 	{
-		// Movement Properties
 		public float jumpForce;
 		public float moveSpeed;
 		public bool topDown;
 		public bool flipWhenTurningDirection;
 
-		// Sprint Properties
 		public bool enableSprinting;
 		public float maxMoveSpeed;
 		public float secondsUntilFullSprint;
 
-		// Jumping Properties
 		public bool checkForGround;
 		public string groundTag;
 
-		// Animation Properties
 		public string animationParameter;
 		public AnimationType animationType;
 		public TrackInput inputToTrack;
 
-		// Animation Properties (continued)
 		public string jumpingAnimationParameter;
 
-		// On Fire Ability Properties
 		public KeyCode onFireAbilityKey;
 		public bool onFireAbilityUnlocked;
 		public float onFireTimer;
 
-		// Sound Effect Properties
-		public AudioClip walkingSoundEffect;
-		public AudioClip jumpingSoundEffect;
+		public bool isWalking;
 
-		internal bool IsWalking;
-		internal bool IsJumping;
 		internal Vector2 Direction = Vector2.right;
 		private Rigidbody2D _rigidbody;
 		private Animator _animator;
@@ -57,8 +47,9 @@ namespace Jacob.Scripts.Controllers
 		private float _verticalInput;
 		private bool _firedAnimationError;
 		private SpriteRenderer _spriteRenderer;
-		private AudioSource _audioSource;
-		private bool _hasAudioSource;
+
+		public AudioSource audioSource;
+		public AudioClip clip;
 
 		private void Awake()
 		{
@@ -76,35 +67,29 @@ namespace Jacob.Scripts.Controllers
 			if (_canControlMovement)
 			{
 				_horizontalInput = Input.GetAxis("Horizontal");
-				IsWalking = _horizontalInput is > 0 or < -0;
-				WalkingAudioCheck();
-
+				isWalking = _horizontalInput is > 0 or < -0;
 
 				if (topDown)
 					_verticalInput = Input.GetAxis("Vertical");
 			}
 
-			AnimatorCheck();
+			if (!string.IsNullOrWhiteSpace(animationParameter))
+			{
+				AnimatorCheck();
+			}
+			else
+			{
+				if (!_firedAnimationError)
+				{
+					PrintWarning("You don't have an animationParameter defined. This means animations won't work.");
+					_firedAnimationError = true;
+				}
+			}
+
 			TopDownCheck();
 			OnFireAbilityCheck();
 			SprintCheck();
 			FlipCheck();
-		}
-
-		private void WalkingAudioCheck()
-		{
-			if (!_hasAudioSource) return;
-			switch (_audioSource.isPlaying)
-			{
-				case false when IsWalking:
-					_audioSource.clip = walkingSoundEffect;
-					_audioSource.loop = true;
-					_audioSource.Play();
-					break;
-				case true when !IsWalking || IsJumping:
-					_audioSource.loop = false;
-					break;
-			}
 		}
 
 		private void FixedUpdate()
@@ -126,7 +111,6 @@ namespace Jacob.Scripts.Controllers
 			_hasAnimator = TryGetComponent(out _animator);
 			_hasOnFire = TryGetComponent(out _playerOnFire);
 			_spriteRenderer = GetComponent<SpriteRenderer>();
-			_hasAudioSource = TryGetComponent(out _audioSource);
 		}
 
 		/// <summary>
@@ -155,7 +139,6 @@ namespace Jacob.Scripts.Controllers
 		/// </summary>
 		private void AnimatorCheck()
 		{
-			if (string.IsNullOrWhiteSpace(animationParameter)) return;
 			if (!_hasAnimator) return;
 
 			var inputType = inputToTrack switch
@@ -306,9 +289,8 @@ namespace Jacob.Scripts.Controllers
 			if (!checkForGround) return;
 			if (!col.collider.CompareTag(groundTag)) return;
 			_canJump = true;
-			IsJumping = false;
 			if (_hasAnimator && !string.IsNullOrWhiteSpace(jumpingAnimationParameter))
-				_animator.SetBool(jumpingAnimationParameter, IsJumping);
+				_animator.SetBool(jumpingAnimationParameter, false);
 		}
 
 		/// <summary>
@@ -318,14 +300,8 @@ namespace Jacob.Scripts.Controllers
 		{
 			if (!Input.GetButtonDown("Jump")) return;
 			if (!_canJump) return;
-			IsJumping = true;
-
 			if (_hasAnimator && !string.IsNullOrWhiteSpace(jumpingAnimationParameter))
-			{
-				_animator.SetBool(jumpingAnimationParameter, IsJumping);
-				if (_hasAudioSource && jumpingSoundEffect) _audioSource.PlayOneShot(jumpingSoundEffect);
-			}
-
+				_animator.SetBool(jumpingAnimationParameter, true);
 			_rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			if (checkForGround) _canJump = false;
 		}

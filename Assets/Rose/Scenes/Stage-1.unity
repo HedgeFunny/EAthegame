@@ -796,6 +796,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7622392985570775200, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622392985704247371, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
+      propertyPath: m_SortingOrder
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622392985895670468, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622392986168720323, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622392986177928964, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7622392986417793584, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
       propertyPath: deactivate.Array.size
       value: 2
@@ -808,6 +828,26 @@ PrefabInstance:
       propertyPath: deactivate.Array.data[1]
       value: 
       objectReference: {fileID: 10711217}
+    - target: {fileID: 7622392986545166463, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622392986815836273, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622392987471477247, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622392987518931257, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622392987562356904, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
 --- !u!1 &992721439 stripped
@@ -1233,6 +1273,30 @@ PrefabInstance:
     - target: {fileID: 4488996694826276417, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488996694929398717, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488996694929398718, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488996694929398718, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488996694929398718, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cbfe585cfd21c774090dbf337ad0f3b7, type: 3}
+    - target: {fileID: 4488996694929398718, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488996694929398718, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
+      value: 0.99938965
       objectReference: {fileID: 0}
     - target: {fileID: 4488996695246682647, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
       propertyPath: activate.Array.data[0]

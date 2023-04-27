@@ -22,6 +22,8 @@ namespace Jacob.Scripts.Editor
 				script.locationToTeleportTo =
 					EditorGUILayout.Vector2Field("Location to Teleport To", script.locationToTeleportTo);
 			}
+
+			Utilities.CheckIfGUIChanged(script);
 		}
 	}
 }

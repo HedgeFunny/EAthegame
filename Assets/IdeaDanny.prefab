@@ -1050,7 +1050,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 402bef67a2526824783557fe73df3f89, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a9dc9447673c90945b788be495369d4a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -73588,7 +73588,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4488996694826276417}
   - component: {fileID: 1789715416}
-  - component: {fileID: 1789715418}
   m_Layer: 0
   m_Name: IdeaDanny
   m_TagString: Untagged
@@ -73639,22 +73638,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableMainPlayer: 0
   locationToTeleportTo: {x: 0, y: 0}
---- !u!114 &1789715418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4488996694826276416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfa1abec36bbfda43ba1c8f91bc6e6fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  testCameraZoomOutBool: 0
-  zoomOutScale: 15
-  zoomInScale: 10
 --- !u!1 &4488996694841987719
 GameObject:
   m_ObjectHideFlags: 0

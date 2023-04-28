@@ -391,6 +391,7 @@ GameObject:
   - component: {fileID: 779847201}
   - component: {fileID: 779847203}
   - component: {fileID: 779847204}
+  - component: {fileID: 779847205}
   m_Layer: 0
   m_Name: UniversalGameManager
   m_TagString: Untagged
@@ -438,6 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa617c40e2c48d789611b8aad8471a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthSystem: {fileID: 0}
   maxHealth: 100
   whenYouDie:
     m_PersistentCalls:
@@ -496,6 +498,22 @@ MonoBehaviour:
     adObject: {fileID: 1266680820}
   - adName: TwoTounge
     adObject: {fileID: 2111232790}
+--- !u!114 &779847205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779847200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013c53352f5849889ecfd4b4ec6f1f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  whenYouDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &992721438
 PrefabInstance:
   m_ObjectHideFlags: 0

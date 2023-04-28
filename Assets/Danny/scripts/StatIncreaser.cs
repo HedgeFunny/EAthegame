@@ -14,6 +14,7 @@ public class StatIncreaser : MonoBehaviour
     void Start()
     {
         mainPlayer = GameObject.Find("Mr. Top Hat");
+        JacobsPlayerScript = mainPlayer.GetComponent<Jacob.Scripts.Controllers.Player>();
         playerBaseSpeed = JacobsPlayerScript.moveSpeed;
         playerBaseJump = JacobsPlayerScript.jumpForce;
     }

@@ -389,18 +389,9 @@ Transform:
   m_LocalPosition: {x: 110.84, y: 0.703, z: 0.38917038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 337946235}
-  - {fileID: 1255774515}
-  - {fileID: 859303684}
-  - {fileID: 1060979402}
-  - {fileID: 596616583}
-  - {fileID: 179205921}
-  - {fileID: 1034298370}
-  - {fileID: 839243124}
-  - {fileID: 97881017}
-  m_Father: {fileID: 1105252643}
-  m_RootOrder: 28
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &125886966
 GameObject:
@@ -26933,7 +26924,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &655182361
 Transform:
   m_ObjectHideFlags: 0
@@ -30459,7 +30450,7 @@ RectTransform:
   m_Children:
   - {fileID: 2052416507}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -31492,13 +31483,17 @@ PrefabInstance:
       propertyPath: activate.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5585760735162836825, guid: eb1564040dbb92c45a4d99e2972b03b4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5585760735764519978, guid: eb1564040dbb92c45a4d99e2972b03b4, type: 3}
       propertyPath: m_Name
       value: Chorters Ad
       objectReference: {fileID: 0}
     - target: {fileID: 5585760735764519978, guid: eb1564040dbb92c45a4d99e2972b03b4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5585760735764519979, guid: eb1564040dbb92c45a4d99e2972b03b4, type: 3}
       propertyPath: m_RootOrder

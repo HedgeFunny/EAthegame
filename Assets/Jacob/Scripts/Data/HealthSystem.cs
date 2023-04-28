@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 
 namespace Jacob.Scripts.Data
 {
-	public class HealthSystem: IHealth
+	public class HealthSystem
 	{
 		/// <summary>
 		/// A constructor that will return a HealthSystem.
@@ -27,20 +27,30 @@ namespace Jacob.Scripts.Data
 		/// </summary>
 		internal double Health { get; private set; }
 
+		/// <summary>
+		/// Add some Health to the Health stat. Will clamp to the maxHealth value as you can't go over your maxHealth.
+		/// </summary>
+		/// <param name="amountOfHealth">The amount of Health you want to add.</param>
 		public void AddHealth(double amountOfHealth)
 		{
 			Health += Math.Clamp(amountOfHealth, 0, _maxHealth);
 			if (Health <= 0) Kill();
 		}
 
+		/// <summary>
+		/// Subtract some Health to the Health stat. Will clamp to the maxHealth value as you can't go under your maxHealth.
+		/// </summary>
+		/// <param name="amountOfHealth"></param>
 		public void SubtractHealth(double amountOfHealth)
 		{
 			Health -= Math.Clamp(amountOfHealth, 0, _maxHealth);
 			if (Health <= 0) Kill();
 		}
 
-		public void SetHealth(double amountOfHealth) => Health = amountOfHealth;
-
+		/// <summary>
+		/// When you completely run out of Health.
+		/// Runs a UnityEvent so you can run whatever you want when you run out of Health.
+		/// </summary>
 		public void Kill()
 		{
 			if (Health != 0) Health = 0;

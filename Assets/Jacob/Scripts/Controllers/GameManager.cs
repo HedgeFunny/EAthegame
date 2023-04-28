@@ -8,49 +8,26 @@ namespace Jacob.Scripts.Controllers
 {
 	public class GameManager : MonoBehaviour
 	{
-		public Health HealthSystem
-		{
-			get
-			{
-				if (!healthComponent)
-				{
-					throw new NullReferenceException(
-						"You don't have a Health component defined in the HealthSystem property.");
-				}
+		/// <summary>
+		/// The Maximum amount of Health your player should have. When you start the game, your Health will bind to
+		/// this.
+		/// </summary>
+		[Header("Health Properties")] public double maxHealth;
 
-				return healthComponent;
-			}
-		}
+		public UnityEvent whenYouDie;
 
-		public GameManagerReturnType returnType;
-		public UnityEvent<float> whenMoneyChangesFloat;
-		public UnityEvent<string> whenMoneyChangesString;
-
+		[HideInInspector] public GameManagerReturnType returnType;
+		[SerializeField] [HideInInspector] public UnityEvent<float> whenMoneyChangesFloat;
+		[SerializeField] [HideInInspector] public UnityEvent<string> whenMoneyChangesString;
 		[NonSerialized] public GameObject CurrentlyActiveScene;
 		[NonSerialized] public GameObject MainPlayer;
 
-		public HealthSystem Health
-		{
-			get
-			{
-				if (_healthSystem == null)
-				{
-					throw new NullReferenceException(
-						"You don't have a Health component defined in the HealthSystem property.");
-				}
-
-				return _healthSystem;
-			}
-			private set => _healthSystem = value;
-		}
-
+		public HealthSystem Health;
 		public CashSystem Cash;
 
 		private GameObject _pauseMenu;
 		private GameObject _debugMenu;
 		private List<DebugAd> _ads;
-		[SerializeField] public Health healthComponent;
-		private HealthSystem _healthSystem;
 
 		private void Awake()
 		{
@@ -69,18 +46,10 @@ namespace Jacob.Scripts.Controllers
 
 		private void InitializeStats()
 		{
-			// Re-export the Health components HealthSystem.
-			try
+			Health = new HealthSystem(maxHealth)
 			{
-				Health = HealthSystem.HealthSystem;
-			}
-			catch (NullReferenceException)
-			{
-				Debug.LogWarning(
-					"You don't have a Health component defined in the HealthSystem property. " +
-					"Health functionality will not work");
-			}
-
+				WhenYouDie = () => whenYouDie.Invoke()
+			};
 			Cash = new CashSystem
 			{
 				SetAction = SetAction

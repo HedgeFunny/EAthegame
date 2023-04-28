@@ -475,5 +475,10 @@ namespace Jacob.Scripts.Controllers
 		{
 			_canJump = true;
 		}
+
+		private void PrintWarning(string warning)
+		{
+			Debug.unityLogger.Log(LogType.Warning, message: warning, context: _animator);
+		}
 	}
 }

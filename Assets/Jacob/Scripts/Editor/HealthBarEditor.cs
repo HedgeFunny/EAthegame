@@ -1,5 +1,4 @@
 ﻿using Jacob.Scripts.Controllers;
-using Jacob.Scripts.Data;
 using UnityEditor;
 using UnityEngine;
 
@@ -11,6 +10,7 @@ namespace Jacob.Scripts.Editor
 		public override void OnInspectorGUI()
 		{
 			var script = target as HealthBar;
+			var gameManager = FindObjectOfType<GameManager>();
 
 			if (script.TryGetComponent<Animator>(out var animator))
 			{
@@ -23,30 +23,20 @@ namespace Jacob.Scripts.Editor
 					MessageType.Error);
 			}
 
-			using (new EditorGUI.DisabledScope(true))
+			if (gameManager)
 			{
-				EditorGUILayout.ObjectField("Animator", script.animator, typeof(Animator));
+				script.GameManager = gameManager;
+			}
+			else
+			{
+				script.GameManager = null;
+				EditorGUILayout.HelpBox("This Script requires a GameManager to be in your Scene.", MessageType.Error);
 			}
 
-			script.useGameManagerHealthSystem =
-				EditorGUILayout.Toggle("Use GameManager Health", script.useGameManagerHealthSystem);
+			using var group = new EditorGUI.DisabledScope(true);
+			EditorGUILayout.ObjectField("Animator", script.animator, typeof(Animator));
+			EditorGUILayout.ObjectField("Game Manager", script.GameManager, typeof(GameManager));
 
-			if (!script.healthSystem && !script.useGameManagerHealthSystem)
-			{
-				EditorGUILayout.HelpBox("The HealthBar script requires a Health component to function.",
-					MessageType.Warning);
-			}
-
-			using (new EditorGUI.DisabledScope(script.useGameManagerHealthSystem))
-			{
-				script.healthSystem =
-					(Health)EditorGUILayout.ObjectField("Health System", script.healthSystem, typeof(Health), true);
-			}
-
-			script.animationType =
-				(HealthBarAnimationType)EditorGUILayout.EnumPopup("Animation Type", script.animationType);
-
-			serializedObject.ApplyModifiedProperties();
 			Utilities.CheckIfGUIChanged(script);
 		}
 	}

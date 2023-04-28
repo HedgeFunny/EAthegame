@@ -1,59 +1,21 @@
-enum Branches {
-    working
-    jacob
-}
-
-enum BranchType {
-    Known
-    Empty
-    Unknown
-}
-
-function StringToBranches([string] $string) {
-	if ($string -eq "") {
-		return [BranchType]::Empty
-	} elseif (StringIsKnownBranch($string)) {
-        return [BranchType]::Known
-	} else {
-		return [BranchType]::Unknown
-	}
-}
-
-function StringIsKnownBranch([string] $string) {
-    [bool]$isKnownBranch = $false
-    [Branches].GetEnumNames() | ForEach-Object {
-        if ($_ -eq $string)
-        {
-            $isKnownBranch = $true
-        }
-    }
-    return $isKnownBranch
-}
-
-function BranchToString([Branches] $branch) {
-    Switch ($branch) {
-        ([Branches]::working) {
-            return "WorkingBranch3"
-        }
-        ([Branches]::jacob) {
-            return "JacobBranch1"
-        }
-    }
-}
-
 function Fetch() {
 	param(
 		[string]$Branch
 	)
-	Switch(StringToBranches($Branch)) {
-        ([BranchType]::Known) {
-            git fetch origin $(BranchToString($Branch))
-        }
-        ([BranchType]::Empty) {
+	Switch($Branch) {
+		"working" {
+			git fetch origin WorkingBranch:WorkingBranch
+			break
+		}
+		"jacob" {
+			git fetch origin JacobBranch:JacobBranch
+			break
+		}
+		"" {
 			Write-Output "Please provide a branch"
 			break
 		}
-        ([BranchType]::Unknown) {
+		Default {
 			git fetch origin ${branch}:${branch}
 			break
 		}
@@ -64,14 +26,14 @@ function Rebase() {
 	param(
 		[string]$Branch
 	)
-	Switch(StringToBranches($Branch)) {
-        ([BranchType]::Known) {
-			git rebase $(BranchToString($Branch))
+	Switch($Branch) {
+		"working" {
+			git rebase WorkingBranch
 		}
-        ([BranchType]::Empty) {
+		"" {
 			Write-Output "Please provide a branch"
 		}
-        ([BranchType]::Unknown) {
+		Default {
 			git rebase ${branch}
 		}
 	}
@@ -81,17 +43,19 @@ function Checkout() {
 	param(
 		[string]$Branch
 	)
-	Switch(StringToBranches($Branch)) {
-        ([BranchType]::Known) {
-			git checkout $(BranchToString($Branch))
+	Switch($Branch) {
+		"working" {
+			git checkout WorkingBranch
 		}
-        ([BranchType]::Empty) {
+		"jacob" {
+			git checkout JacobBranch
+		}
+		"" {
 			Write-Output "Please provide a branch"
 		}
-        ([BranchType]::Unknown) {
+		Default {
 			git checkout ${branch}
 		}
-
 	}
 }
 
@@ -105,13 +69,12 @@ function DeleteBranch() {
 function Push() {
 	param(
 		[string]$Branch,
-		[string]$Remote,
-		[switch]$Upstream
+		[string]$Remote
 	)
 	if (!$Remote) {
 		$Remote = "origin"
 	}
-	git push $(if ($Upstream) { "-u" }) $Remote $(if ($Branch) {$Branch})
+	git push $Remote $(if ($Branch) {$Branch})
 }
 
 function Pull() {
@@ -125,26 +88,14 @@ function Pull() {
 	git pull $Remote $(if ($Branch) {$Branch})
 }
 
-function Branch() {
-	param(
-		[switch]$Delete,
-		[string]$Branch
-	)
-	git branch $(if ($Delete) { return "-d" })
-}
-
 Register-ArgumentCompleter -CommandName Fetch -ParameterName Branch -ScriptBlock {
-    [Branches].GetEnumNames()
+	"working","jacob"
 }
 
 Register-ArgumentCompleter -CommandName Rebase -ParameterName Branch -ScriptBlock {
-    [Branches].GetEnumNames()
+	"working"
 }
 
 Register-ArgumentCompleter -CommandName Checkout -ParameterName Branch -ScriptBlock {
-    [Branches].GetEnumNames()
-}
-
-Register-ArgumentCompleter -CommandName Branch -ParameterName Branch -ScriptBlock {
-	git for-each-ref --format='%(refname:short)' refs/heads/
+	"working","jacob"
 }

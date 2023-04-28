@@ -9,6 +9,7 @@ public class CameraZoomcontrolideaAd : MonoBehaviour
     public bool testCameraZoomOutBool;
     public float zoomOutScale;
     public float zoomInScale;
+
     private void Start()
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -25,6 +26,7 @@ public class CameraZoomcontrolideaAd : MonoBehaviour
             testCameraZoomOutBool = false;
         }
         if (testCameraZoomOutBool)
+
         {
             ZoomOut();
         }

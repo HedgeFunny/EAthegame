@@ -10,12 +10,12 @@ public class SpawnSlime : MonoBehaviour
     private SlimeSpawnerManager slimeManager;
 
     private int randomNumber;
- 
+
     // Start is called before the first frame update
     void Start()
     {
         slimeManager = GameObject.Find("DemonSlimeSpawnerManager").GetComponent<SlimeSpawnerManager>();
-    
+
     }
 
     // Update is called once per frame
@@ -30,8 +30,16 @@ public class SpawnSlime : MonoBehaviour
         Debug.Log("Assigned random number " + randomNumber + " to " + gameObject.name); // Optional debug message to confirm that the random number was assigned correctly
     }
 
+    public void SpawnSlimes()
+    {
+        Vector2 position = gameObject.transform.position;
+        Instantiate(slimePrefab, position, Quaternion.identity);
+    }
+}
 
-    /*
+
+
+/*
     public void SpawnSlimes1()
     {
         //Internal Variables
@@ -60,10 +68,3 @@ public class SpawnSlime : MonoBehaviour
         Instantiate(slimePrefab, spawnPos, slimePrefab.transform.rotation);
     }
     */
-    public void SpawnSlimes()
-    {
-        Vector2 position = gameObject.transform.position;
-        Instantiate(slimePrefab, position, slimePrefab.transform.rotation);
-
-    }
-}

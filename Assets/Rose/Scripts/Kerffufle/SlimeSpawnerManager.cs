@@ -10,7 +10,8 @@ public class SlimeSpawnerManager : MonoBehaviour
     private SpawnSlime slimeSpawner;
     public int numberOfSlimes = 0;
     public GameObject[] demonSlimeSpawner;
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,26 +23,31 @@ public class SlimeSpawnerManager : MonoBehaviour
             obj.GetComponent<SpawnSlime>().AssignRandomNumber(randomNumber); // Call a function in MyScript to assign the random number to the game object
         }
 
-        SpawnWave();
-        
+        StartCoroutine(SpawnWave());
     }
 
     // Update is called once per frame
     void Update()
     {
-        int numberOfSlimes = GameObject.FindGameObjectsWithTag("Slime").Length;
-
+        numberOfSlimes = GameObject.FindGameObjectsWithTag("Slime").Length;
     }
 
     IEnumerator SpawnWave()
     {
-        if (rounds <= maxRounds)
+        if (rounds <= maxRounds && numberOfSlimes == 0)
         {
             rounds++;
-           // slimeSpawner.SpawnSlimes();
+            foreach (GameObject obj in demonSlimeSpawner)
+            {
+                obj.GetComponent<SpawnSlime>().SpawnSlimes();
+            }
             yield return new WaitForSeconds(30);
-            SpawnWave();
+            StartCoroutine(SpawnWave());
         }
-        yield return new WaitForSeconds(30);
+        else
+        {
+            yield return new WaitForSeconds(1);
+            StartCoroutine(SpawnWave());
+        }
     }
 }

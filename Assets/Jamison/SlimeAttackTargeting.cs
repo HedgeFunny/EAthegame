@@ -72,8 +72,7 @@ public class SlimeAttackTargeting : MonoBehaviour
 
 
 			//Move To Building
-			transform.Translate((destroyMe.transform.position - gameObject.transform.position) * speed * Time.deltaTime);
-			Destroy(closestObject);
+			
 
 
 
@@ -85,23 +84,20 @@ public class SlimeAttackTargeting : MonoBehaviour
 		{
 			if (targetManager.Cannons >= 1)
 			{
-				DestroyByTag("Cannon");
+				FindObject("Cannon");
 			}
 
-			if (targetManager.GStorages >= 1 && targetManager.Cannons <= 0)
+			else if (targetManager.GStorages >= 1 && targetManager.Cannons <= 0)
 			{
 				DestroyByTag("GoldStorage");
 			}
 
-			if (targetManager.EStorages >= 1 && targetManager.GStorages <= 0)
+			else if (targetManager.EStorages >= 1 && targetManager.GStorages <= 0)
 			{
 				DestroyByTag("ElixirStorage");
 			}
 		}
 
-		//Moves to Closest building
-		void Movement()
-		{
-		}
+		
 	}
 }

@@ -1050,7 +1050,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 402bef67a2526824783557fe73df3f89, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a9dc9447673c90945b788be495369d4a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -73652,6 +73652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+  IdeaAd: {fileID: 4488996694826276416}
   testCameraZoomOutBool: 0
   zoomOutScale: 15
   zoomInScale: 10

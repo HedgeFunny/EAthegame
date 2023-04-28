@@ -1,34 +1,25 @@
-using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Jacob.Scripts.Controllers
 {
-    public class HealthSubtract : MonoBehaviour
-    {
-        public double healthToSubtract;
+	public class HealthSubtract : MonoBehaviour
+	{
+		public bool useGameManagerHealth;
+		public Health healthSystem;
+		public double healthToSubtract;
 
-        private void OnCollisionEnter2D(Collision2D col)
-        {
-            if (col.collider.CompareTag("Cannon"))
-            {
-                GameManager.Get().Health.SubtractHealth(healthToSubtract);
-            }
-
-            if (col.collider.CompareTag("GoldStorage"))
-            {
-                GameManager.Get().Health.SubtractHealth(healthToSubtract);
-            }
-
-            if (col.collider.CompareTag("ElixirStorage"))
-            {
-                GameManager.Get().Health.SubtractHealth(healthToSubtract);
-            }
-
-            if (col.collider.CompareTag("TownHall"))
-            {
-                GameManager.Get().Health.SubtractHealth(healthToSubtract);
-            }
-        }
-    }
+		private void OnCollisionEnter2D(Collision2D col)
+		{
+			if (!col.collider.CompareTag("Player")) return;
+			
+			if (useGameManagerHealth)
+			{
+				GameManager.Get().Health.SubtractHealth(healthToSubtract);
+			}
+			else
+			{
+				healthSystem.SubtractHealth(healthToSubtract);
+			}
+		}
+	}
 }

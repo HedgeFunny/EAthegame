@@ -85,7 +85,7 @@ public class SlimeAttackTargeting : MonoBehaviour
 		{
 			if (targetManager.Cannons >= 1)
 			{
-				FindObject("Cannon");
+				GameObject.Find("Cannon");
 			}
 
 			else if (targetManager.GStorages >= 1 && targetManager.Cannons <= 0)

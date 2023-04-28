@@ -14,10 +14,9 @@ public class StatIncreaser : MonoBehaviour
     void Start()
     {
         mainPlayer = GameObject.Find("Mr. Top Hat");
-<<<<<<< HEAD
+
         JacobsPlayerScript = mainPlayer.GetComponent<Jacob.Scripts.Controllers.Player>();
-=======
->>>>>>> parent of 7cd30d2 (Revert "Merge branch 'WorkingBranch3' into RoseBranchNEW")
+
         playerBaseSpeed = JacobsPlayerScript.moveSpeed;
         playerBaseJump = JacobsPlayerScript.jumpForce;
     }

@@ -49,7 +49,7 @@ public class SlimeAttack : MonoBehaviour
         if(CanAttack == true && IsAbletoAttack == true)
         {
             //Lowers health of object
-            AttackHealth. - AttackDamage;
+           // AttackHealth -= AttackDamage;
         }
     }
 

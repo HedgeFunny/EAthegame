@@ -22,8 +22,8 @@ namespace Jacob.Scripts.Controllers
 		[NonSerialized] public GameObject CurrentlyActiveScene;
 		[NonSerialized] public GameObject MainPlayer;
 
-		internal HealthSystem Health;
-		internal CashSystem Cash;
+		public HealthSystem Health;
+		public CashSystem Cash;
 
 		private GameObject _pauseMenu;
 		private GameObject _debugMenu;

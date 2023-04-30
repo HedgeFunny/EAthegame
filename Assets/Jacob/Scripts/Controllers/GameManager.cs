@@ -8,14 +8,20 @@ namespace Jacob.Scripts.Controllers
 {
 	public class GameManager : MonoBehaviour
 	{
+		private const string HealthComponentError =
+			"You don't have a Health Component defined in the HealthSystem property on the GameManager.";
+
+		private const string HealthComponentWarning =
+			"You don't have a Health Component defined in the HealthSystem property on the GameManager. " +
+			"GameManager Health functionality will not work.";
+
 		public Health HealthSystem
 		{
 			get
 			{
 				if (!healthComponent)
 				{
-					throw new NullReferenceException(
-						"You don't have a Health component defined in the HealthSystem property.");
+					throw new NullReferenceException(HealthComponentError);
 				}
 
 				return healthComponent;
@@ -35,8 +41,7 @@ namespace Jacob.Scripts.Controllers
 			{
 				if (_healthSystem == null)
 				{
-					throw new NullReferenceException(
-						"You don't have a Health component defined in the HealthSystem property.");
+					throw new NullReferenceException(HealthComponentError);
 				}
 
 				return _healthSystem;
@@ -76,9 +81,7 @@ namespace Jacob.Scripts.Controllers
 			}
 			catch (NullReferenceException)
 			{
-				Debug.LogWarning(
-					"You don't have a Health component defined in the HealthSystem property. " +
-					"Health functionality will not work");
+				Debug.LogWarning(HealthComponentWarning);
 			}
 
 			Cash = new CashSystem

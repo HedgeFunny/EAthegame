@@ -21,16 +21,16 @@ namespace Jacob.Scripts.Controllers
 		private void OnMouseDown()
 		{
 			if (!clickToTrigger && !_hasCollider) return;
-			Activate();
 			Deactivate();
+			Activate();
 		}
 
 		private void OnTriggerEnter2D(Collider2D col)
 		{
 			if (!collideToTrigger && !_hasCollider) return;
 			if (!col.CompareTag("Player")) return;
-			Activate();
 			Deactivate();
+			Activate();
 		}
 
 		/// <summary>

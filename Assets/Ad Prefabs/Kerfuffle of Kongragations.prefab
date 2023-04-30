@@ -13715,6 +13715,7 @@ MonoBehaviour:
   PositionButtons: {fileID: 3727296082439263828}
   CannonLeft: {fileID: 534340518813701493, guid: 7ef001b1a47f7094899a94421596076e, type: 3}
   CannonRight: {fileID: 1001729460259936309, guid: e2eedc44015434f48949960b115a39f4, type: 3}
+  gameManager: {fileID: 0}
 --- !u!1 &3727296080826300486
 GameObject:
   m_ObjectHideFlags: 0
@@ -13937,7 +13938,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3727296081218667911}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16441,10 +16442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa617c40e2c48d789611b8aad8471a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  whenYouDie:
-    m_PersistentCalls:
-      m_Calls: []
   returnType: 1
   whenMoneyChangesFloat:
     m_PersistentCalls:
@@ -16464,6 +16461,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  healthComponent: {fileID: 0}
 --- !u!1001 &3727296081101274530
 PrefabInstance:
   m_ObjectHideFlags: 0

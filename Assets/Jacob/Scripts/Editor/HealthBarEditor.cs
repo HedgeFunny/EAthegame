@@ -25,7 +25,7 @@ namespace Jacob.Scripts.Editor
 
 			using (new EditorGUI.DisabledScope(true))
 			{
-				EditorGUILayout.ObjectField("Animator", script.animator, typeof(Animator));
+				EditorGUILayout.ObjectField("Animator", script.animator, typeof(Animator), false);
 			}
 
 			script.useGameManagerHealthSystem =

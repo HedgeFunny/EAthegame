@@ -162,8 +162,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickToTrigger: 0
   collideToTrigger: 0
-  activate: [{fileID: 655182360}]
-  deactivate: [{fileID: 1105252641}, {fileID: 10711217}]
+  activate:
+  - {fileID: 655182360}
+  deactivate:
+  - {fileID: 1105252641}
+  - {fileID: 10711217}
 --- !u!61 &105651443
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -639,7 +642,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779847200}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d08e8e1d0f070a141b742d66ae740081, type: 3}
   m_Name: 
@@ -673,10 +676,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSystem: {fileID: 0}
-  maxHealth: 100
-  whenYouDie:
-    m_PersistentCalls:
-      m_Calls: []
   returnType: 1
   whenMoneyChangesFloat:
     m_PersistentCalls:
@@ -708,6 +707,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  healthComponent: {fileID: 0}
 --- !u!114 &779847204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,7 +724,7 @@ MonoBehaviour:
   - adName: Idea
     adObject: {fileID: 1789715415}
   - adName: Main Stage
-    adObject: {fileID: 0}
+    adObject: {fileID: 1105252641}
   - adName: Kerfuffle
     adObject: {fileID: 655182360}
   - adName: Chorters
@@ -760,6 +760,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2168075658164787647, guid: 2934c70d0e20f3347927481d4c70dc58,
+        type: 3}
+      propertyPath: objectToFollow
+      value: 
+      objectReference: {fileID: 423444629}
     - target: {fileID: 180508443811004411, guid: 2934c70d0e20f3347927481d4c70dc58,
         type: 3}
       propertyPath: SceneName
@@ -1081,10 +1086,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5ed4be70bdacb409f152ca257ddfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followedObject: {fileID: 423444629}
-  clampToTilemap: 0
-  tilemap: {fileID: 0}
+  followedObject: {fileID: 0}
   clampVerticalPosition: 0
+  clampingTypes: 0
+  tilemap: {fileID: 0}
+  clampProperty: 0
 --- !u!1 &1343637819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,10 +1417,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 774865652}
     m_Modifications:
     - target: {fileID: 1789715418, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 1305014880}
-    - target: {fileID: 1789715418, guid: 53b7913c246c7e04099e84f0a2d65dda, type: 3}
       propertyPath: IdeaAd
       value: 
       objectReference: {fileID: 1789715415}
@@ -1447,6 +1449,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -2.6467247
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488996694826276417, guid: 53b7913c246c7e04099e84f0a2d65dda,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488996694826276417, guid: 53b7913c246c7e04099e84f0a2d65dda,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488996694826276417, guid: 53b7913c246c7e04099e84f0a2d65dda,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4488996694826276417, guid: 53b7913c246c7e04099e84f0a2d65dda,
         type: 3}

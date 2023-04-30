@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Jacob.Scripts.Controllers;
 using UnityEngine;
 
 public class StatIncreaser : MonoBehaviour
 {
     private GameObject mainPlayer;
-    private Jacob.Scripts.Controllers.Player JacobsPlayerScript;
+    private Player JacobsPlayerScript;
     private float playerBaseSpeed;
     private float playerBaseJump;
     public float playerSpeedIncreaseAmount;
@@ -14,6 +15,7 @@ public class StatIncreaser : MonoBehaviour
     void Start()
     {
         mainPlayer = GameObject.Find("Mr. Top Hat");
+        JacobsPlayerScript = mainPlayer.GetComponent<Player>();
         playerBaseSpeed = JacobsPlayerScript.moveSpeed;
         playerBaseJump = JacobsPlayerScript.jumpForce;
     }

@@ -1,12 +1,12 @@
 using System;
 using Jacob.Scripts.Data;
+using Jacob.Scripts.Data.Clamp;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 
 namespace Jacob.Scripts.Controllers
 {
-	public class Cam : MonoBehaviour
+	public class Cam : ClampingProperties
 	{
 		public Transform followedObject;
 
@@ -20,26 +20,17 @@ namespace Jacob.Scripts.Controllers
 			}
 		}
 
-		public bool clampVerticalPosition;
-		public ClampingTypes clampingTypes;
-
-		// Tilemap
-		public TilemapCollider2D tilemap;
-
 		// Manual Coordinates
 		[NonSerialized] public ManualCoordinatesData ManualCoordinatesData;
-
-
+		
 		[NonSerialized] public Camera Camera;
 		private float _horizontalSize;
 		private TilemapBounds _tilemapBounds;
 		private ICameraClamping _clampingInterface;
-		public bool clampProperty;
-
 
 		private void Awake()
 		{
-			Camera = GetComponent<Camera>()!;
+			Camera = GetComponent<Camera>();
 			ClampCheck();
 		}
 

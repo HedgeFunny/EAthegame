@@ -47,7 +47,7 @@ function Fetch() {
 	)
 	Switch(StringToBranches($Branch)) {
         ([BranchType]::Known) {
-            git fetch origin $(BranchToString($Branch))
+            git fetch origin $(BranchToString($Branch)):$(BranchToString($Branch))
         }
         ([BranchType]::Empty) {
 			Write-Output "Please provide a branch"

@@ -23,7 +23,7 @@ public class SlimeAttack : MonoBehaviour
     public bool CanAttack;
 
     public GameObject AttackTarget;
-    public HealthBar AttackHealth;
+    public Jacob.Scripts.Controllers.HealthBar AttackHealth;
 
 
 
@@ -37,7 +37,7 @@ public class SlimeAttack : MonoBehaviour
     void Update()
     {
         //Variable declaration
-        AttackHealth = AttackTarget.GetComponent<HealthBar>();
+        AttackHealth = AttackTarget.GetComponent<Jacob.Scripts.Controllers.HealthBar>();
 
         //Movement
         if(CanMove == true && IsAbleToMove == true)
@@ -49,7 +49,7 @@ public class SlimeAttack : MonoBehaviour
         if(CanAttack == true && IsAbletoAttack == true)
         {
             //Lowers health of object
-            AttackHealth. - AttackDamage;
+            AttackHealth.healthSystem.SubtractHealth(AttackDamage);
         }
     }
 

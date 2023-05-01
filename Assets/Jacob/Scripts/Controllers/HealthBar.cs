@@ -8,13 +8,18 @@ namespace Jacob.Scripts.Controllers
 	{
 		public Animator animator;
 		public bool useGameManagerHealthSystem;
+		/// <summary>
+		/// This is an internal property, for assigning a HealthSystem to your HealthBar.
+		/// Use <code>CurrentHealthSystem</code> instead if you want to get the HealthSystem of the HealthBar
+		/// programatically.
+		/// </summary>
 		public Health healthSystem;
 		public HealthBarAnimationType animationType;
 		
 		private float _frames;
 		private GameManager _gameManager;
 
-		private Health _currentHealthSystem;
+		[NonSerialized] public Health CurrentHealthSystem;
 
 		private void Awake()
 		{
@@ -34,7 +39,7 @@ namespace Jacob.Scripts.Controllers
 				throw new NullReferenceException("A GameManager is required to use the GameManager Health System");
 			}
 
-			_currentHealthSystem = useGameManagerHealthSystem ? _gameManager.HealthSystem : healthSystem;
+			CurrentHealthSystem = useGameManagerHealthSystem ? _gameManager.HealthSystem : healthSystem;
 		}
 
 		private void Update()
@@ -44,9 +49,9 @@ namespace Jacob.Scripts.Controllers
 
 		private void WatchHealth()
 		{
-			if (!healthSystem) return;
-			var percentage = Math.Clamp(healthSystem.HealthPoints, 0, healthSystem.HealthPoints) /
-			                 healthSystem.maxHealth;
+			if (!CurrentHealthSystem) return;
+			var percentage = Math.Clamp(CurrentHealthSystem.HealthPoints, 0, CurrentHealthSystem.HealthPoints) /
+			                 CurrentHealthSystem.maxHealth;
 			var frame = Math.Round(_frames * percentage);
 			PlayAtFrame((int)frame);
 		}

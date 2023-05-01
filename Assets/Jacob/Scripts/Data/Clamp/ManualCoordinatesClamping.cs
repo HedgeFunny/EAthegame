@@ -1,14 +1,24 @@
+using System;
 using UnityEngine;
 
-namespace Jacob.Scripts.Data
+namespace Jacob.Scripts.Data.Clamp
 {
 	public class ManualCoordinatesClamping : Clamping, ICameraClamping
 	{
+		private const string CoordsNullError = "Unable to find a ManualCoordinates data asset. Please use the " +
+		                                       "ManualCoordinatesSupport script and assign a ManualCoordinates " +
+		                                       "data asset to that script.";
+		
 		private readonly ManualCoordinatesData _coords;
 		private readonly Transform _followedObject;
 
 		public ManualCoordinatesClamping(ManualCoordinatesData coords, Transform followedObject, Camera camera)
 		{
+			if (coords == null)
+			{
+				throw new NullReferenceException(CoordsNullError);
+			}
+
 			_coords = coords;
 			_followedObject = followedObject;
 			Camera = camera;

@@ -1,6 +1,6 @@
 ﻿using System;
 using Jacob.Scripts.Controllers;
-using Jacob.Scripts.Data;
+using Jacob.Scripts.Data.Clamp;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -27,11 +27,11 @@ namespace Jacob.Scripts.Editor
 			Utilities.CheckIfGUIChanged(script);
 		}
 
-		private static void ClampProperties(Cam script)
+		public static void ClampProperties(ClampingProperties script)
 		{
 			EditorGUILayout.LabelField("Clamp Properties", EditorStyles.boldLabel);
 			script.clampProperty = EditorGUILayout.Toggle("Clamp Camera", script.clampProperty);
-			using (new EditorGUI.DisabledScope(!script.Clamp))
+			using (new EditorGUI.DisabledScope(!script.clampProperty))
 			{
 				script.clampVerticalPosition =
 					EditorGUILayout.Toggle("Clamp Vertical Position", script.clampVerticalPosition);

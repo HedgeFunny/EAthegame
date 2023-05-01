@@ -1,4 +1,3 @@
-using System;
 using Jacob.Scripts.Data;
 using UnityEngine;
 

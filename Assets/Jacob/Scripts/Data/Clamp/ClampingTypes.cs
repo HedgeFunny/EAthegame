@@ -1,4 +1,4 @@
-namespace Jacob.Scripts.Data
+namespace Jacob.Scripts.Data.Clamp
 {
 	public enum ClampingTypes
 	{

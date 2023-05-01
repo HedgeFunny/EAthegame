@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7622392985546967270}
   - component: {fileID: 916667920}
   - component: {fileID: 2168075658164787647}
+  - component: {fileID: 11661726454019970}
+  - component: {fileID: 6240907002727569707}
   m_Layer: 7
   m_Name: Stage-1
   m_TagString: Untagged
@@ -87,6 +89,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 0}
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &11661726454019970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7622392985546967271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc026302eb124fb4b87d0090f327b0c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manualCoordinates: {fileID: 11400000, guid: 142408206fede86b384d30ceab073f55, type: 2}
+--- !u!114 &6240907002727569707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7622392985546967271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50973166466945e6bb36f40c2fce2dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clampVerticalPosition: 0
+  clampingTypes: 1
+  tilemap: {fileID: 0}
+  clampProperty: 1
 --- !u!1 &7622392985570775201
 GameObject:
   m_ObjectHideFlags: 0

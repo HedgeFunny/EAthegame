@@ -22,11 +22,13 @@ namespace Jacob.Scripts.Controllers
 
 		// Manual Coordinates
 		[NonSerialized] public ManualCoordinatesData ManualCoordinatesData;
-		
+
 		[NonSerialized] public Camera Camera;
+		[NonSerialized] public float SmoothTime = 0.35f;
 		private float _horizontalSize;
 		private TilemapBounds _tilemapBounds;
 		private ICameraClamping _clampingInterface;
+		private Vector3 _velocity = Vector3.zero;
 
 		private void Awake()
 		{
@@ -37,11 +39,13 @@ namespace Jacob.Scripts.Controllers
 		private void Update()
 		{
 			if (!followedObject) return;
-			
+
 			if (Clamp)
 			{
-				transform.position = new Vector3(_clampingInterface.GetClampedHorizontalPosition(),
+				var targetPosition = new Vector3(_clampingInterface.GetClampedHorizontalPosition(),
 					clampVerticalPosition ? _clampingInterface.GetClampedVerticalPosition() : 0, -10);
+
+				transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, SmoothTime);
 			}
 			else
 			{

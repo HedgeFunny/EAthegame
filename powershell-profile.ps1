@@ -33,7 +33,7 @@ function StringIsKnownBranch([string] $string) {
 function BranchToString([Branches] $branch) {
     Switch ($branch) {
         ([Branches]::working) {
-            return "WorkingBranch3"
+            return "NewWorkingBranch"
         }
         ([Branches]::jacob) {
             return "JacobBranch1"

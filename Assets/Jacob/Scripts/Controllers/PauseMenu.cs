@@ -52,5 +52,10 @@ namespace Jacob.Scripts.Controllers
 			Time.timeScale = 1;
 			SceneManager.LoadScene("TitleScreen");
 		}
+
+		private void OnDestroy()
+		{
+			Initialized = false;
+		}
 	}
 }

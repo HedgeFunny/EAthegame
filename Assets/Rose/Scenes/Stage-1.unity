@@ -338,11 +338,6 @@ PrefabInstance:
       propertyPath: walkingSoundEffect
       value: 
       objectReference: {fileID: 8300000, guid: 7b21d942a429fb34ba936c068c0609b4, type: 3}
-    - target: {fileID: 571123465526197715, guid: 543757839b7baf490a8a7918dfb2c590,
-        type: 3}
-      propertyPath: flipWhenTurningDirection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 571123465526197725, guid: 543757839b7baf490a8a7918dfb2c590,
         type: 3}
       propertyPath: m_Name
@@ -416,18 +411,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 423444628}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &423444630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10711217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 288a73dc04d64bd48c5c0a709c51f0b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &423444636
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1092,11 +1075,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5ed4be70bdacb409f152ca257ddfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followedObject: {fileID: 0}
   clampVerticalPosition: 0
   clampingTypes: 0
   tilemap: {fileID: 0}
   clampProperty: 0
+  followedObject: {fileID: 0}
 --- !u!1 &1343637819
 GameObject:
   m_ObjectHideFlags: 0

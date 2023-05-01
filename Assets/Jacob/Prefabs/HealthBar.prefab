@@ -91,7 +91,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1173999547037894832}
-  gameManager: {fileID: 0}
+  healthSystem: {fileID: 0}
+  animationType: 1
 --- !u!95 &1173999547037894832
 Animator:
   serializedVersion: 4

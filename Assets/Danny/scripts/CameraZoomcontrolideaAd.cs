@@ -1,22 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Jacob.Scripts.Controllers;
 using UnityEngine;
 
 public class CameraZoomcontrolideaAd : MonoBehaviour
 {
-    public Camera cam;
+    public Cam cam;
     public GameObject IdeaAd;
     public bool testCameraZoomOutBool;
     public float zoomOutScale;
     public float zoomInScale;
 
-    private void Start()
-    {
-        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-      //  IdeaAd = FindObjectOfType<CameraZoomcontrolideaAd>().GetComponent<GameObject>();
-    }
     private void Update()
     {
+        /*
         if (IdeaAd.activeInHierarchy)
         {
             testCameraZoomOutBool = true;
@@ -34,13 +32,28 @@ public class CameraZoomcontrolideaAd : MonoBehaviour
         {
             ZoomIn();
         }
+        */
     }
+
+
+    private void OnEnable()
+    {
+        ZoomOut();
+    }
+
+    private void OnDisable()
+    {
+        ZoomIn();
+    }
+
     public void ZoomOut()
     {
-        cam.orthographicSize = zoomOutScale;
+        if (!cam) return;
+        cam.Camera.orthographicSize = zoomOutScale;
     }
     public void ZoomIn()
     {
-        cam.orthographicSize = zoomInScale;
+        if (!cam) return;
+        cam.Camera.orthographicSize = zoomInScale;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using UnityEngine;
 
 namespace Jacob.Scripts.Data
@@ -10,23 +11,33 @@ namespace Jacob.Scripts.Data
 			get => ReadSettings();
 			set => SetSettings(value);
 		}
-		
+
 		private static readonly string Path = $"{Application.persistentDataPath}/Settings.json";
 
 		private static Settings ReadSettings()
 		{
-			string file;
-			
-			if (File.Exists(Path))
+			try
 			{
-				file = File.ReadAllText(Path);
+				string file;
+				if (File.Exists(Path))
+				{
+					file = File.ReadAllText(Path);
+				}
+				else
+				{
+					return new Settings();
+				}
+
+				return DeserializeSettings(file);
 			}
-			else
+			catch (Exception e)
 			{
+				Debug.LogError($"An error occured while trying to read the Settings File. " +
+				               "Default values will now apply.\n" +
+				               $"This is the Exception that was thrown: {e}");
+
 				return new Settings();
 			}
-
-			return DeserializeSettings(file);
 		}
 
 		private static void SetSettings(Settings settings)

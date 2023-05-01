@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Jacob.Scripts.Data
 {
-	[CreateAssetMenu(fileName = "StoragePresetSettings", menuName = "StoragePreset")]
+	[CreateAssetMenu(fileName = "StoragePresetSettings", menuName = "TotallyAverageMobileGame/StoragePreset")]
 	public class StoragePreset : ScriptableObject
 	{
 		public const float GoldAmount = 100;

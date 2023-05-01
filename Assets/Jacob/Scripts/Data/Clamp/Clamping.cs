@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Jacob.Scripts.Data
+namespace Jacob.Scripts.Data.Clamp
 {
 	public class Clamping
 	{

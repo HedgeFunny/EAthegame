@@ -73589,8 +73589,9 @@ GameObject:
   - component: {fileID: 4488996694826276417}
   - component: {fileID: 1789715416}
   - component: {fileID: 5702073640693614944}
-  - component: {fileID: 1789715418}
   - component: {fileID: -1531163019960775037}
+  - component: {fileID: 5077449797513273987}
+  - component: {fileID: 1789715418}
   m_Layer: 0
   m_Name: Idea
   m_TagString: Untagged
@@ -73654,6 +73655,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manualCoordinates: {fileID: 11400000, guid: 7bc231681c108148dab6a0b1a33232e1, type: 2}
+--- !u!114 &-1531163019960775037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4488996694826276416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e4f4b7dc014b93abb94d19f8f93e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFollow: {fileID: 4488996695236860501}
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5077449797513273987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4488996694826276416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50973166466945e6bb36f40c2fce2dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clampVerticalPosition: 1
+  clampingTypes: 1
+  tilemap: {fileID: 0}
+  clampProperty: 1
 --- !u!114 &1789715418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73671,34 +73704,6 @@ MonoBehaviour:
   testCameraZoomOutBool: 0
   zoomOutScale: 15
   zoomInScale: 10
---- !u!114 &-1531163019960775037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4488996694826276416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02e4f4b7dc014b93abb94d19f8f93e28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToFollow: {fileID: 4488996695236860501}
-  onEnable:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1789715418}
-        m_TargetAssemblyTypeName: CameraZoomcontrolideaAd, Assembly-CSharp
-        m_MethodName: Clamp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4488996694841987719
 GameObject:
   m_ObjectHideFlags: 0

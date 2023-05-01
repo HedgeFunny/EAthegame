@@ -12,6 +12,7 @@ namespace Jacob.Scripts.Controllers
 		public UnityEvent onSocketEnter;
 		public Action<SocketsSocket> OnSocketEnterAction;
 		[NonSerialized] public SocketsSocket SocketsSocket;
+		[NonSerialized] public Transform OriginalParent;
 
 		public GameObject HeldObject
 		{
@@ -19,7 +20,11 @@ namespace Jacob.Scripts.Controllers
 			set
 			{
 				if (value)
+				{
+					OriginalParent = value.transform.parent;
 					value.transform.parent = transform;
+				}
+
 				_heldObject = value;
 			}
 		}
@@ -72,7 +77,7 @@ namespace Jacob.Scripts.Controllers
 			{
 				obj.Collider2D.isTrigger = true;
 			}
-			
+
 			if (obj.Rigidbody)
 			{
 				obj.Rigidbody.isKinematic = true;
@@ -83,6 +88,11 @@ namespace Jacob.Scripts.Controllers
 			obj.DisableDragging();
 			onSocketEnter?.Invoke();
 			OnSocketEnterAction?.Invoke(SocketsSocket);
+		}
+
+		public void ClearSocket()
+		{
+			HeldObject = null;
 		}
 	}
 }

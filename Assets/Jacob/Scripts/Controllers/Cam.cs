@@ -1,35 +1,47 @@
+using System;
 using Jacob.Scripts.Data;
+using Jacob.Scripts.Data.Clamp;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 namespace Jacob.Scripts.Controllers
 {
-	public class Cam : MonoBehaviour
+	public class Cam : ClampingProperties
 	{
 		public Transform followedObject;
-		public bool clampToTilemap;
-		public TilemapCollider2D tilemap;
-		public bool clampVerticalPosition;
 
-		private Camera _camera;
+		public bool Clamp
+		{
+			get => clampProperty;
+			set
+			{
+				clampProperty = value;
+				ClampCheck();
+			}
+		}
+
+		// Manual Coordinates
+		[NonSerialized] public ManualCoordinatesData ManualCoordinatesData;
+		
+		[NonSerialized] public Camera Camera;
 		private float _horizontalSize;
 		private TilemapBounds _tilemapBounds;
+		private ICameraClamping _clampingInterface;
 
 		private void Awake()
 		{
-			_camera = GetComponent<Camera>()!;
-			if (clampToTilemap)
-			{
-				CalculateSize(tilemap.bounds);
-			}
+			Camera = GetComponent<Camera>();
+			ClampCheck();
 		}
 
 		private void Update()
 		{
-			if (clampToTilemap)
+			if (!followedObject) return;
+			
+			if (Clamp)
 			{
-				transform.position = new Vector3(GetClampedHorizontalPosition(),
-					clampVerticalPosition ? GetClampedVerticalPosition() : 0, -10);
+				transform.position = new Vector3(_clampingInterface.GetClampedHorizontalPosition(),
+					clampVerticalPosition ? _clampingInterface.GetClampedVerticalPosition() : 0, -10);
 			}
 			else
 			{
@@ -38,28 +50,19 @@ namespace Jacob.Scripts.Controllers
 			}
 		}
 
-		private float GetClampedHorizontalPosition()
+		public void ClampCheck()
 		{
-			return Mathf.Clamp(followedObject.position.x, _tilemapBounds.Left,
-				_tilemapBounds.Right < _horizontalSize ? _tilemapBounds.Left : _tilemapBounds.Right);
-		}
+			if (!Clamp) return;
 
-		private float GetClampedVerticalPosition()
-		{
-			return Mathf.Clamp(followedObject.position.y,
-				_tilemapBounds.Down > _camera.orthographicSize ? _tilemapBounds.Up : _tilemapBounds.Down,
-				_tilemapBounds.Up);
-		}
+			_clampingInterface = clampingTypes switch
+			{
+				ClampingTypes.Tilemap => new TilemapClamping(Camera, tilemap.bounds, followedObject),
+				ClampingTypes.ManualCoordinates => new ManualCoordinatesClamping(ManualCoordinatesData,
+					followedObject, Camera),
+				_ => throw new ArgumentOutOfRangeException()
+			};
 
-		private static float GetHorizontalSize(Camera camera)
-		{
-			return camera.orthographicSize * camera.aspect;
-		}
-
-		private void CalculateSize(Bounds bounds)
-		{
-			_horizontalSize = GetHorizontalSize(_camera);
-			_tilemapBounds = new TilemapBounds(bounds, _horizontalSize, _camera.orthographicSize);
+			_clampingInterface.Awake();
 		}
 
 		/// <summary>
@@ -70,7 +73,7 @@ namespace Jacob.Scripts.Controllers
 		{
 			var bound = tilemap.bounds;
 			bound.Encapsulate(tileMapCollider.bounds);
-			CalculateSize(bound);
+			// _CalculateSize(bound);
 		}
 
 		/// <summary>
@@ -78,7 +81,7 @@ namespace Jacob.Scripts.Controllers
 		/// </summary>
 		public void RestoreCameraView()
 		{
-			CalculateSize(tilemap.bounds);
+			// CalculateSize(tilemap.bounds);
 		}
 	}
 }

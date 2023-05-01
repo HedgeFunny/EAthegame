@@ -11,7 +11,7 @@ namespace Jacob.Scripts.Controllers
 		public SocketsSocket[] sockets;
 		public UnityEvent onAllSocketsCorrect;
 
-		private void Awake()
+		private void OnEnable()
 		{
 			foreach (var socketsSocket in sockets)
 			{
@@ -22,40 +22,34 @@ namespace Jacob.Scripts.Controllers
 			StartCoroutine(AllCorrectCoroutine());
 		}
 
-		private static void EnterSocket(SocketsSocket socketsSocket)
+		private void OnDisable()
 		{
-			if (socketsSocket.socket.HeldObject != socketsSocket.correctGameObject)
+			foreach (var socket in sockets)
 			{
-				if (!socketsSocket.socket.HeldObject.TryGetComponent<DragAndDrop>(out var drop)) return;
-
-				drop.transform.parent = null;
-				socketsSocket.socket.HeldObject = null;
-
-				if (drop.Collider2D)
+				if (socket.socket.HeldObject)
 				{
-					drop.Collider2D.isTrigger = false;
+					ResetDraggableObject(socket);
 				}
 
-				if (drop.Rigidbody)
-				{
-					drop.Rigidbody.isKinematic = false;
-				}
+				socket.socket.SocketsSocket = null;
+				socket.socket.OnSocketEnterAction -= EnterSocket;
+				socket.Correct = false;
+			}
+			
+			StopCoroutine(AllCorrectCoroutine());
+		}
 
-				drop.EnableDragging();
-
-				if (!socketsSocket.overrideDefaultProtection &&
-				    socketsSocket.incorrectObjectPosition == Vector2.zero)
-				{
-					if (drop.snapBackToStartingPos)
-						drop.SnapBackToStartingPosition();
-					return;
-				}
-
-				drop.transform.position = socketsSocket.incorrectObjectPosition;
+		private static void EnterSocket(SocketsSocket socket)
+		{
+			// Checks if the Socket's HeldObject is not the set Correct GameObject. If it's not, the socket will be
+			// cleared
+			if (socket.socket.HeldObject != socket.correctGameObject)
+			{
+				ResetDraggableObject(socket);
 			}
 			else
 			{
-				socketsSocket.Correct = true;
+				socket.Correct = true;
 			}
 		}
 
@@ -68,6 +62,38 @@ namespace Jacob.Scripts.Controllers
 
 			print("all are correct");
 			onAllSocketsCorrect?.Invoke();
+		}
+
+		private static void ResetDraggableObject(SocketsSocket socket)
+		{
+			// Check if the specific Object has a DragAndDrop script, if it doesn't, exit the method.
+			if (!socket.socket.HeldObject.TryGetComponent<DragAndDrop>(out var drop)) return;
+
+			drop.transform.parent = socket.socket.OriginalParent;
+
+			socket.socket.ClearSocket();
+
+			if (drop.Collider2D)
+			{
+				drop.Collider2D.isTrigger = false;
+			}
+
+			if (drop.Rigidbody)
+			{
+				drop.Rigidbody.isKinematic = false;
+			}
+
+			drop.EnableDragging();
+
+			if (!socket.overrideDefaultProtection &&
+			    socket.incorrectObjectPosition == Vector2.zero)
+			{
+				if (drop.snapBackToStartingPos)
+					drop.SnapBackToStartingPosition();
+				return;
+			}
+
+			drop.transform.position = socket.incorrectObjectPosition;
 		}
 	}
 }

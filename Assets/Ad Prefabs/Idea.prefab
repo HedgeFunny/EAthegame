@@ -73588,10 +73588,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4488996694826276417}
   - component: {fileID: 1789715416}
+  - component: {fileID: 1789715418}
   - component: {fileID: 5702073640693614944}
   - component: {fileID: -1531163019960775037}
   - component: {fileID: 5077449797513273987}
-  - component: {fileID: 1789715418}
   m_Layer: 0
   m_Name: Idea
   m_TagString: Untagged
@@ -73607,7 +73607,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4488996694826276416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 75.94422, y: 30.515959, z: -2.4805331}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -73642,6 +73642,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableMainPlayer: 0
   locationToTeleportTo: {x: 0, y: 0}
+--- !u!114 &1789715418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4488996694826276416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa1abec36bbfda43ba1c8f91bc6e6fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  IdeaAd: {fileID: 4488996694826276416}
+  testCameraZoomOutBool: 0
+  zoomOutScale: 15
+  zoomInScale: 10
 --- !u!114 &5702073640693614944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73687,23 +73704,6 @@ MonoBehaviour:
   clampingTypes: 1
   tilemap: {fileID: 0}
   clampProperty: 1
---- !u!114 &1789715418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4488996694826276416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfa1abec36bbfda43ba1c8f91bc6e6fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  IdeaAd: {fileID: 4488996694826276416}
-  testCameraZoomOutBool: 0
-  zoomOutScale: 15
-  zoomInScale: 10
 --- !u!1 &4488996694841987719
 GameObject:
   m_ObjectHideFlags: 0
@@ -103832,6 +103832,10 @@ PrefabInstance:
     - target: {fileID: 2349252121787433456, guid: 1066c9af96eb21349923eb1c18ce2589, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349252121787433458, guid: 1066c9af96eb21349923eb1c18ce2589, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2349252121787433459, guid: 1066c9af96eb21349923eb1c18ce2589, type: 3}
       propertyPath: moveSpeed

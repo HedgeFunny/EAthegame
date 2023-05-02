@@ -1440,7 +1440,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1678,6 +1679,7 @@ GameObject:
   - component: {fileID: 5585760735764519979}
   - component: {fileID: 871188687}
   - component: {fileID: 1266680823}
+  - component: {fileID: 8479907306922669222}
   m_Layer: 6
   m_Name: Chorters Ad
   m_TagString: Untagged
@@ -1740,6 +1742,22 @@ MonoBehaviour:
   deactivate:
   - {fileID: 5585760735764519978}
   - {fileID: 0}
+--- !u!114 &8479907306922669222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5585760735764519978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e4f4b7dc014b93abb94d19f8f93e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFollow: {fileID: 5585760735183033247}
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5585760735841132830
 GameObject:
   m_ObjectHideFlags: 0

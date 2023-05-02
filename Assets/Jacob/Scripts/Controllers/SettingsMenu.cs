@@ -8,23 +8,32 @@ namespace Jacob.Scripts.Controllers
 	public class SettingsMenu : MonoBehaviour
 	{
 		public Action OnBack;
-		public Slider slider;
+		public Slider volume;
+		public Toggle smoothOutCamera;
 
 		private void Awake()
 		{
 			InitializeVolume.SetVolume();
-			slider.value = SettingsManager.Settings.Volume;
+			volume.value = SettingsManager.Settings.Volume;
+			smoothOutCamera.isOn = SettingsManager.Settings.SmoothCamera;
 		}
 
-		public void VolumeChanged(float volume)
+		public void VolumeChanged(float value)
 		{
-			SettingsManager.Settings = new Settings
-			{
-				Volume = volume
-			};
+			var newSettings = SettingsManager.Settings;
+			newSettings.Volume = value;
+			SettingsManager.Settings = newSettings;
 			InitializeVolume.SetVolume();
 		}
-		
+
+		public void SmoothOutCameraChanged(bool value)
+		{
+			var newSettings = SettingsManager.Settings;
+			newSettings.SmoothCamera = value;
+			SettingsManager.Settings = newSettings;
+			Cam.Instance.SmoothCamera = value;
+		}
+
 		public void Back()
 		{
 			OnBack?.Invoke();

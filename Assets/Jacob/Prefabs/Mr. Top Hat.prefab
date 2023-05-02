@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571123465526197725}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalPosition: {x: -17.47, y: 1.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 12
   m_Sprite: {fileID: 1374001984, guid: 0da10b6b99c093f4ca4602cec9747407, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -141,9 +141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70bae6465c9df0f48686dd8a056cbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 5.1
+  jumpForce: 10
   moveSpeed: 5
   topDown: 0
+  flipWhenTurningDirection: 0
   enableSprinting: 0
   maxMoveSpeed: 0
   secondsUntilFullSprint: 0
@@ -156,6 +157,8 @@ MonoBehaviour:
   onFireAbilityKey: 0
   onFireAbilityUnlocked: 0
   onFireTimer: 0
+  walkingSoundEffect: {fileID: 0}
+  jumpingSoundEffect: {fileID: 0}
 --- !u!70 &571123465526197714
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

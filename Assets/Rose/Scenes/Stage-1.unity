@@ -1031,7 +1031,7 @@ PrefabInstance:
     - target: {fileID: 571123465526197715, guid: 543757839b7baf490a8a7918dfb2c590, type: 3}
       propertyPath: walkingSoundEffect
       value: 
-      objectReference: {fileID: 8300000, guid: 7b21d942a429fb34ba936c068c0609b4, type: 3}
+      objectReference: {fileID: 8300000, guid: 5915645c4e4c8f14a992311873af292b, type: 3}
     - target: {fileID: 571123465526197715, guid: 543757839b7baf490a8a7918dfb2c590, type: 3}
       propertyPath: flipWhenTurningDirection
       value: 1
@@ -1119,7 +1119,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -28696,6 +28696,10 @@ PrefabInstance:
     - target: {fileID: 7622392986177928964, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
       propertyPath: m_SortingOrder
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622392986387807408, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7622392986387807422, guid: 2934c70d0e20f3347927481d4c70dc58, type: 3}
       propertyPath: m_IsActive

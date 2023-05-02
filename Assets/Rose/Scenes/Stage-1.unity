@@ -318,17 +318,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 571123465526197715, guid: 543757839b7baf490a8a7918dfb2c590, type: 3}
-      propertyPath: flipWhenTurningDirection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 571123465526197725, guid: 543757839b7baf490a8a7918dfb2c590, type: 3}
       propertyPath: m_Name
       value: Mr. Top Hat
-      objectReference: {fileID: 0}
-    - target: {fileID: 571123465526197725, guid: 543757839b7baf490a8a7918dfb2c590, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 571123465526197726, guid: 543757839b7baf490a8a7918dfb2c590, type: 3}
       propertyPath: m_RootOrder
@@ -381,18 +373,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 571123465526197726, guid: 543757839b7baf490a8a7918dfb2c590, type: 3}
   m_PrefabInstance: {fileID: 423444628}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &423444630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10711217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 288a73dc04d64bd48c5c0a709c51f0b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &655182360 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 501943140535476927, guid: eba66a7427f144b82b590a6e6124998e, type: 3}

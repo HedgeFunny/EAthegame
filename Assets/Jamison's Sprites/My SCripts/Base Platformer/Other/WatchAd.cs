@@ -48,12 +48,17 @@ public class WatchAd : MonoBehaviour
         {
             AdtoPlay = TwoTongueAd;
         }
+        else if(deathMan.DiedToSpikes == true)
+        {
+            AdtoPlay = KerfuffleOfKongregationsAd;
+        }
     }
 
     //plays AdToPlay when button is pressed
     public void HahaAdGoBrrrrrr()
     {
-        Instantiate(AdtoPlay, adAnchor.transform.position, adAnchor.transform.rotation);
+        //Enables Ad
+        AdtoPlay.SetActive(true);
     }
     
     

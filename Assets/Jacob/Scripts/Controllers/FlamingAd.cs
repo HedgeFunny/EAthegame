@@ -13,6 +13,7 @@ namespace Jacob.Scripts.Controllers
 	{
 		/* Begin: Controlled by the FlamingAdEditor Script */
 		[HideInInspector] public UnityEvent onClickedEnough;
+
 		[HideInInspector] public Vector2 movePlayerTo;
 		/* End: Controlled by the FlamingAdEditor Script */
 
@@ -36,11 +37,20 @@ namespace Jacob.Scripts.Controllers
 
 		private void Awake()
 		{
-			GenerateRandomNumber();
 			_mainCamera = Camera.main;
 
 			//Component Declaration
 			ChortBagAnimator = ChorterBag.GetComponent<Animator>();
+		}
+
+		private void OnEnable()
+		{
+			GenerateRandomNumber();
+		}
+
+		private void OnDisable()
+		{
+			_timesClicked = 0;
 		}
 
 		private void OnMouseDown()

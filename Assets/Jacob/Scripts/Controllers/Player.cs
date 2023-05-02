@@ -87,8 +87,6 @@ namespace Jacob.Scripts.Controllers
 			FlipCheck();
 		}
 
-
-
 		private void FixedUpdate()
 		{
 			Movement();

@@ -100,7 +100,7 @@ namespace Jacob.Scripts.Editor
 
 		private void SoundEffectProperties(Player script)
 		{
-			EditorGUILayout.LabelField("Sound Effect Properties");
+			EditorGUILayout.LabelField("Sound Effect Properties", EditorStyles.boldLabel);
 
 			if (!_onFire)
 			{

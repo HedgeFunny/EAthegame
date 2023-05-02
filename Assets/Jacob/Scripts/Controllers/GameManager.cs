@@ -8,26 +8,54 @@ namespace Jacob.Scripts.Controllers
 {
 	public class GameManager : MonoBehaviour
 	{
-		/// <summary>
-		/// The Maximum amount of Health your player should have. When you start the game, your Health will bind to
-		/// this.
-		/// </summary>
-		[Header("Health Properties")] public double maxHealth;
+		private const string HealthComponentError =
+			"You don't have a Health Component defined in the HealthSystem property on the GameManager.";
 
-		public UnityEvent whenYouDie;
+		private const string HealthComponentWarning =
+			"You don't have a Health Component defined in the HealthSystem property on the GameManager. " +
+			"GameManager Health functionality will not work.";
 
-		[HideInInspector] public GameManagerReturnType returnType;
-		[SerializeField] [HideInInspector] public UnityEvent<float> whenMoneyChangesFloat;
-		[SerializeField] [HideInInspector] public UnityEvent<string> whenMoneyChangesString;
+		public Health HealthSystem
+		{
+			get
+			{
+				if (!healthComponent)
+				{
+					throw new NullReferenceException(HealthComponentError);
+				}
+
+				return healthComponent;
+			}
+		}
+
+		public GameManagerReturnType returnType;
+		public UnityEvent<float> whenMoneyChangesFloat;
+		public UnityEvent<string> whenMoneyChangesString;
+
 		[NonSerialized] public GameObject CurrentlyActiveScene;
 		[NonSerialized] public GameObject MainPlayer;
 
-		public HealthSystem Health;
+		public HealthSystem Health
+		{
+			get
+			{
+				if (_healthSystem == null)
+				{
+					throw new NullReferenceException(HealthComponentError);
+				}
+
+				return _healthSystem;
+			}
+			private set => _healthSystem = value;
+		}
+
 		public CashSystem Cash;
 
 		private GameObject _pauseMenu;
 		private GameObject _debugMenu;
 		private List<DebugAd> _ads;
+		[SerializeField] public Health healthComponent;
+		private HealthSystem _healthSystem;
 
 		private void Awake()
 		{
@@ -46,10 +74,16 @@ namespace Jacob.Scripts.Controllers
 
 		private void InitializeStats()
 		{
-			Health = new HealthSystem(maxHealth)
+			// Re-export the Health components HealthSystem.
+			try
 			{
-				WhenYouDie = () => whenYouDie.Invoke()
-			};
+				Health = HealthSystem.HealthSystem;
+			}
+			catch (NullReferenceException)
+			{
+				Debug.LogWarning(HealthComponentWarning);
+			}
+
 			Cash = new CashSystem
 			{
 				SetAction = SetAction

@@ -33,7 +33,7 @@ function StringIsKnownBranch([string] $string) {
 function BranchToString([Branches] $branch) {
     Switch ($branch) {
         ([Branches]::working) {
-            return "WorkingBranch3"
+            return "Working_Branch_Monday"
         }
         ([Branches]::jacob) {
             return "JacobBranch1"
@@ -47,7 +47,7 @@ function Fetch() {
 	)
 	Switch(StringToBranches($Branch)) {
         ([BranchType]::Known) {
-            git fetch origin $(BranchToString($Branch))
+            git fetch origin $(BranchToString($Branch)):$(BranchToString($Branch))
         }
         ([BranchType]::Empty) {
 			Write-Output "Please provide a branch"
@@ -125,6 +125,14 @@ function Pull() {
 	git pull $Remote $(if ($Branch) {$Branch})
 }
 
+function Branch() {
+	param(
+		[switch]$Delete,
+		[string]$Branch
+	)
+	git branch $(if ($Delete) { return "-d" })
+}
+
 Register-ArgumentCompleter -CommandName Fetch -ParameterName Branch -ScriptBlock {
     [Branches].GetEnumNames()
 }
@@ -135,4 +143,8 @@ Register-ArgumentCompleter -CommandName Rebase -ParameterName Branch -ScriptBloc
 
 Register-ArgumentCompleter -CommandName Checkout -ParameterName Branch -ScriptBlock {
     [Branches].GetEnumNames()
+}
+
+Register-ArgumentCompleter -CommandName Branch -ParameterName Branch -ScriptBlock {
+	git for-each-ref --format='%(refname:short)' refs/heads/
 }

@@ -64,7 +64,7 @@ public class DeathManager : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Pit Hazard Check
-        if (collision.gameObject.CompareTag("Fire Hazard"))
+        if (collision.gameObject.CompareTag("Fire"))
         {
             DiedbyFire = true;
 
@@ -73,7 +73,7 @@ public class DeathManager : MonoBehaviour
         }
 
         //Fire Hazard Check
-       else if (collision.gameObject.CompareTag("Falling Hazard"))
+       else if (collision.gameObject.CompareTag("Fall"))
         {
             DiedToPit = true;
 
@@ -82,7 +82,7 @@ public class DeathManager : MonoBehaviour
         }
 
         //Mugging Hazard Check
-       else if (collision.gameObject.CompareTag("Mugging Hazard"))
+       else if (collision.gameObject.CompareTag("Mugging"))
         {
             DiedtoMugging = true;
 
@@ -90,6 +90,14 @@ public class DeathManager : MonoBehaviour
             StartCoroutine(SummonCoolDown());
 
         }
+       else if (collision.gameObject.CompareTag("Spike"))
+       {
+            DiedToSpikes = true;
+
+            //Starts Cooldown
+            StartCoroutine(SummonCoolDown());
+
+       }
 
     }
 

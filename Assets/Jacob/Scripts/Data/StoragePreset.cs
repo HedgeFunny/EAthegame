@@ -6,10 +6,10 @@ namespace Jacob.Scripts.Data
 	[CreateAssetMenu(fileName = "StoragePresetSettings", menuName = "TotallyAverageMobileGame/StoragePreset")]
 	public class StoragePreset : ScriptableObject
 	{
-		public const float GoldAmount = 100;
-		public const float GoldTime = 1;
-		public const float ElixirAmount = 1000;
-		public const float ElixirTime = 5;
+		private const float GoldAmount = 100;
+		private const float GoldTime = 1;
+		private const float ElixirAmount = 1000;
+		private const float ElixirTime = 5;
 		
 		public float goldStorageAmount = GoldAmount;
 		public float goldStorageTime = GoldTime;

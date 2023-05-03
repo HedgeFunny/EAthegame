@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Jacob.Scripts.Data.Clamp
@@ -7,6 +8,8 @@ namespace Jacob.Scripts.Data.Clamp
 		private TilemapBounds _tilemapBounds;
 		private readonly Bounds _bounds;
 		private readonly Transform _followedObject;
+		private Action _resolutionChanged;
+		private (int width, int height) _currentResolution;
 
 		public TilemapClamping(Camera camera, Bounds bounds, Transform followedObject)
 		{
@@ -17,7 +20,19 @@ namespace Jacob.Scripts.Data.Clamp
 
 		public void Awake()
 		{
-			CalculateSize(_bounds);
+			_resolutionChanged += CalculateSize;
+			_currentResolution = (Screen.width, Screen.height);
+			CalculateSize();
+		}
+
+		public void Update()
+		{
+			if (!(Screen.width, Screen.height).Equals(_currentResolution)) _resolutionChanged.Invoke();
+		}
+
+		public void OnDestroy()
+		{
+			_resolutionChanged -= CalculateSize;
 		}
 
 		public float GetClampedHorizontalPosition()
@@ -33,9 +48,10 @@ namespace Jacob.Scripts.Data.Clamp
 				_tilemapBounds.Up);
 		}
 
-		private void CalculateSize(Bounds bounds)
+		private void CalculateSize()
 		{
-			_tilemapBounds = new TilemapBounds(bounds, horizontalSize, Camera.orthographicSize);
+			_tilemapBounds = new TilemapBounds(_bounds, horizontalSize, Camera.orthographicSize);
+			_currentResolution = (Screen.width, Screen.height);
 		}
 	}
 }

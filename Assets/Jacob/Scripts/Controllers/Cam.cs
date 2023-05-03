@@ -48,6 +48,7 @@ namespace Jacob.Scripts.Controllers
 
 		private void OnDestroy()
 		{
+			_clampingInterface.OnDestroy();
 			Instance = null;
 			_onFollowedObjectChange -= FollowedObjectChange;
 		}
@@ -87,6 +88,8 @@ namespace Jacob.Scripts.Controllers
 				transform.position = SmoothCamera
 					? Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, SmoothTime)
 					: targetPosition;
+				
+				_clampingInterface.Update();
 			}
 			else
 			{

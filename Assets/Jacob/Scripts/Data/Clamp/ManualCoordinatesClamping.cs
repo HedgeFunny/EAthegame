@@ -8,7 +8,7 @@ namespace Jacob.Scripts.Data.Clamp
 		private const string CoordsNullError = "Unable to find a ManualCoordinates data asset. Please use the " +
 		                                       "ManualCoordinatesSupport script and assign a ManualCoordinates " +
 		                                       "data asset to that script.";
-		
+
 		private readonly ManualCoordinatesData _coords;
 		private readonly Transform _followedObject;
 
@@ -25,6 +25,14 @@ namespace Jacob.Scripts.Data.Clamp
 		}
 
 		public void Awake()
+		{
+		}
+
+		public void Update()
+		{
+		}
+
+		public void OnDestroy()
 		{
 		}
 

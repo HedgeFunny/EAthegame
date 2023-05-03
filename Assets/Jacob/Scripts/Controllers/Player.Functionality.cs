@@ -17,6 +17,8 @@ namespace Jacob.Scripts.Controllers
 			_hasOnFire = TryGetComponent(out _playerOnFire);
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_hasAudioSource = TryGetComponent(out _audioSource);
+			_hasWallClimbing = TryGetComponent(out _wallClimbing);
+			HasCollider2D = TryGetComponent(out Collider2D);
 		}
 
 		/// <summary>

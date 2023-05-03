@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using Jacob.Scripts.Data;
 using UnityEngine;
 
@@ -40,6 +38,9 @@ namespace Jacob.Scripts.Controllers
 		public AudioClip walkingSoundEffect;
 		public AudioClip jumpingSoundEffect;
 
+		// Wall Climbing Properties
+		public bool enableWallClimbing;
+
 		internal bool IsWalking;
 		internal bool IsJumping;
 		internal Vector2 Direction = Vector2.right;
@@ -59,6 +60,10 @@ namespace Jacob.Scripts.Controllers
 		private SpriteRenderer _spriteRenderer;
 		private AudioSource _audioSource;
 		private bool _hasAudioSource;
+		private PlayerWallClimbing _wallClimbing;
+		private bool _hasWallClimbing;
+		internal bool HasCollider2D;
+		internal Collider2D Collider2D;
 
 		private void Awake()
 		{
@@ -85,6 +90,7 @@ namespace Jacob.Scripts.Controllers
 			OnFireAbilityCheck();
 			SprintCheck();
 			FlipCheck();
+			if (_hasWallClimbing) _wallClimbing.WallClimbingCheck();
 		}
 
 		private void FixedUpdate()

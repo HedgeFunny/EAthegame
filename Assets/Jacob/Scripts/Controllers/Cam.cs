@@ -8,6 +8,7 @@ namespace Jacob.Scripts.Controllers
 {
 	public class Cam : ClampingProperties
 	{
+		public static Cam Instance;
 		public Transform followedObject;
 
 		public bool Clamp
@@ -29,28 +30,75 @@ namespace Jacob.Scripts.Controllers
 		private TilemapBounds _tilemapBounds;
 		private ICameraClamping _clampingInterface;
 		private Vector3 _velocity = Vector3.zero;
+		private Transform _currentFollowedObject;
+		private Action _onFollowedObjectChange;
+		internal bool SmoothCamera;
 
 		private void Awake()
 		{
+			if (Instance)
+				throw new InvalidOperationException("You can't have more then 1 Cam script active at once.");
+			
+			Instance = this;
+			SmoothCamera = SettingsManager.Settings.SmoothCamera;
+			_onFollowedObjectChange += FollowedObjectChange;
 			Camera = GetComponent<Camera>();
 			ClampCheck();
 		}
 
+		private void OnDestroy()
+		{
+			_clampingInterface.OnDestroy();
+			Instance = null;
+			_onFollowedObjectChange -= FollowedObjectChange;
+		}
+
+		private void FollowedObjectChange()
+		{
+			print("Followed Object has been changed.");
+			_velocity = Vector3.zero;
+			var targetPosition = new Vector3(followedObject.transform.position.x,
+				followedObject.transform.position.y, -10);
+			transform.position = targetPosition;
+			_currentFollowedObject = followedObject;
+		}
+
 		private void Update()
 		{
-			if (!followedObject) return;
+			if (!followedObject)
+			{
+				if (_currentFollowedObject) _currentFollowedObject = null;
+				return;
+			}
+
+			if (!SmoothCamera) _velocity = Vector3.zero;
+			
+			if (followedObject && _currentFollowedObject && !followedObject.Equals(_currentFollowedObject))
+			{
+				_onFollowedObjectChange.Invoke();
+			}
+
+			if (followedObject && !_currentFollowedObject) _currentFollowedObject = followedObject;
 
 			if (Clamp)
 			{
 				var targetPosition = new Vector3(_clampingInterface.GetClampedHorizontalPosition(),
 					clampVerticalPosition ? _clampingInterface.GetClampedVerticalPosition() : 0, -10);
 
-				transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, SmoothTime);
+				transform.position = SmoothCamera
+					? Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, SmoothTime)
+					: targetPosition;
+				
+				_clampingInterface.Update();
 			}
 			else
 			{
-				transform.position = new Vector3(followedObject.transform.position.x,
+				var targetPosition = new Vector3(followedObject.transform.position.x,
 					followedObject.transform.position.y, -10);
+
+				transform.position = SmoothCamera
+					? Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, SmoothTime)
+					: targetPosition;
 			}
 		}
 

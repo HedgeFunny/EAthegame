@@ -33,7 +33,7 @@ function StringIsKnownBranch([string] $string) {
 function BranchToString([Branches] $branch) {
     Switch ($branch) {
         ([Branches]::working) {
-            return "NewWorkingBranch"
+            return "Working_Branch_Monday"
         }
         ([Branches]::jacob) {
             return "JacobBranch1"
@@ -47,7 +47,7 @@ function Fetch() {
 	)
 	Switch(StringToBranches($Branch)) {
         ([BranchType]::Known) {
-            git fetch origin $(BranchToString($Branch))
+            git fetch origin $(BranchToString($Branch)):$(BranchToString($Branch))
         }
         ([BranchType]::Empty) {
 			Write-Output "Please provide a branch"

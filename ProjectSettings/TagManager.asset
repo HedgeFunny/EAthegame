@@ -15,6 +15,7 @@ TagManager:
   - GoldStorage
   - Slime
   - Building
+  - Mugging
   layers:
   - Default
   - TransparentFX

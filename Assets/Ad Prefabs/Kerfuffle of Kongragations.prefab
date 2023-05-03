@@ -29435,7 +29435,7 @@ GameObject:
   m_Layer: 0
   m_Name: Kerfuffle of Kongragations
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 6ea4bd57e7e39c044b411a639e649b44, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

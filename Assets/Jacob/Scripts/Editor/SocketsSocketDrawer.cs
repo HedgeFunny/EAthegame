@@ -18,6 +18,7 @@ namespace Jacob.Scripts.Editor
 			AllocateLines(DrawerFieldLines.PropertyField);
 			AllocateLines(DrawerFieldLines.PropertyField);
 			AllocateLines(DrawerFieldLines.PropertyField);
+			AllocateLines(DrawerFieldLines.UnityEvent);
 			if (incorrectObjectPosition.vector2Value != Vector2.zero) return;
 			AllocateLines(DrawerFieldLines.HelpBox);
 			AllocateLines(DrawerFieldLines.PropertyField);
@@ -32,8 +33,9 @@ namespace Jacob.Scripts.Editor
 				"Correct GameObject", socket);
 			var incorrectObjectPosition =
 				PropertyField(position, incorrectObj, "Incorrect Object Position", correctGameObject);
+			var onIncorrect = UnityEventField(position, property.FindPropertyRelative("onIncorrect"), "On Incorrect", incorrectObjectPosition);
 			if (incorrectObj.vector2Value != Vector2.zero) return;
-			var overrideWarning = HelpBox(position, OverrideWarning, MessageType.Warning, incorrectObjectPosition);
+			var overrideWarning = HelpBox(position, OverrideWarning, MessageType.Warning, onIncorrect);
 			PropertyField(position, property.FindPropertyRelative("overrideDefaultProtection"),
 				"Override Default Protection", overrideWarning);
 		}

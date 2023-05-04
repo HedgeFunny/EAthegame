@@ -3,7 +3,6 @@ using System.Reflection;
 using Jacob.Scripts.Data;
 using UnityEditor;
 using UnityEngine;
-using Object = System.Object;
 
 namespace Jacob.Scripts.Editor
 {
@@ -29,6 +28,8 @@ namespace Jacob.Scripts.Editor
 				GUICode(position, property);
 			}
 
+			if (EditorGUI.EndChangeCheck()) property.serializedObject.ApplyModifiedProperties();
+
 			EditorGUI.EndProperty();
 		}
 
@@ -51,6 +52,14 @@ namespace Jacob.Scripts.Editor
 			return currentLine + DrawerFieldLines.PropertyField;
 		}
 
+		protected int UnityEventField(Rect position, SerializedProperty property, string label, int currentLine)
+		{
+			var rectValues = RectValues(position, currentLine);
+			var drawArea = new Rect(rectValues.posX, rectValues.posY, rectValues.width, _lineHeight);
+			EditorGUI.PropertyField(drawArea, property, new GUIContent(label));
+			return currentLine + DrawerFieldLines.UnityEvent;
+		}
+
 		protected int HelpBox(Rect position, string message, MessageType messageType, int currentLine)
 		{
 			var rectValues = RectValues(position, currentLine);
@@ -67,14 +76,16 @@ namespace Jacob.Scripts.Editor
 			{
 				EditorGUI.BeginDisabledGroup(true);
 			}
+
 			EditorGUI.FloatField(drawArea, label, value);
 			if (disable)
 			{
 				EditorGUI.EndDisabledGroup();
 			}
+
 			return currentLine + DrawerFieldLines.PropertyField;
 		}
-		
+
 		protected virtual void AllocateLines(SerializedProperty property)
 		{
 			throw new NotImplementedException();

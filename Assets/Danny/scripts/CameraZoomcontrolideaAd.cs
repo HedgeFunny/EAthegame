@@ -12,29 +12,6 @@ public class CameraZoomcontrolideaAd : MonoBehaviour
     public float zoomOutScale;
     public float zoomInScale;
 
-    private void Update()
-    {
-        /*
-        if (IdeaAd.activeInHierarchy)
-        {
-            testCameraZoomOutBool = true;
-        }
-        else
-        {
-            testCameraZoomOutBool = false;
-        }
-        if (testCameraZoomOutBool)
-
-        {
-            ZoomOut();
-        }
-        else
-        {
-            ZoomIn();
-        }
-        */
-    }
-
 
     private void OnEnable()
     {

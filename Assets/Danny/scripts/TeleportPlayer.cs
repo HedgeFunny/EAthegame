@@ -8,6 +8,7 @@ public class TeleportPlayer : MonoBehaviour
     public Vector2 newTeleportSpot;
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Vector2 newTeleportSpot = new Vector2(25, 2);
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.transform.position = newTeleportSpot;

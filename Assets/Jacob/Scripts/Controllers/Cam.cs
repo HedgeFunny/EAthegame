@@ -48,7 +48,7 @@ namespace Jacob.Scripts.Controllers
 
 		private void OnDestroy()
 		{
-			_clampingInterface.OnDestroy();
+			_clampingInterface?.OnDestroy();
 			Instance = null;
 			_onFollowedObjectChange -= FollowedObjectChange;
 		}

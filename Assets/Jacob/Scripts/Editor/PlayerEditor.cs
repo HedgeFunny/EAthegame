@@ -19,6 +19,7 @@ namespace Jacob.Scripts.Editor
 		private PlayerOnFire _onFire;
 		private bool _monitoringAnimatorController;
 		private AudioSource _audioSource;
+		private PlayerWallClimbing _wallClimbing;
 
 		private void OnEnable()
 		{
@@ -31,6 +32,7 @@ namespace Jacob.Scripts.Editor
 
 			script.TryGetComponent(out _onFire);
 			script.TryGetComponent(out _audioSource);
+			script.TryGetComponent(out _wallClimbing);
 		}
 
 		private void OnDisable()
@@ -50,6 +52,7 @@ namespace Jacob.Scripts.Editor
 			AnimationProperties(script);
 			OnFireAbilityProperties(script);
 			SoundEffectProperties(script);
+			WallClimbingProperties(script);
 
 			serializedObject.ApplyModifiedProperties();
 			Utilities.CheckIfGUIChanged(script);

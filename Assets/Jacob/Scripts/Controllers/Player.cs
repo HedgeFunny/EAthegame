@@ -40,13 +40,14 @@ namespace Jacob.Scripts.Controllers
 
 		// Wall Climbing Properties
 		public bool enableWallClimbing;
+		public float wallClimbingSpeed;
 
 		internal bool IsWalking;
 		internal bool IsJumping;
 		internal Vector2 Direction = Vector2.right;
-		private Rigidbody2D _rigidbody;
+		internal Rigidbody2D Rigidbody;
 		private Animator _animator;
-		private float _horizontalInput;
+		internal float HorizontalInput;
 		private bool _canJump = true;
 		private bool _canControlMovement = true;
 		private float _baseJumpForce;
@@ -76,8 +77,8 @@ namespace Jacob.Scripts.Controllers
 		{
 			if (_canControlMovement)
 			{
-				_horizontalInput = Input.GetAxis("Horizontal");
-				IsWalking = _horizontalInput is > 0 or < -0;
+				HorizontalInput = Input.GetAxis("Horizontal");
+				IsWalking = HorizontalInput is > 0 or < -0;
 				WalkingAudioCheck();
 
 
@@ -87,6 +88,7 @@ namespace Jacob.Scripts.Controllers
 
 			AnimatorCheck();
 			TopDownCheck();
+
 			OnFireAbilityCheck();
 			SprintCheck();
 			FlipCheck();

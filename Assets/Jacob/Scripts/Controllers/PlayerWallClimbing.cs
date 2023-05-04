@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Jacob.Scripts.Data;
 using UnityEngine;
 
 namespace Jacob.Scripts.Controllers
@@ -7,7 +7,8 @@ namespace Jacob.Scripts.Controllers
 	public class PlayerWallClimbing : MonoBehaviour
 	{
 		private Player _player;
-		private bool _touchingWall;
+		internal bool TouchingWall;
+		private readonly Distance _rayDistance = Distance.Centimetre(1);
 
 		private void Awake()
 		{
@@ -16,26 +17,46 @@ namespace Jacob.Scripts.Controllers
 
 		private void ShootRaycast()
 		{
-			var directionOffset = new Vector3(_player.Collider2D.bounds.extents.x + 0.01f, 0, 0);
+			var playerBounds = _player.Collider2D.bounds;
+			var extentsX = playerBounds.extents.x;
+			var extentsY = playerBounds.extents.y;
+			var extentsOffset = YOnly(extentsY) - YOnly(Distance.Centimetre(15));
+
+			var directionOffset = XOnly(extentsX + Distance.Centimetre(1));
 			var direction = _player.Direction == Vector2.right
-				? _player.Collider2D.bounds.center + directionOffset
-				: _player.Collider2D.bounds.center - directionOffset;
-			var hit = Physics2D.Raycast(direction, _player.Direction, 1);
-			Debug.DrawRay(direction, _player.Direction * 1, Color.red);
-			
-			if (!hit) return;
-			print(hit.collider.name);
-			if (hit.collider.CompareTag("Ground"))
+				? playerBounds.center + directionOffset - extentsOffset
+				: playerBounds.center - directionOffset - extentsOffset;
+
+			var hit = Physics2D.Raycast(direction, _player.Direction, _rayDistance);
+			Debug.DrawRay(direction, _player.Direction * _rayDistance, Color.red);
+
+			if (!hit)
 			{
-				print("You have ran into a wall.");
-				print(_player.Collider2D.bounds.extents.x);
+				TouchingWall = false;
+				return;
 			}
+			
+			print(hit.collider.name);
+			TouchingWall = hit.collider.CompareTag("Ground");
 		}
 
 		internal void WallClimbingCheck()
 		{
 			if (!_player.enableWallClimbing) return;
 			ShootRaycast();
+			if (!TouchingWall) return;
+			_player.Rigidbody.gravityScale = 0;
+			_player.Rigidbody.velocity = YOnly(Mathf.Abs(_player.HorizontalInput) * _player.wallClimbingSpeed);
+		}
+
+		private static Vector3 XOnly(float xAxis)
+		{
+			return new Vector3(xAxis, 0, 0);
+		}
+
+		private static Vector3 YOnly(float yAxis)
+		{
+			return new Vector3(0, yAxis, 0);
 		}
 	}
 }

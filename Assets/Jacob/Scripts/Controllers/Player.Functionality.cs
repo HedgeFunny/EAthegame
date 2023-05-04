@@ -12,7 +12,7 @@ namespace Jacob.Scripts.Controllers
 		/// </summary>
 		private void GetComponents()
 		{
-			_rigidbody = GetComponent<Rigidbody2D>();
+			Rigidbody = GetComponent<Rigidbody2D>();
 			_hasAnimator = TryGetComponent(out _animator);
 			_hasOnFire = TryGetComponent(out _playerOnFire);
 			_spriteRenderer = GetComponent<SpriteRenderer>();
@@ -26,7 +26,7 @@ namespace Jacob.Scripts.Controllers
 		/// </summary>
 		private void SetupRigidbody()
 		{
-			_rigidbody.freezeRotation = true;
+			Rigidbody.freezeRotation = true;
 		}
 
 		/// <summary>
@@ -83,7 +83,7 @@ namespace Jacob.Scripts.Controllers
 			// the Player Controller to track in the inspector.
 			var inputType = inputToTrack switch
 			{
-				TrackInput.HorizontalInput => _horizontalInput,
+				TrackInput.HorizontalInput => HorizontalInput,
 				TrackInput.VerticalInput => _verticalInput,
 				_ => throw new ArgumentOutOfRangeException()
 			};
@@ -109,14 +109,16 @@ namespace Jacob.Scripts.Controllers
 		/// </summary>
 		private void TopDownCheck()
 		{
+			if (_hasWallClimbing && _wallClimbing.TouchingWall) return;
+			
 			// If you don't have topDown enabled, check for jumping.
 			if (!topDown)
 			{
 				JumpCheck();
 			}
-
+			
 			// Disables gravity if you have topDown enabled.
-			_rigidbody.gravityScale = topDown ? 0 : 1;
+			Rigidbody.gravityScale = topDown ? 0 : 1;
 		}
 
 		/// <summary>
@@ -213,9 +215,9 @@ namespace Jacob.Scripts.Controllers
 		/// </summary>
 		private void Movement()
 		{
-			_rigidbody.velocity = new Vector2(_horizontalInput * moveSpeed,
-				topDown ? _verticalInput * moveSpeed : _rigidbody.velocity.y);
-			Direction = _horizontalInput switch
+			Rigidbody.velocity = new Vector2(HorizontalInput * moveSpeed,
+				topDown ? _verticalInput * moveSpeed : Rigidbody.velocity.y);
+			Direction = HorizontalInput switch
 			{
 				> 0 => Vector2.right,
 				< -0 => Vector2.left,
@@ -253,7 +255,7 @@ namespace Jacob.Scripts.Controllers
 				if (_hasAudioSource && jumpingSoundEffect) _audioSource.PlayOneShot(jumpingSoundEffect);
 			}
 
-			_rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+			Rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 			if (checkForGround) _canJump = false;
 		}
 
@@ -273,7 +275,7 @@ namespace Jacob.Scripts.Controllers
 		public void DisableControllingMovement()
 		{
 			_canControlMovement = false;
-			_horizontalInput = 0;
+			HorizontalInput = 0;
 		}
 
 		/// <summary>
@@ -281,7 +283,7 @@ namespace Jacob.Scripts.Controllers
 		/// </summary>
 		public void EnableControllingMovement()
 		{
-			_horizontalInput = 0;
+			HorizontalInput = 0;
 			_canControlMovement = true;
 		}
 
@@ -291,7 +293,7 @@ namespace Jacob.Scripts.Controllers
 		/// <param name="horizontalInput">A number around -1 and 1.</param>
 		public void SetHorizontalInput(float horizontalInput)
 		{
-			_horizontalInput = horizontalInput;
+			HorizontalInput = horizontalInput;
 		}
 
 		/// <summary>
@@ -312,11 +314,11 @@ namespace Jacob.Scripts.Controllers
 		/// </summary>
 		public void FlipHorizontalInput()
 		{
-			_horizontalInput = _horizontalInput switch
+			HorizontalInput = HorizontalInput switch
 			{
 				1 => -1,
 				-1 => 1,
-				_ => _horizontalInput
+				_ => HorizontalInput
 			};
 		}
 

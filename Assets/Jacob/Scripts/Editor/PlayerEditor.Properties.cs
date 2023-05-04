@@ -127,6 +127,7 @@ namespace Jacob.Scripts.Editor
 			using (new EditorGUI.DisabledScope(!_wallClimbing))
 			{
 				script.enableWallClimbing = EditorGUILayout.Toggle("Enable Wall Climbing", script.enableWallClimbing);
+				script.wallClimbingSpeed = EditorGUILayout.FloatField("Wall Climbing Speed", script.wallClimbingSpeed);
 			}
 		}
 	}

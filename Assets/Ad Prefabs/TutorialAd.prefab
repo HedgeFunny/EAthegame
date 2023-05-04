@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 8
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3207172495812084904
 SpriteRenderer:
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1782453411834722648}
   - component: {fileID: 4480513865671265286}
   - component: {fileID: 5011962299367540622}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (6)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 19
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4480513865671265286
 SpriteRenderer:
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 4287821054665500484}
   - component: {fileID: 4287821054665500482}
   - component: {fileID: 4287821054665500485}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (8)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4287821054665500482
 SpriteRenderer:
@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 4287821054711835474}
   - component: {fileID: 4287821054711835472}
   - component: {fileID: 4287821054711835475}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (12)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 15
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4287821054711835472
 SpriteRenderer:
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 4287821055085663980}
   - component: {fileID: 4287821055085663983}
   - component: {fileID: 4287821055085663982}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: SceneTransformer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 13
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &4287821055085663981
 SpriteRenderer:
@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1b6ec308c705e43b71ddabcae0dc60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Stage-1
+  SceneName: Updated Level 1
 --- !u!50 &4287821055085663982
 Rigidbody2D:
   serializedVersion: 4
@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 4287821055185154648}
   - component: {fileID: 4287821055185154630}
   - component: {fileID: 4287821055185154649}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (10)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -595,7 +595,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4287821055185154630
 SpriteRenderer:
@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 4287821055295393844}
   - component: {fileID: 4287821055295393842}
   - component: {fileID: 4287821055295393845}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (9)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -706,7 +706,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 14
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4287821055295393842
 SpriteRenderer:
@@ -797,7 +797,7 @@ GameObject:
   - component: {fileID: 4287821055346779897}
   - component: {fileID: 4287821055346779879}
   - component: {fileID: 4287821055346779878}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (7)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -812,12 +812,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4287821055346779896}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.84, y: -0.1864, z: -0.047177467}
-  m_LocalScale: {x: 3.7823236, y: 2.0589957, z: 1}
+  m_LocalPosition: {x: -11.84, y: -0.2648, z: -0.047177467}
+  m_LocalScale: {x: 3.7823236, y: 1.9021002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4287821055346779879
 SpriteRenderer:
@@ -909,7 +909,7 @@ GameObject:
   - component: {fileID: 4287821055709397987}
   - component: {fileID: 4287821055709397986}
   - component: {fileID: 4287821055376353079}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (19)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -924,12 +924,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4287821055709397988}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.31, y: 0.8846, z: -0.047177467}
-  m_LocalScale: {x: 3.7823236, y: 4.2009687, z: 1}
+  m_LocalPosition: {x: -9.31, y: 0.6044, z: -0.047177467}
+  m_LocalScale: {x: 3.7823236, y: 3.6407275, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 25
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4287821055709397987
 SpriteRenderer:
@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4287821055709397988}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0477a11f7876ee047aa5e4eda311ed41, type: 3}
   m_Name: 
@@ -1055,7 +1055,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 16
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4287821055899525398
 SpriteRenderer:
@@ -1140,7 +1140,7 @@ GameObject:
   - component: {fileID: 4287821055997800623}
   - component: {fileID: 4287821055997800621}
   - component: {fileID: 4287821055997800620}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (15)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1160,7 +1160,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 17
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4287821055997800621
 SpriteRenderer:
@@ -1251,7 +1251,7 @@ GameObject:
   - component: {fileID: 4287821056260632215}
   - component: {fileID: 4287821056260632213}
   - component: {fileID: 4287821056260632212}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ad walls (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1271,7 +1271,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &4287821056260632213
 SpriteRenderer:
@@ -1381,7 +1381,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5040539339949967722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.47, y: 1.14, z: 0}
+  m_LocalPosition: {x: -18.88, y: 1.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1493,7 +1493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70bae6465c9df0f48686dd8a056cbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 5.1
+  jumpForce: 6
   moveSpeed: 5
   topDown: 0
   flipWhenTurningDirection: 1
@@ -1552,7 +1552,7 @@ GameObject:
   - component: {fileID: 8781975164888508800}
   - component: {fileID: 5784299916478010507}
   - component: {fileID: 2523332124705774925}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (11)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1572,7 +1572,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 23
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5784299916478010507
 SpriteRenderer:
@@ -1663,7 +1663,7 @@ GameObject:
   - component: {fileID: 2013706465434780726}
   - component: {fileID: 8963626865191303050}
   - component: {fileID: 8250177900425003501}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (16)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1683,7 +1683,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 20
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8963626865191303050
 SpriteRenderer:
@@ -1798,16 +1798,12 @@ Transform:
   - {fileID: 6613485244108979129}
   - {fileID: 6613485243637150058}
   - {fileID: 6613485244207087689}
-  - {fileID: 9033854901880247135}
-  - {fileID: 3207172495812084903}
   - {fileID: 4287821055346779897}
   - {fileID: 4287821054665500484}
   - {fileID: 4287821055185154648}
   - {fileID: 4287821056260632215}
-  - {fileID: 4287821055085663969}
   - {fileID: 4287821055295393844}
   - {fileID: 4287821054711835474}
-  - {fileID: 4287821055899525480}
   - {fileID: 4287821055997800623}
   - {fileID: 2097929357293265805}
   - {fileID: 1782453411834722648}
@@ -1817,6 +1813,10 @@ Transform:
   - {fileID: 8781975164888508800}
   - {fileID: 4170352202930764246}
   - {fileID: 4287821055709397989}
+  - {fileID: 9033854901880247135}
+  - {fileID: 3207172495812084903}
+  - {fileID: 4287821055085663969}
+  - {fileID: 4287821055899525480}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1831,7 +1831,7 @@ GameObject:
   - component: {fileID: 6613485243532433150}
   - component: {fileID: 6613485243532433151}
   - component: {fileID: 6613485243532433149}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ad walls (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1942,7 +1942,7 @@ GameObject:
   - component: {fileID: 6613485243637150058}
   - component: {fileID: 6613485243637150059}
   - component: {fileID: 6613485243637150056}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (4)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2053,7 +2053,7 @@ GameObject:
   - component: {fileID: 6613485243992651715}
   - component: {fileID: 6613485243992651724}
   - component: {fileID: 6613485243992651714}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ad walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2164,7 +2164,7 @@ GameObject:
   - component: {fileID: 6613485244108979129}
   - component: {fileID: 6613485244108979130}
   - component: {fileID: 6613485244108979128}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ad walls (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2275,7 +2275,7 @@ GameObject:
   - component: {fileID: 6613485244207087689}
   - component: {fileID: 6613485244207087690}
   - component: {fileID: 6613485244207087688}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2386,7 +2386,7 @@ GameObject:
   - component: {fileID: 6613485244911077176}
   - component: {fileID: 6613485244911077177}
   - component: {fileID: 6613485244911077183}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ad walls (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2497,7 +2497,7 @@ GameObject:
   - component: {fileID: 6589878224714283176}
   - component: {fileID: 7416267814994209136}
   - component: {fileID: 2041399915012074436}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (18)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2517,7 +2517,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 22
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7416267814994209136
 SpriteRenderer:
@@ -2608,7 +2608,7 @@ GameObject:
   - component: {fileID: 2097929357293265805}
   - component: {fileID: 2339097428377058854}
   - component: {fileID: 2394517584490374169}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (13)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2628,7 +2628,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 18
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2339097428377058854
 SpriteRenderer:
@@ -2719,7 +2719,7 @@ GameObject:
   - component: {fileID: 5342224886590423979}
   - component: {fileID: 7999966591333067561}
   - component: {fileID: 9052388259801289179}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2739,7 +2739,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 21
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7999966591333067561
 SpriteRenderer:
@@ -2830,7 +2830,7 @@ GameObject:
   - component: {fileID: 4170352202930764246}
   - component: {fileID: 708864933321808791}
   - component: {fileID: 1057615331887677302}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (14)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2845,12 +2845,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8978823290507665330}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.78, y: 6.74, z: -0.047177467}
+  m_LocalPosition: {x: 6.78, y: 7.35, z: -0.047177467}
   m_LocalScale: {x: 2.090302, y: 0.59909177, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 24
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &708864933321808791
 SpriteRenderer:
@@ -2961,7 +2961,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6613485243525064878}
-  m_RootOrder: 7
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9033854901880247132
 SpriteRenderer:
@@ -3022,7 +3022,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9033854901880247133}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

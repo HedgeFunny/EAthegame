@@ -6,7 +6,10 @@ namespace Jacob.Scripts.Controllers
 	{
 		private void Awake()
 		{
-			GameManager.Get().MainPlayer = gameObject;
+			if (FindObjectOfType<GameManager>())
+            {
+				GameManager.Get().MainPlayer = gameObject;
+			}
 		}
 	}
 }

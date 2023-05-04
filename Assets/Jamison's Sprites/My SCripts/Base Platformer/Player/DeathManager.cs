@@ -52,7 +52,7 @@ public class DeathManager : MonoBehaviour
         //Brings up death screen when cooldown is over
         if (IsDeathCooldownover == true)
         {
-        Instantiate(WatchAd, AdAnchor.transform.position, AdAnchor.transform.rotation);
+            WatchAd.SetActive(true);
 
         //Makes bool False quickly after to prevent multiple instantiations
         IsDeathCooldownover = false;
@@ -70,6 +70,9 @@ public class DeathManager : MonoBehaviour
 
             //Starts Cooldown
             StartCoroutine(SummonCoolDown());
+
+            //destroys gameobject responsible of collision
+            Destroy(collision.gameObject);
         }
 
         //Fire Hazard Check
@@ -79,6 +82,9 @@ public class DeathManager : MonoBehaviour
 
             //Starts Cooldown
             StartCoroutine(SummonCoolDown());
+
+            //destroys gameobject responsible of collision
+            Destroy(collision.gameObject);
         }
 
         //Mugging Hazard Check
@@ -89,6 +95,9 @@ public class DeathManager : MonoBehaviour
             //Starts Cooldown
             StartCoroutine(SummonCoolDown());
 
+            //destroys gameobject responsible of collision
+            Destroy(collision.gameObject);
+
         }
        else if (collision.gameObject.CompareTag("Spike"))
        {
@@ -97,7 +106,10 @@ public class DeathManager : MonoBehaviour
             //Starts Cooldown
             StartCoroutine(SummonCoolDown());
 
-       }
+            //destroys gameobject responsible of collision
+            Destroy(collision.gameObject);
+
+        }
 
     }
 
@@ -110,15 +122,6 @@ public class DeathManager : MonoBehaviour
 
 
     
-    }
-
-    public void AdSpawner(string adToSpawn)
-    {
-        if(adToSpawn =="fire" )
-        {
-            //Instantiate your fire ad
-        }
-
     }
 
     //Resets Booleans when called on

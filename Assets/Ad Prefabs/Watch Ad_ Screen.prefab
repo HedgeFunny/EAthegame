@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7749250698663640117
 RectTransform:
   m_ObjectHideFlags: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   KerfuffleOfKongregationsAd: {fileID: 0}
   TwoTongueAd: {fileID: 0}
   Player: {fileID: 0}
+  Stage: {fileID: 0}
   deathMan: {fileID: 0}
   adAnchor: {fileID: 0}
 --- !u!1001 &4937415228214474115
@@ -221,6 +222,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3391182524359700154, guid: 6c2f648ec4c254e45be05065f7e880c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391182524359700154, guid: 6c2f648ec4c254e45be05065f7e880c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391182524359700154, guid: 6c2f648ec4c254e45be05065f7e880c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7749250698663640116}
+    - target: {fileID: 3391182524359700154, guid: 6c2f648ec4c254e45be05065f7e880c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391182524359700154, guid: 6c2f648ec4c254e45be05065f7e880c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HahaAdGoBrrrrrr
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391182524359700154, guid: 6c2f648ec4c254e45be05065f7e880c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WatchAd, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391182524359700154, guid: 6c2f648ec4c254e45be05065f7e880c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c2f648ec4c254e45be05065f7e880c2, type: 3}
 --- !u!224 &7749250698791886606 stripped
@@ -251,5 +280,6 @@ MonoBehaviour:
   KerfuffleOfKongregationsAd: {fileID: 0}
   TwoTongueAd: {fileID: 0}
   Player: {fileID: 0}
+  Stage: {fileID: 0}
   deathMan: {fileID: 0}
   adAnchor: {fileID: 0}

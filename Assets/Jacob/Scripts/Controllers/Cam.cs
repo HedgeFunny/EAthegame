@@ -61,6 +61,7 @@ namespace Jacob.Scripts.Controllers
 				followedObject.transform.position.y, -10);
 			transform.position = targetPosition;
 			_currentFollowedObject = followedObject;
+			ClampCheck();
 		}
 
 		private void Update()

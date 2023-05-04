@@ -18,11 +18,12 @@ public class WatchAd : MonoBehaviour
     //DeathManager - Acsessing Variables
     [Header("Death Manager")]
     public GameObject Player;
+    public GameObject Stage;
     public DeathManager deathMan;
     public GameObject adAnchor;
 
     //Other
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +60,14 @@ public class WatchAd : MonoBehaviour
     {
         //Enables Ad
         AdtoPlay.SetActive(true);
+
+        //Deactives Stage and Player
+        Player.SetActive(false);
+        Stage.SetActive(false);
+
+        //Deactivates Itself
+        gameObject.SetActive(false);
+
     }
     
     

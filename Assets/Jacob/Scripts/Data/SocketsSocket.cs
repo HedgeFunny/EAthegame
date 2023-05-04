@@ -1,6 +1,7 @@
 ﻿using System;
 using Jacob.Scripts.Controllers;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Jacob.Scripts.Data
 {
@@ -11,6 +12,7 @@ namespace Jacob.Scripts.Data
 		public GameObject correctGameObject;
 		public Vector2 incorrectObjectPosition;
 		public bool overrideDefaultProtection;
+		public UnityEvent<GameObject> onIncorrect;
 		[NonSerialized] public bool Correct;
 	}
 }

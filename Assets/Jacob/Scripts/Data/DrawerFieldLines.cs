@@ -4,5 +4,6 @@ namespace Jacob.Scripts.Data
 	{
 		public const int PropertyField = 1;
 		public const int HelpBox = 2;
+		public const int UnityEvent = 6;
 	}
 }

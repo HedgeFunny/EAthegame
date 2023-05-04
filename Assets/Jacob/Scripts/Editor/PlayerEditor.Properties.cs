@@ -76,11 +76,7 @@ namespace Jacob.Scripts.Editor
 
 			if (!_onFire)
 			{
-				EditorGUILayout.HelpBox(
-					"You don't have the PlayerOnFire Component attached. " +
-					"Please attach the component for this functionality to work.",
-					MessageType.Warning
-				);
+				EditorGUILayout.HelpBox(Utilities.ComponentWarning("PlayerOnFire"), MessageType.Warning);
 			}
 
 			using (new EditorGUI.DisabledScope(true))
@@ -104,11 +100,7 @@ namespace Jacob.Scripts.Editor
 
 			if (!_onFire)
 			{
-				EditorGUILayout.HelpBox(
-					"You don't have the AudioSource Component attached. " +
-					"Please attach the component for this functionality to work.",
-					MessageType.Warning
-				);
+				EditorGUILayout.HelpBox(Utilities.ComponentWarning("AudioSource"), MessageType.Warning);
 			}
 
 			using (new EditorGUI.DisabledScope(true))
@@ -120,6 +112,22 @@ namespace Jacob.Scripts.Editor
 			{
 				EditorGUILayout.PropertyField(serializedObject.FindProperty("walkingSoundEffect"));
 				EditorGUILayout.PropertyField(serializedObject.FindProperty("jumpingSoundEffect"));
+			}
+		}
+
+		private void WallClimbingProperties(Player script)
+		{
+			EditorGUILayout.LabelField("Wall Climbing Properties", EditorStyles.boldLabel);
+
+			if (!_wallClimbing)
+			{
+				EditorGUILayout.HelpBox(Utilities.ComponentWarning("PlayerWallClimbing"), MessageType.Warning);
+			}
+
+			using (new EditorGUI.DisabledScope(!_wallClimbing))
+			{
+				script.enableWallClimbing = EditorGUILayout.Toggle("Enable Wall Climbing", script.enableWallClimbing);
+				script.wallClimbingSpeed = EditorGUILayout.FloatField("Wall Climbing Speed", script.wallClimbingSpeed);
 			}
 		}
 	}

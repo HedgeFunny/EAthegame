@@ -2,6 +2,7 @@
 
 namespace Jacob.Scripts.Controllers
 {
+	[RequireComponent(typeof(Player))]
 	public class PlayerOnFire : MonoBehaviour
 	{
 		public string tagName;

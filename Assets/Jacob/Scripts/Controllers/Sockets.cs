@@ -69,7 +69,7 @@ namespace Jacob.Scripts.Controllers
 			// Check if the specific Object has a DragAndDrop script, if it doesn't, exit the method.
 			if (!socket.socket.HeldObject.TryGetComponent<DragAndDrop>(out var drop)) return;
 			
-			socket.onIncorrect?.Invoke();
+			socket.onIncorrect?.Invoke(socket.socket.HeldObject);
 
 			drop.transform.parent = socket.socket.OriginalParent;
 

@@ -12,7 +12,7 @@ namespace Jacob.Scripts.Data
 		public GameObject correctGameObject;
 		public Vector2 incorrectObjectPosition;
 		public bool overrideDefaultProtection;
-		public UnityEvent onIncorrect;
+		public UnityEvent<GameObject> onIncorrect;
 		[NonSerialized] public bool Correct;
 	}
 }

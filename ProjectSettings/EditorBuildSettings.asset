@@ -11,9 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Danny/Scene/IntroScene.unity
     guid: 6da359bdf46d2be4ca3cf2b9c046d7be
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/UPDATED SCENES/Updated Level 1.unity
+    guid: 383bbcaf076d62b40b75a6a9f2709146
   - enabled: 1
     path: Assets/Danny/Scene/EndOfGameScene.unity
     guid: a7238984c7830914ca54411b6ed904b0

@@ -367,6 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783aecaa53eb4d27a413c5ae33dd0ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: []
 --- !u!1 &454288594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2532,7 +2533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 571123465526197715, guid: 543757839b7baf490a8a7918dfb2c590, type: 3}
       propertyPath: enableWallClimbing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 571123465526197715, guid: 543757839b7baf490a8a7918dfb2c590, type: 3}
       propertyPath: jumpingSoundEffect

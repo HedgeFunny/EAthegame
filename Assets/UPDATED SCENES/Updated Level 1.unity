@@ -29441,6 +29441,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Watch Ad_ Screen
       objectReference: {fileID: 0}
+    - target: {fileID: 7749250698663640137, guid: b842cda6e9d537448ba73d59fc3777cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7749250698791886606, guid: b842cda6e9d537448ba73d59fc3777cc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7749250698791886606, guid: b842cda6e9d537448ba73d59fc3777cc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7749250698791886607, guid: b842cda6e9d537448ba73d59fc3777cc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b842cda6e9d537448ba73d59fc3777cc, type: 3}
 --- !u!1 &1266680820 stripped

@@ -47,6 +47,7 @@ namespace Jacob.Scripts.Controllers
 			if (other.TryGetComponent<DragAndDrop>(out var obj) && _startedCoroutine)
 			{
 				_breakFromCoroutine = true;
+				obj.OverrideSnap = false;
 			}
 		}
 
@@ -54,6 +55,7 @@ namespace Jacob.Scripts.Controllers
 		{
 			while (obj.IsBeingHeld)
 			{
+				obj.OverrideSnap = true;
 				print("being held");
 				if (!obj.IsBeingHeld) continue;
 				print("waiting for end of frame");

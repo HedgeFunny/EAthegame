@@ -10,6 +10,7 @@ namespace Jacob.Scripts.Controllers
 		[NonSerialized] public bool IsBeingHeld;
 		[NonSerialized] public Rigidbody2D Rigidbody;
 		[NonSerialized] public Collider2D Collider2D;
+		[NonSerialized] public bool OverrideSnap;
 		
 		private Camera _camera;
 		private Vector3 MouseWorldPos => _camera.ScreenToWorldPoint(Input.mousePosition);
@@ -42,7 +43,7 @@ namespace Jacob.Scripts.Controllers
 		{
 			if (!_isDraggable) return;
 			IsBeingHeld = false;
-			if (snapBackToStartingPos) SnapBackToStartingPosition();
+			if (snapBackToStartingPos && !OverrideSnap) SnapBackToStartingPosition();
 			if (!Rigidbody) return;
 			Rigidbody.velocity = new Vector2(0,0);
 		}

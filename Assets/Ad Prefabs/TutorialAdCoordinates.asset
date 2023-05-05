@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f34c21fafef4c30a58d43ecf96549be, type: 3}
-  m_Name: Stage-1-Coordinates
+  m_Name: TutorialAdCoordinates
   m_EditorClassIdentifier: 
-  minX: -4
-  minY: 0
-  maxX: 94
-  maxY: 0
+  minX: -23.7
+  minY: -4.9
+  maxX: 30.28
+  maxY: 12.35

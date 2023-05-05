@@ -35,7 +35,7 @@ namespace Jacob.Scripts.Controllers
 				socket.socket.OnSocketEnterAction -= EnterSocket;
 				socket.Correct = false;
 			}
-			
+
 			StopCoroutine(AllCorrectCoroutine());
 		}
 
@@ -68,7 +68,7 @@ namespace Jacob.Scripts.Controllers
 		{
 			// Check if the specific Object has a DragAndDrop script, if it doesn't, exit the method.
 			if (!socket.socket.HeldObject.TryGetComponent<DragAndDrop>(out var drop)) return;
-			
+
 			socket.onIncorrect?.Invoke(socket.socket.HeldObject);
 
 			drop.transform.parent = socket.socket.OriginalParent;
@@ -91,7 +91,11 @@ namespace Jacob.Scripts.Controllers
 			    socket.incorrectObjectPosition == Vector2.zero)
 			{
 				if (drop.snapBackToStartingPos)
+				{
 					drop.SnapBackToStartingPosition();
+					drop.OverrideSnap = false;
+				}
+
 				return;
 			}
 
